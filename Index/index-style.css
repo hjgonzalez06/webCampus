@@ -27,22 +27,36 @@ q:before, q:after { content:''; }
 /* INICIO CÓDIGO CSS PARA APARIENCIA DE PÁGINA WEB */
 
 body{
-	background-color: #7ac5cd;
-	font-family: 'Nunito Sans', sans-serif;
+	background-color: #FAFAFA;
+	font-family: 'Play', sans-serif;
 	font-size: 16px;
 	padding-top: 55px;
 }
 
-#particles-js{
-	margin-top: -20px;
+#ventanaModal{
 	width: 100%;
-	height: 100%;
+	height: 100vh;
+	background-color: rgba(0,0,0,.75);
 	position: fixed;
-	z-index: -1;
+	top: 0;
+	left: 0;
+	display: none;
+	z-index: 50;
+}
+
+#contenido{
+	margin: auto;
+	width: 35%;
+	height: 50%%;
+	background-color: rgba(240,248,255,.75);
+	border-radius: 10px;
+	cursor: pointer;
+	z-index: 55;
 }
 
 header{
-	background-color: #00b2ee;
+	background-color: rgb(51,153,255);
+	font-family: 'Play', sans-serif;
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -69,6 +83,9 @@ header{
 }
 
 .Menu{
+	font-family: 'Play', sans-serif;
+	font-style: 'Play';
+	font
 	width: 100%;
 	max-width: 1000px;
 	margin: auto;
@@ -93,14 +110,16 @@ header{
 
 .Ident_Fecha p{
 	margin-right: 230px;
-	font: normal 1em 'Nunito Sans', sans-serif;
-	color: #696969;
+	font: normal 1em 'Play', sans-serif;
+	color: #FFFFFF;
+	text-shadow: #696969 1px 1px 2px;
 }
 
 .Ident_Fecha span{
 	margin-left: 230px;
-	font: italic 1em 'Nunito Sans', sans-serif;
-	color: #696969;
+	font: normal 1em 'Play', sans-serif;
+	color: #FFFFFF;
+	text-shadow: #696969 1px 1px 2px;
 }
 
 .Menu .Enlaces{
@@ -109,7 +128,7 @@ header{
 }
 
 .Menu .Enlaces a{
-	color: #696969;
+	color: #FFFFFF;
 	text-decoration: none;
 	display: inline-block;
 	padding: 1em;
@@ -118,12 +137,16 @@ header{
 }
 
 .Menu .Enlaces a:hover{
-	background-color: #ee3b3b;
-	color: #00b2ee;
+	background-color: rgba(242,242,242,.7);
+	color: rgb(51,153,255);
 }
 
 .Menu .Enlaces i{
 	margin-right: 5px;
+}
+
+.Menu .Enlaces i span{
+	font-family: 'Play', sans-serif;
 }
 
 main{
@@ -133,9 +156,10 @@ main{
 	margin-bottom: 20px;
 	margin-right: auto;
 	margin-left: auto;
-	background-color: rgba(0,30,255,.5);
+	background-color: rgba(242,242,242,.9);
 	padding: 20px;
 	box-shadow: #696969 10px 10px 15px;
+	font-style: 'Play', sans-serif;
 }
 
 #Noticias{
@@ -143,82 +167,10 @@ main{
 	height:300px;
 	margin-right: 7px;
 	margin-bottom: 7px;
-	border: 3px solid rgb(0,30,255);
-	background-color: rgba(240,248,255,.5);
+	border: 3px solid rgba(0,30,255,.75);
+	background-color: #FFFFFF;
 	float: left;
 }
-
-/*#Noticias table{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: left;
-	border-collapse: separate;
-	border-spacing: 5px 5px;
-}
-
-#Noticias table tr th p{
-	text-align: center;
-	font: 20px bold;
-	background-color: #ee3b3b;
-	width: 523px;
-	border: 3px solid rgb(0,30,255);
-}
-
-#Noticias table tr td .Art_1{
-	text-align: justify;
-	color: blue;
-	font: 15px bold;
-	background-color: rgba(240,248,255,.5);
-	width: 521px;
-	border: transparent;
-	margin-top: 0px;
-	padding: 10px;
-	text-shadow: #696969 2px 2px 7px;
-}
-
-#Noticias table tr td .Art_1 span{
-	font-size: 11px;
-	color: #333333;
-}
-
-#Noticias table tr td .Art{
-	text-align: justify;
-	color: blue;
-	font: 15px bold;
-	background-color: rgba(240,248,255,.5);
-	width: 521px;
-	border: transparent;
-	margin-top: -1px;
-	padding: 10px;
-	text-shadow: #696969 2px 2px 7px;
-}
-
-#Noticias table tr td .Art span{
-	font-size: 11px;
-	color: #333333;
-}
-
-#Noticias table tr td hr{
-	margin-top: -1px;
-	margin-bottom: 0px;
-	margin-left: -1px;
-	border: 1px dashed rgba(0,30,255,.5);
-	width: 521px;
-}
-
-#Noticias table tr td a .Art_1:hover{
-    background-color: #97ffff;
-}
-
-#Noticias table tr td a .Art:hover{
-    background-color: #97ffff;
-}
-
-#Noticias table tr td a:active{
-    position: relative;
-    top: 1px;
-}*/
 
 #E_Paginas{
 	display: flex;
@@ -227,8 +179,8 @@ main{
 	align-items: center;
 	width: 43%;
 	height: 600px;
-	border: 3px solid rgb(0,30,255);
-	background-color: rgba(240,248,255,.5);
+	border: 3px solid rgba(0,30,255,.75);
+	background-color: #FFFFFF;
 }
 
 #E_Paginas #E_1{
@@ -256,7 +208,7 @@ main{
 }
 
 #E_Paginas figure{
-	background-color: rgba(240,248,255,.5);
+	background-color: rgb(242,242,242);
 	width: 100px;
 	height: 100px;
 	border-radius: 50px;
@@ -280,16 +232,19 @@ main{
 
 #E_Paginas figure figcaption{
 	text-align: center;
+	text-shadow: #696969 2px 2px 3px;
 	color: #333333;
 	font: 17px bold;
+	font-family: 'Play', sans-serif;
 }
 
 #Flexslider{
 	width: 55%;
 	height: 286px;
-	border: 3px solid rgb(0,30,255);
+	border: 3px solid rgba(0,30,255,.75);
 	position: relative;
 	top: -292px;
+	background-color: #ffffff;
 }
 
 .Slides{
@@ -302,7 +257,7 @@ main{
 }
 
 .slidesjs-pagination{
-	background-color: #00b2ee;
+	background-color: #FFFFFF;
 	list-style: none;
 	overflow: hidden;
 }
@@ -320,11 +275,11 @@ main{
 }
 
 .slidesjs-pagination li a:hover{
-	background-color: #ee3b3b;
+	background-color: #00b2ee;
 }
 
 .slidesjs-navigation{
-	background-color: #ee3b3b;
+	background-color: #ffffff;
 	color: #333333;
 	text-decoration: none;
 	display: inline-block;
@@ -333,7 +288,7 @@ main{
 }
 
 .Slides .active{
-	background-color: #ee3b3b;
+	background-color: #00b2ee;
 }
 
 #Opciones{
@@ -347,15 +302,15 @@ main{
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: -284px;
-	background-color: rgba(240,248,255,.5);
-	border: 3px solid rgb(0,30,255);
+	background-color: #ffffff;
+	border: 3px solid rgba(0,30,255,.75);
 }
 
 #Opciones a{
-	color: #1874cd;
+	color: #06F;
 	text-decoration: none;
 	display: inline-block;
-	padding: .5em;
+	padding: .6em;
 	text-align: center;
 	font-size: 14px;
 	margin: 0px;
@@ -363,8 +318,8 @@ main{
 }
 
 #Opciones a:hover{
-	background-color: #ee3b3b;
-	color: #8470ff;
+	background-color: #00b2ee;
+	color: #333333;
 }
 
 #Opciones a:active{
@@ -376,10 +331,11 @@ main{
 	color: #FF00FF;
 	text-decoration: none;
 	display: inline-block;
-	margin-left: -20px;
-	margin-right: -20px;
+	margin-left: -10px;
+	margin-right: -10px;
 	text-shadow: #ffffff 0px 0px 0px;
 	font: 25px bold;
+	margin-bottom: 5px;
 }
 
 footer{
@@ -388,11 +344,12 @@ footer{
 	position: relative;
 	bottom: 0;
 	width: 100%;
+	background-color: #333;
 }
 
 footer p{
-	font: 1em Georgia, "Times New Roman", Times, serif;
-	color: #303030;
+	font: 1em 'Play', sans-serif;
+	color: #F6F6F6;
 	text-shadow: #696969 3px 3px 3px;
 }
 
@@ -451,6 +408,7 @@ footer p{
 
 	header .Menu .Logo .btn-Menu{
 		display: inline-block;
+		color: #FFFFFF;
 	}
 
 	header .Menu .Enlaces{
@@ -470,15 +428,15 @@ footer p{
 	.Ident_Fecha p{
 		margin-right: 0px;
 		text-align: center;
-		font: bold .75em 'Nunito Sans', sans-serif;
-		color: #696969;
+		font: bold .75em 'Play', sans-serif;
+		color: #FFFFFF;
 	}
 
 	.Ident_Fecha span{
 		margin-left: 0px;
 		text-align: center;
-		font: bold .75em 'Nunito Sans', sans-serif;
-		color: #696969;
+		font: bold .75em 'Play', sans-serif;
+		color: #FFFFFF;
 	}
 
 	main{
@@ -488,9 +446,10 @@ footer p{
 		margin-bottom: 20px;
 		margin-right: auto;
 		margin-left: auto;
-		background-color: rgba(0,30,255,.5);
+		background-color: rgba(242,242,242,.9);
 		padding: 20px;
 		box-shadow: #696969 10px 10px 15px;
+		font-family: 'Play', sans-serif;
 	}
 
 	#Noticias{
@@ -499,8 +458,8 @@ footer p{
 		margin-right: auto;
 		margin-left: auto;
 		margin-bottom: 7px;
-		border: 3px solid rgb(0,30,255);
-		background-color: rgba(240,248,255,.5);
+		border: 3px solid rgba(0,30,255,.75);
+		background-color: #FFFFFF;
 	}
 
 	#E_Paginas{
@@ -513,20 +472,20 @@ footer p{
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: 7px;
-		border: 3px solid rgb(0,30,255);
+		border: 3px solid rgba(0,30,255,.75);
 		background-color: rgba(240,248,255,.5);
 	}
 
 	#Flexslider{
 		width: 100%;
 		height: 286px;
-		border: 3px solid rgb(0,30,255);
+		border: 3px solid rgba(0,30,255,.75);
 		position: static;
 	}
 
 	#Opciones{
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		justify-content: space-around;
 		align-items: center;
 		text-align: center;
@@ -536,7 +495,7 @@ footer p{
 		margin-top: 7px;
 		margin-bottom: 0px;
 		background-color: rgba(240,248,255,.5);
-		border: 3px solid rgb(0,30,255);
+		border: 3px solid rgba(0,30,255,.75);
 		clear: both;
 	}
 
@@ -549,8 +508,8 @@ footer p{
 	}
 
 	footer p{
-		font: .78em Georgia, "Times New Roman", Times, serif;
-		color: #303030;
+		font: .78em 'Play', serif;
+		color: #F6F6F6;
 		text-shadow: #696969 3px 3px 3px;
 	}
 
