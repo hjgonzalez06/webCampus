@@ -24,10 +24,10 @@
 
 	<body>
                 
-		<div id="particles-js">
-	        <script src="../Efecto-Particulas-Fondo/particles.js"></script>
-            <script src="../Efecto-Particulas-Fondo/particulas.js"></script>
-	    </div>
+		<div id="ventanaModal">
+			<script src="modal.js"></script>
+			<img src="../Imagenes/Logo Unimar.png" id="contenido" onclick="cerrarVentana()">
+		</div>
 
 	    <?php require_once '../banner/banner.php';?>
 
