@@ -1,0 +1,431 @@
+@charset "utf-8";
+
+/*
+    CÓDIGO FUENTE DESARROLLADO POR FRANKLIN MORENO E HIRAM GONZÁLEZ
+    CONTACTO: hiramjgonzalez98@gmail.com
+    TODOS LOS DERECHOS RESERVADOS
+*/
+
+/* INICIO CÓDIGO RESET CSS */
+
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote {
+ padding: 0;
+ margin: 0;
+ font-size: 100%;
+ font-weight: normal;
+ box-sizing: border-box;
+}
+table { border-collapse: collapse; border-spacing: 0; }
+td, th, caption { font-weight: normal; text-align: left; }
+img, fieldset { border: 0; }
+ol { padding-left: 1.4em; list-style: decimal; }
+ul { padding-left: 1.4em; list-style:square; }
+q:before, q:after { content:''; }
+
+/* FIN CÓDIGO RESET CSS */
+
+/* INICIO CÓDIGO CSS PARA APARIENCIA DE PÁGINA WEB */
+
+body{
+	background-color: #7ac5cd;
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 16px;
+	padding-top: 55px;
+}
+
+#particles-js{
+	margin-top: -20px;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: -1;
+}
+
+header{
+	background-color: #00b2ee;
+	position: fixed;
+	width: 100%;
+	top: 0;
+}
+
+.Logo img{
+	display: inline-block;
+	width: 50px;
+	text-align: center;
+}
+
+#Encabezado2{
+	display: inline-block;
+	width: 180px;
+	text-align: center;
+}
+
+.Menu .Logo:hover{
+	background-color: #ee3b3b;
+}
+
+.Menu{
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Menu .btn-Menu{
+	display: none;
+	color: #0000ff;
+	text-decoration: none;
+	font-size: 1em;
+}
+
+.Menu .Enlaces{
+	display: inline-block;
+	text-align: right;
+}
+
+.Menu .Enlaces a{
+	color: #696969;
+	text-decoration: none;
+	display: inline-block;
+	padding: 1em;
+	text-align: center;
+	font-size: 16px;
+}
+
+.Menu .Enlaces a:hover{
+	background-color: #ee3b3b;
+	color: #00b2ee;
+}
+
+.Menu .Enlaces i{
+	margin-right: 5px;
+}
+
+main{
+	width: 90%;
+	max-width: 1000px;
+	margin-top: 70px;
+	margin-bottom: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: rgba(0,30,255,.5);
+	padding: 20px;
+	box-shadow: #696969 10px 10px 15px;
+}
+
+article{
+	background-color: rgba(240,248,255,.5);
+	border: 3px solid rgb(0,30,255);
+	padding: 5px;
+}
+
+main article h1{
+	font: 25px bold;
+	text-align: center;
+	background-color: #ee3b3b;
+}
+
+main article hr{
+	margin-bottom: .5em;
+	height: 2px;
+	background: #00b2ee;
+	border: none;
+}
+
+main article p{
+	margin-bottom: 1em;
+}
+
+#Datos_G{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#Datos_G tr td p{
+	color: #303030;
+	font: bold 1em 'Nunito Sans', sans-serif;
+	margin-bottom: 12px;
+}
+
+#Datos_G tr td input{
+	color: #333333;
+	vertical-align: top;
+	background-color: rgba(240,248,255,.5);
+	border-color: transparent;
+	text-align: left;
+	padding-left: 10px;
+	width: 300px;
+	box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8);
+	border-radius:5px;
+	margin-bottom: 15px;
+}
+
+#Titulo_M{
+	text-align: center;
+	font: 20px bold;
+	background-color: rgba(238,59,59,.9);
+	margin-bottom: 0px;
+	border-top: 3px solid rgb(0,30,255);
+	border-left: 3px solid rgb(0,30,255);
+	border-right: 3px solid rgb(0,30,255);
+	border-radius:5px;
+}
+
+#Datos_M{
+	border: 3px solid rgb(0,30,255);
+	border-collapse: separate;
+	border-spacing: 30px 5px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	border-radius:5px;
+}
+
+#Datos_M tr td .Cod{
+	width: 100px;
+	text-align: center;
+	color: #333333;
+	border-color: transparent;
+	background-color: rgba(240,248,255,.5);
+	border-radius:5px;
+}
+
+#Datos_M tr td .Asig{
+	width: 275px;
+	text-align: center;
+	color: #333333;
+	border-color: transparent;
+	background-color: rgba(240,248,255,.5);
+	border-radius:5px;
+}
+
+#Datos_M tr td .Sec{
+	width: 50px;
+	text-align: center;
+	color: #333333;
+	border-color: transparent;
+	background-color: rgba(240,248,255,.5);
+	border-radius:5px;
+}
+
+#Datos_M tr td .Prof{
+	width: 250px;
+	text-align: center;
+	color: #333333;
+	border-color: transparent;
+	background-color: rgba(240,248,255,.5);
+	border-radius:5px;
+}
+
+#Datos_M tr td .Uc{
+	width: 30px;
+	text-align: center;
+	color: #333333;
+	border-color: transparent;
+	background-color: rgba(240,248,255,.5);
+	border-radius:5px;
+}
+
+#Datos_M tr td .Def{
+	width: 40px;
+	text-align: center;
+	color: #333333;
+	border-color: transparent;
+	background-color: rgba(240,248,255,.5);
+	border-radius:5px;
+}
+
+footer{
+	text-align: center;
+	font-size: 1em;
+	position: relative;
+	bottom: 0;
+	width: 100%;
+}
+
+footer p{
+	font: 1em Georgia, "Times New Roman", Times, serif;
+	color: #303030;
+	text-shadow: #696969 3px 3px 3px;
+}
+
+/* FIN CÓDIGO CSS PARA APARIENCIA DE PÁGINA WEB */
+
+/* COMIENZO CÓDIGO EFECTOS DEL MENÚ */
+
+.headroom{
+	-moz-transition: -moz-transform 0.3s ease;
+	-webkit-transition: -webkit-transform 0.3s ease;
+	-ms-transition: -ms-transform 0.3s ease;
+	-o-transition: -o-transform 0.3s ease;
+}
+
+.headroom--pinned{
+	transform: translateY(0%);
+}
+
+.headroom--unpinned{
+	transform: translateY(-100%);
+}
+
+/* FIN CÓDIGO EFECTOS DEL MENÚ */
+
+/* COMIENZO CÓDIGO MEDIAQUERIES */
+
+@media screen and (max-width: 900px){
+	.Menu{
+		flex-direction: column;
+	}
+
+	header .Menu .Logo{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 90%;
+		padding: 1em;
+	}
+
+	header .Menu .Logo .btn-Menu{
+		display: inline-block;
+	}
+
+	header .Menu .Enlaces{
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+
+	main{
+		width: 90%;
+		max-width: 1000px;
+		margin-top: 45px;
+		margin-bottom: 20px;
+		margin-right: auto;
+		margin-left: auto;
+		background-color: rgba(0,30,255,.5);
+		padding: 20px;
+		box-shadow: #696969 10px 10px 15px;
+	}
+
+	main article h1{
+		font: 20px bold;
+		text-align: center;
+		background-color: #ee3b3b;
+	}
+
+	#Datos_G{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	#Datos_G tr td{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	#Datos_G tr td p{
+		color: #303030;
+		font: bold 1em 'Nunito Sans', sans-serif;
+		margin-bottom: -5px;
+		margin-top: -5px;
+	}
+
+	#Datos_G tr td input{
+		color: #333333;
+		vertical-align: top;
+		background-color: rgba(240,248,255,.5);
+		border-color: transparent;
+		text-align: left;
+		margin-bottom: 15px;
+		padding-left: 10px;
+		width: 300px;
+		box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8);
+		border-radius:5px;
+	}
+
+	#Datos_M{
+		border: 3px solid rgb(0,30,255);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	#Datos_M tr{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 15px;
+		margin-top: 15px
+	}
+
+	#Datos_M tr td .Cod{
+		width: 250px;
+		text-align: center;
+		color: #333333;
+		border-color: transparent;
+		background-color: rgba(240,248,255,.5);
+		border-radius:5px;
+	}
+
+	#Datos_M tr td .Asig{
+		width: 250px;
+		text-align: center;
+		color: #333333;
+		border-color: transparent;
+		background-color: rgba(240,248,255,.5);
+		border-radius:5px;
+	}
+
+	#Datos_M tr td .Sec{
+		width: 250px;
+		text-align: center;
+		color: #333333;
+		border-color: transparent;
+		background-color: rgba(240,248,255,.5);
+		border-radius:5px;
+	}
+
+	#Datos_M tr td .Prof{
+		width: 250px;
+		text-align: center;
+		color: #333333;
+		border-color: transparent;
+		background-color: rgba(240,248,255,.5);
+		border-radius:5px;
+	}
+
+	#Datos_M tr td .Uc{
+		width: 250px;
+		text-align: center;
+		color: #333333;
+		border-color: transparent;
+		background-color: rgba(240,248,255,.5);
+		border-radius:5px;
+	}
+
+	#Datos_M tr td .Def{
+		width: 250px;
+		text-align: center;
+		color: #333333;
+		border-color: transparent;
+		background-color: rgba(240,248,255,.5);
+		border-radius:5px;
+	}
+
+	footer p{
+		font: .78em Georgia, "Times New Roman", Times, serif;
+		color: #303030;
+		text-shadow: #696969 3px 3px 3px;
+	}
+
+}
+
+/* FIN CÓDIGO MEDIAQUERIES */

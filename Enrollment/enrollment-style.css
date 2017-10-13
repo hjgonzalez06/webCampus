@@ -1,0 +1,494 @@
+@charset "utf-8";
+
+/*
+    CÓDIGO FUENTE DESARROLLADO POR FRANKLIN MORENO E HIRAM GONZÁLEZ
+    CONTACTO: hiramjgonzalez98@gmail.com
+    TODOS LOS DERECHOS RESERVADOS
+*/
+
+/* INICIO CÓDIGO RESET CSS */
+
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote {
+ padding: 0;
+ margin: 0;
+ font-size: 100%;
+ font-weight: normal;
+ box-sizing: border-box;
+}
+table { border-collapse: collapse; border-spacing: 0; }
+td, th, caption { font-weight: normal; text-align: left; }
+img, fieldset { border: 0; }
+ol { padding-left: 1.4em; list-style: decimal; }
+ul { padding-left: 1.4em; list-style:square; }
+q:before, q:after { content:''; }
+
+/* FIN CÓDIGO RESET CSS */
+
+/* INICIO CÓDIGO CSS PARA APARIENCIA DE PÁGINA WEB */
+
+body{
+	background-color: #7ac5cd;
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 16px;
+	padding-top: 75px;
+}
+
+#particles-js{
+	margin-top: -20px;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: -1;
+}
+
+header{
+	background-color: #00b2ee;
+	position: fixed;
+	width: 100%;
+	top: 0;
+}
+
+.Logo img{
+	display: inline-block;
+	width: 50px;
+	text-align: center;
+}
+
+#Encabezado2{
+	display: inline-block;
+	width: 180px;
+	text-align: center;
+	margin-right: 230px;
+}
+
+#Encabezado3{
+	display: inline-block;
+	width: 180px;
+	text-align: center;
+	margin-left: 215px;
+}
+
+.Menu{
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Menu .btn-Menu{
+	display: none;
+	color: #0000ff;
+	text-decoration: none;
+	font-size: 1em;
+}
+
+.Ident_Fecha{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.Ident_Fecha p{
+	margin-right: 230px;
+	font: normal 1em 'Nunito Sans', sans-serif;
+	color: #696969;
+}
+
+.Ident_Fecha span{
+	margin-left: 230px;
+	font: italic 1em 'Nunito Sans', sans-serif;
+	color: #696969;
+}
+
+.Menu .Enlaces{
+	display: inline-block;
+	text-align: right;
+}
+
+.Menu .Enlaces a{
+	color: #696969;
+	text-decoration: none;
+	display: inline-block;
+	padding: 1em;
+	text-align: center;
+	font-size: 16px;
+}
+
+.Menu .Enlaces a:hover{
+	background-color: #ee3b3b;
+	color: #00b2ee;
+}
+
+.Menu .Enlaces i{
+	margin-right: 5px;
+}
+
+main{
+	width: 90%;
+	max-width: 1000px;
+	margin-top: 70px;
+	margin-bottom: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: rgba(0,30,255,.5);
+	padding: 20px;
+	box-shadow: #696969 10px 10px 15px;
+}
+
+article{
+	background-color: rgba(240,248,255,.5);
+	border: 3px solid rgb(0,30,255);
+	padding: 5px;
+}
+
+main article h1{
+	font: 25px bold;
+	margin-bottom: 0px;
+	text-align: center;
+	background-color: #ee3b3b;
+}
+
+main article hr{
+	margin-bottom: .5em;
+	height: 2px;
+	background: #00b2ee;
+	border: none;
+}
+
+#Cuadros{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 0px;
+}
+
+.Asig{
+	width: 40%;
+	height: 350px;
+	background-color: rgba(240,248,255,.5);
+	border: 3px solid rgb(0,30,255);
+	overflow: auto;
+}
+
+.Desp_Opc{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: 165px;
+	height: 350px;
+	background-color: rgba(240,248,255,.5);
+	float: center;
+	border: 3px solid rgb(0,30,255);
+}
+
+#Lista1{
+	width: 40px;
+	margin-top: -30px;
+	margin-bottom: -20px;
+}
+
+#Lista2{
+	width: 40px;
+	margin-top: -35px;
+	margin-bottom: 50px;
+}
+
+#bot1{
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: -50px;
+}
+
+#bot2{
+    padding-top: 10px;
+    text-align: center;
+    margin-top: -40px;
+    margin-bottom: -30px;
+}
+
+.Ins{
+	width: 40%;
+	height: 350px;
+	background-color: rgba(240,248,255,.5);
+	border: 3px solid rgb(0,30,255);
+	overflow: auto;
+}
+
+table{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+#Titulo{
+	width: 100%;
+	text-align: center;
+	background-color: #ee3b3b;
+	font: 20px bold;
+}
+
+.Cod{
+	width: 90px;
+	border-color: transparent;
+	background-color: rgba(240,248,255,.5);
+	margin: auto;
+	text-align: center;
+}
+.mat{
+	width: 100%;
+        border-color: #cccccc;
+	background-color: azure;
+	margin: 1%;
+	text-align: center;
+        border-style: ridge;
+}
+
+.mate{
+	width: 100%;
+        border-color: #cccccc;
+	background-color: seashell;
+	margin: 1%;
+	text-align: center;
+        border-style: ridge;
+}
+
+tbody tr td{
+	text-align: center;
+	padding: 0px;
+}
+
+tbody tr td .U_C{
+	width: 25px;
+	border-color: transparent;
+	background-color: rgba(240,248,255,.5);
+	margin: auto;
+	text-align: center;
+}
+
+tbody tr td select{
+	width: 100%;
+}
+
+tr:hover{
+	background-color: #97ffff;
+}
+
+table thead p{
+	text-align: center;
+	background-color: rgba(238,59,59,.8);
+}
+
+#Can_Fin{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: right;
+	width: 300px;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.boton{
+    background: #ccc;
+    background: -moz-linear-gradient(top,#fc6,#f63);
+    background: -webkit-linear-gradient(top,#fc6,#f63);
+    background: linear-gradient(top,#fc6,#f63);
+    color: #303030;
+    width: 120px;
+    border-radius: 5px;
+}
+
+.boton:active{
+    position: relative;
+    top: 3px;
+}
+
+#bot{
+    padding-top: 10px;
+    text-align: center;
+}
+
+footer{
+	text-align: center;
+	font-size: 1em;
+	position: relative;
+	bottom: 0;
+	width: 100%;
+}
+
+footer p{
+	font: 1em Georgia, "Times New Roman", Times, serif;
+	color: #303030;
+	text-shadow: #696969 3px 3px 3px;
+}
+
+/* FIN CÓDIGO CSS PARA APARIENCIA DE PÁGINA WEB */
+
+/* COMIENZO CÓDIGO EFECTOS DEL MENÚ */
+
+.headroom{
+	-moz-transition: -moz-transform 0.3s ease;
+	-webkit-transition: -webkit-transform 0.3s ease;
+	-ms-transition: -ms-transform 0.3s ease;
+	-o-transition: -o-transform 0.3s ease;
+}
+
+.headroom--pinned{
+	transform: translateY(0%);
+}
+
+.headroom--unpinned{
+	transform: translateY(-100%);
+}
+
+/* FIN CÓDIGO EFECTOS DEL MENÚ */
+
+/* COMIENZO CÓDIGO MEDIAQUERIES */
+
+@media screen and (max-width: 900px){
+	.Menu{
+		flex-direction: column;
+	}
+
+	header .Menu .Logo{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 90%;
+		padding: 1em;
+		vertical-align: top;
+	}
+
+	#Encabezado2{
+		display: inline-block;
+		width: 150px;
+		text-align: center;
+		margin-right: 0px;
+		vertical-align: top;
+	}
+
+	#Encabezado3{
+		display: inline-block;
+		width: 120px;
+		text-align: center;
+		margin-left: 0px;
+		vertical-align: top;
+	}
+
+	header .Menu .Logo .btn-Menu{
+		display: inline-block;
+	}
+
+	header .Menu .Enlaces{
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+
+	.Ident_Fecha{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.Ident_Fecha p{
+		margin-right: 0px;
+		text-align: center;
+		font: bold .75em 'Nunito Sans', sans-serif;
+		color: #696969;
+	}
+
+	.Ident_Fecha span{
+		margin-left: 0px;
+		text-align: center;
+		font: bold .75em 'Nunito Sans', sans-serif;
+		color: #696969;
+	}
+
+	main{
+		width: 90%;
+		max-width: 1000px;
+		margin-top: 50px;
+		margin-bottom: 20px;
+		margin-right: auto;
+		margin-left: auto;
+		background-color: rgba(0,30,255,.5);
+		box-shadow: #696969 10px 10px 15px;
+	}
+
+	main article h1{
+		font: 20px bold;
+		margin-bottom: 0px;
+		text-align: center;
+		background-color: #ee3b3b;
+	}
+
+	main article hr{
+		margin-bottom: .5em;
+		height: 2px;
+		background: #00b2ee;
+		border: none;
+	}
+
+	#Cuadros{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		margin: auto;
+		align-items: center;
+	}
+
+	.Asig{
+		width: 100%;
+		height: 375px;
+		background-color: rgba(240,248,255,.5);
+		border: 3px solid rgb(0,30,255);
+		overflow: auto;
+		margin: 2px -3px;
+	}
+
+	.Desp_Opc{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		width: 50%;
+		height: 375px;
+		background-color: rgba(240,248,255,.5);
+		float: center;
+		border: 3px solid rgb(0,30,255);
+		margin: 2px -3px;
+	}
+
+	.Ins{
+		width: 100%;
+		height: 375px;
+		background-color: rgba(240,248,255,.5);
+		border: 3px solid rgb(0,30,255);
+		overflow: auto;
+		margin: 2px -3px;
+	}
+
+	#Titulo{
+		width: 100%;
+		text-align: center;
+		background-color: #ee3b3b;
+		font: 15px bold;
+	}
+
+	footer p{
+		font: .78em Georgia, "Times New Roman", Times, serif;
+		color: #303030;
+		text-shadow: #696969 3px 3px 3px;
+	}
+
+}
+
+/* FIN CÓDIGO MEDIAQUERIES */

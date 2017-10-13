@@ -1,0 +1,208 @@
+@charset "utf-8";
+
+/*
+    CÓDIGO FUENTE DESARROLLADO POR FRANKLIN MORENO E HIRAM GONZÁLEZ
+    CONTACTO: hiramjgonzalez98@gmail.com
+    TODOS LOS DERECHOS RESERVADOS
+*/
+
+/* INICIO CÓDIGO RESET CSS */
+
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote {
+ padding: 0;
+ margin: 0;
+ font-size: 100%;
+ font-weight: normal;
+ box-sizing: border-box;
+}
+table { border-collapse: collapse; border-spacing: 0; }
+td, th, caption { font-weight: normal; text-align: left; }
+img, fieldset { border: 0; }
+ol { padding-left: 1.4em; list-style: decimal; }
+ul { padding-left: 1.4em; list-style:square; }
+q:before, q:after { content:''; }
+
+/* FIN CÓDIGO RESET CSS */
+
+/* INICIO CÓDIGO CSS PARA APARIENCIA DE PÁGINA WEB */
+
+body{
+	background-color: #7ac5cd;
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 16px;
+	padding-top: 55px;
+}
+
+#particles-js{
+	margin-top: -20px;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: -1;
+}
+
+header{
+	background-color: #00b2ee;
+	position: fixed;
+	width: 100%;
+	top: 0;
+}
+
+.Logo img{
+	display: inline-block;
+	width: 50px;
+	text-align: center;
+}
+
+.Menu{
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+main{
+	width: 90%;
+	max-width: 1000px;
+	height: 607px;
+	margin-top: 80px;
+	margin-bottom: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: rgba(0,30,255,.5);
+	padding: 20px;
+	box-shadow: #696969 10px 10px 15px;
+}
+
+main h1{
+	font: 40px bold;
+	background-color: rgba(238,59,59,.7);
+	width: 90%;
+	padding: 5px;
+	text-align: center;
+	border-radius: 10px;
+	border: 3px solid rgb(0,30,255);
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: #696969 5px 5px 10px;
+}
+
+#Cuadro{
+	margin: 10px auto;
+	height: 532px;
+	background-color: rgba(240,248,255,.5);
+	border: 3px solid rgb(0,30,255);
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+table{
+	margin: 10px auto;
+	width: 95%;
+	border-collapse: separate;
+	border-spacing: 10px 5px;
+	border: 3px solid rgb(0,30,255);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center
+}
+
+table tr .izq{
+	background-color: rgba(238,59,59,.5);
+	padding: 0px;
+	text-align: center;
+	font-size: 15px bold;
+	width: 250px;
+	border-radius: 3px;
+}
+
+table tr .der{
+	background-color: transparent;
+	padding: 0px;
+	text-align: center;
+	font-size: 15px bold;
+	width: 250px;
+}
+
+.Input{
+	width: 200px;
+	text-align: center;
+	background-color: rgba(240,248,255,.5);
+	border: 2px solid #333333;
+	border-radius: 5px;
+}
+
+select{
+	width: 200px;
+	text-align: center;
+	background-color: rgba(240,248,255,.5);
+	border: 2px solid #333333;
+	border-radius: 5px;
+}
+
+#C_Bot{
+	background-color: transparent;
+	vertical-align: middle;
+	width: 150px;
+	align-items: right;
+}
+
+.boton{
+    background: #ccc;
+    background: -moz-linear-gradient(top,#fc6,#f63);
+    background: -webkit-linear-gradient(top,#fc6,#f63);
+    background: linear-gradient(top,#fc6,#f63);
+    color: #303030;
+    width: 100px;
+    border-radius: 5px;
+}
+
+a{
+	text-decoration: none;
+}
+
+.boton:active{
+    position: relative;
+    top: 3px;
+}
+
+#bot{
+    padding-top: 10px;
+    text-align: center;
+}
+
+footer{
+	text-align: center;
+	font-size: 1em;
+	position: relative;
+	bottom: 0;
+	width: 100%;
+}
+
+footer p{
+	font: 1em Georgia, "Times New Roman", Times, serif;
+	color: #303030;
+	text-shadow: #696969 3px 3px 3px;
+}
+
+.headroom{
+	-moz-transition: -moz-transform 0.3s ease;
+	-webkit-transition: -webkit-transform 0.3s ease;
+	-ms-transition: -ms-transform 0.3s ease;
+	-o-transition: -o-transform 0.3s ease;
+}
+
+.headroom--pinned{
+	transform: translateY(0%);
+}
+
+.headroom--unpinned{
+	transform: translateY(-100%);
+}

@@ -1,0 +1,519 @@
+@charset "utf-8";
+
+/*
+    CÓDIGO FUENTE DESARROLLADO POR FRANKLIN MORENO E HIRAM GONZÁLEZ
+    CONTACTO: hiramjgonzalez98@gmail.com
+    TODOS LOS DERECHOS RESERVADOS
+*/
+
+/* INICIO CÓDIGO RESET CSS */
+
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote {
+ padding: 0;
+ margin: 0;
+ font-size: 100%;
+ font-weight: normal;
+ box-sizing: border-box;
+}
+table { border-collapse: collapse; border-spacing: 0; }
+td, th, caption { font-weight: normal; text-align: left; }
+img, fieldset { border: 0; }
+ol { padding-left: 1.4em; list-style: decimal; }
+ul { padding-left: 1.4em; list-style:square; }
+q:before, q:after { content:''; }
+
+/* FIN CÓDIGO RESET CSS */
+
+/* INICIO CÓDIGO CSS PARA APARIENCIA DE PÁGINA WEB */
+
+body{
+	background-color: #7ac5cd;
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 16px;
+	padding-top: 55px;
+}
+
+#particles-js{
+	margin-top: -20px;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: -1;
+}
+
+header{
+	background-color: #00b2ee;
+	position: fixed;
+	width: 100%;
+	top: 0;
+}
+
+.Logo img{
+	display: inline-block;
+	width: 50px;
+	text-align: center;
+}
+
+#Encabezado2{
+	display: inline-block;
+	width: 180px;
+	text-align: center;
+	margin-right: 230px;
+}
+
+#Encabezado3{
+	display: inline-block;
+	width: 180px;
+	text-align: center;
+	margin-left: 215px;
+}
+
+.Menu{
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Menu .btn-Menu{
+	display: none;
+	color: #0000ff;
+	text-decoration: none;
+	font-size: 1em;
+}
+
+.Ident_Fecha{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.Ident_Fecha p{
+	margin-right: 230px;
+	font: normal 1em 'Nunito Sans', sans-serif;
+	color: #696969;
+}
+
+.Ident_Fecha span{
+	margin-left: 230px;
+	font: italic 1em 'Nunito Sans', sans-serif;
+	color: #696969;
+}
+
+.Menu .Enlaces{
+	display: inline-block;
+	text-align: right;
+}
+
+.Menu .Enlaces a{
+	color: #696969;
+	text-decoration: none;
+	display: inline-block;
+	padding: 1em;
+	text-align: center;
+	font-size: 16px;
+}
+
+.Menu .Enlaces a:hover{
+	background-color: #ee3b3b;
+	color: #00b2ee;
+}
+
+.Menu .Enlaces i{
+	margin-right: 5px;
+}
+
+main{
+	width: 90%;
+	max-width: 1000px;
+	margin-top: 85px;
+	margin-bottom: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: rgba(0,30,255,.5);
+	padding: 20px;
+	box-shadow: #696969 10px 10px 15px;
+}
+
+article{
+	background-color: rgba(240,248,255,.5);
+	border: 3px solid rgb(0,30,255);
+	padding: 5px;
+}
+
+#Principal{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+main article h1{
+	background-color: #ee3b3b;
+	font: 25px bold;
+	text-align: center;
+}
+
+main article hr{
+	margin-bottom: .5em;
+	height: 2px;
+	background: #00b2ee;
+	border: none;
+}
+
+main article p{
+	margin-bottom: 1em;
+}
+
+#Cal_Prin{
+	width: 71%;
+	height: 425px;
+	background-color: rgba(240,248,255,.5);
+	border-collapse: collapse;
+	border: 3px solid rgb(0,30,255);
+}
+
+#Cal{
+	width: 225px;
+	margin: 90px auto;
+    font: 15px "Nunito Sans", sans-serif;
+    -moz-transition: -moz-transform 0.3s ease-in-out 0.1s;
+	-webkit-transition: -webkit-transform 0.3s ease-in-out 0.1s;
+	-ms-transition: -ms-transform 0.3s ease-in-out 0.1s;
+	-o-transition: -o-transform 0.3s ease-in-out 0.1s; 
+}
+
+#Cal:hover{
+	-moz-transform: scale(1.25);
+	-webkit-transform: scale(1.25);
+	-ms-transform: scale(1.25);
+	-o-transform: scale(1.25);
+}
+
+#Cal .Header { 
+    cursor:default; 
+    background: #ee3b3b;
+    height: 35px; 
+    position: relative; 
+    color: #000; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    text-shadow: #696969 3px 3px 3px;
+    text-transform: uppercase;
+} 
+
+#Cal .Header span { 
+    display:inline-block; 
+    line-height: 35px; 
+    text-align: center;
+}
+
+#Cal .Header .Hook { 
+    width: 9px; 
+    height: 28px; 
+    position: absolute; 
+    bottom:60%; 
+    border-radius:10px; 
+    background:#ececec; 
+    background: -moz-linear-gradient(right top, #fff, #827e7d); 
+    background: -webkit-gradient(linear, right top, right bottom, from(#fff), to(#827e7d)); 
+    box-shadow: #696969 1px 1px 3px;
+} 
+
+.Right.Hook { 
+    right:15%; 
+} 
+
+.Left.Hook { 
+    left: 15%; 
+}
+
+#Cal .Header .Button { 
+    width:24px;
+    height: 35px; 
+    text-align: center; 
+    position: absolute; 
+} 
+
+#Cal .Header .Left.Button { 
+    left:0; 
+    border-top-left-radius: 5px;
+    border-right: 1px solid #ae2a0c; 
+}
+
+#Cal .Header .Right.Button { 
+    right:0; 
+    top:0; 
+    border-left: 1px solid #ae2a0c;  
+    border-top-right-radius: 5px; 
+}
+
+#Cal .Header .Button:hover { 
+    background: -moz-linear-gradient(top, #d94215, #bb330f); 
+    background: -webkit-gradient(linear, left top, left bottom, from(#d94215), to(#bb330f)); 
+}
+
+#Cal .Header .Month-year { 
+    letter-spacing: 1px; 
+    width: 100%; 
+    text-align: center; 
+}
+
+#Cal table { 
+    background:#fff; 
+    border-collapse:collapse; 
+}
+
+#Cal td { 
+    color:#2b2b2b; 
+    width:30px; 
+    height:30px; 
+    line-height:30px; 
+    text-align:center; 
+    border:1px solid #e6e6e6; 
+    cursor:default; 
+}
+
+#Cal #Days td { 
+    height:26px; 
+    line-height: 26px; 
+    text-transform:uppercase; 
+    font-size:90%; 
+    color:#9e9e9e; 
+}
+
+#Cal #Days td:not(:last-child) { 
+    border-right:1px solid #fff; 
+}
+
+#Cal #Cal-frame td.today { 
+    background:#8ee5ee; 
+    color:#8c8c8c; 
+    box-shadow:1px 1px 0px #fff inset; 
+    -moz-box-shadow:1px 1px 0px #fff inset; 
+    -webkit-box-shadow:1px 1px 0px #fff inset; 
+}
+
+#Cal #Cal-frame td.nil{
+	background-color: #fff68f;
+}
+
+#Cal #Cal-frame td:not(.nil):hover { 
+    color:#fff; 
+    text-shadow: #6C1A07 0px -1px; 
+    background:#CD310D; 
+    background: -moz-linear-gradient(top, #b32b0c, #cd310d); 
+    background: -webkit-gradient(linear, left top, left bottom, from(#b32b0c), to(#cd310d)); 
+    -moz-box-shadow:0px 0px 0px; 
+    -webkit-box-shadow:0px 0px 0px; 
+}
+
+#Cal #Cal-frame td span { 
+    font-size:80%; 
+    position:relative; 
+}
+
+#Cal #Cal-frame td span:first-child { 
+    bottom:5px; 
+}
+
+#Cal #Cal-frame td span:last-child { 
+    top:5px; 
+}
+
+#Cal #Cal-frame table .Curr { 
+    float:left;      
+} 
+#Cal #Cal-frame table .temp { 
+    position:absolute; 
+}
+
+#Sig{
+	border-collapse: separate;
+	border-spacing: 15px 32px;
+	border: 3px solid rgb(0,30,255);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 270px;
+	height: 431px;
+	background-color: rgba(240,248,255,.5);
+}
+
+.Trim{
+	border-radius: 15px;
+	background-color: #ffd700;
+}
+
+.Ins{
+	border-radius: 15px;
+	background-color: #f57ab1;
+}
+
+.Int{
+	border-radius: 15px;
+	background-color: #045ff4;
+}
+
+.Emb{
+	border-radius: 15px;
+	background-color: #df5333;
+}
+
+.Vac{
+	border-radius: 15px;
+	background-color: #00ff7f;
+}
+
+.No_Lab{
+	border-radius: 15px;
+	background-color: #ff7f00;
+}
+
+.Nav{
+	border-radius: 15px;
+	background-color: #ff00ff;
+}
+
+#Sig tr td p{
+	
+}
+
+footer{
+	text-align: center;
+	font-size: 1em;
+	position: relative;
+	bottom: 0;
+	width: 100%;
+}
+
+footer p{
+	font: 1em Georgia, "Times New Roman", Times, serif;
+	color: #303030;
+	text-shadow: #696969 3px 3px 3px;
+}
+
+/* FIN CÓDIGO CSS PARA APARIENCIA DE PÁGINA WEB */
+
+/* COMIENZO CÓDIGO EFECTOS DEL MENÚ */
+
+.headroom{
+	-moz-transition: -moz-transform 0.3s ease;
+	-webkit-transition: -webkit-transform 0.3s ease;
+	-ms-transition: -ms-transform 0.3s ease;
+	-o-transition: -o-transform 0.3s ease;
+}
+
+.headroom--pinned{
+	transform: translateY(0%);
+}
+
+.headroom--unpinned{
+	transform: translateY(-100%);
+}
+
+/* FIN CÓDIGO EFECTOS DEL MENÚ */
+
+/* COMIENZO CÓDIGO MEDIAQUERIES */
+
+@media screen and (max-width: 900px){
+	.Menu{
+		flex-direction: column;
+	}
+
+	header .Menu .Logo{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 90%;
+		padding: 1em;
+	}
+
+	#Encabezado2{
+		display: inline-block;
+		width: 150px;
+		text-align: center;
+		margin-right: 0px;
+		vertical-align: top;
+	}
+
+	#Encabezado3{
+		display: inline-block;
+		width: 120px;
+		text-align: center;
+		margin-left: 0px;
+		vertical-align: top;
+	}
+
+	header .Menu .Logo .btn-Menu{
+		display: inline-block;
+	}
+
+	header .Menu .Enlaces{
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+
+	.Ident_Fecha{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.Ident_Fecha p{
+		margin-right: 0px;
+		text-align: center;
+		font: bold .75em 'Nunito Sans', sans-serif;
+		color: #696969;
+	}
+
+	.Ident_Fecha span{
+		margin-left: 0px;
+		text-align: center;
+		font: bold .75em 'Nunito Sans', sans-serif;
+		color: #696969;
+	}
+
+	main{
+		width: 90%;
+		max-width: 1000px;
+		margin-top: 70px;
+		margin-bottom: 20px;
+		margin-right: auto;
+		margin-left: auto;
+		background-color: rgba(0,30,255,.5);
+		padding: 20px;
+		box-shadow: #696969 10px 10px 15px;
+	}
+
+	#Principal{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	#Cal_Prin{
+		width: 100%;
+	}
+
+	#Sig{
+		width: 100%;
+		margin-top: 7px;
+	}
+
+	footer p{
+		font: .78em Georgia, "Times New Roman", Times, serif;
+		color: #303030;
+		text-shadow: #696969 3px 3px 3px;
+	}
+
+}
+
+/* FIN CÓDIGO MEDIAQUERIES */

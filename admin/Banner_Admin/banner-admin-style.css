@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+.Logo img{
+	display: inline-block;
+	width: 50px;
+	text-align: center;
+}
+
+#Encabezado2{
+	display: inline-block;
+	width: 180px;
+	text-align: center;
+	margin-right: 230px;
+}
+
+#Encabezado3{
+	display: inline-block;
+	width: 180px;
+	text-align: center;
+	margin-left: 215px;
+}
+
+.Menu{
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Menu .btn-Menu{
+	display: none;
+	color: #0000ff;
+	text-decoration: none;
+	font-size: 1em;
+}
+
+.Ident_Fecha{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.Ident_Fecha p{
+	margin-right: 245px;
+	font: bold 1em 'Nunito Sans', sans-serif;
+	color: #696969;
+}
+
+.Ident_Fecha span{
+	margin-left: 245px;
+	font: bold 1em 'Nunito Sans', sans-serif;
+	color: #696969;
+}
+
+.Menu .Enlaces{
+	display: inline-block;
+	text-align: right;
+}
+
+.Menu .Enlaces a{
+	color: #696969;
+	text-decoration: none;
+	display: inline-block;
+	padding: .75em;
+	text-align: center;
+	font-size: 16px;
+}
+
+.Menu .Enlaces a:hover{
+	background-color: #ee3b3b;
+	color: #00b2ee;
+}
+
+.Menu .Enlaces i{
+	margin-right: 5px;
+}
+
+/* COMIENZO CÓDIGO EFECTOS DEL MENÚ */
+
+.headroom{
+	-moz-transition: -moz-transform 0.3s ease;
+	-webkit-transition: -webkit-transform 0.3s ease;
+	-ms-transition: -ms-transform 0.3s ease;
+	-o-transition: -o-transform 0.3s ease;
+}
+
+.headroom--pinned{
+	transform: translateY(0%);
+}
+
+.headroom--unpinned{
+	transform: translateY(-100%);
+}
+
+/* FIN CÓDIGO EFECTOS DEL MENÚ */
+
+@media screen and (max-width: 900px){
+	.Menu{
+		flex-direction: column;
+	}
+
+	header .Menu .Logo{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 90%;
+		padding: 1em;
+	}
+
+	#Encabezado2{
+		display: inline-block;
+		width: 150px;
+		text-align: center;
+		margin-right: 0px;
+		vertical-align: top;
+	}
+
+	#Encabezado3{
+		display: inline-block;
+		width: 120px;
+		text-align: center;
+		margin-left: 0px;
+		vertical-align: top;
+	}
+
+	header .Menu .Logo .btn-Menu{
+		display: inline-block;
+	}
+
+	header .Menu .Enlaces{
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+
+	.Ident_Fecha{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.Ident_Fecha p{
+		margin-right: 0px;
+		text-align: center;
+		font: bold .75em 'Nunito Sans', sans-serif;
+		color: #696969;
+	}
+
+	.Ident_Fecha span{
+		margin-left: 0px;
+		text-align: center;
+		font: bold .75em 'Nunito Sans', sans-serif;
+		color: #696969;
+	}  
+}

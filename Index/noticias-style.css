@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+body table{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	border-collapse: separate;
+	border-spacing: 5px 5px;
+}
+
+body table tr th p{
+	text-align: center;
+	font: 20px bold;
+	background-color: #ee3b3b;
+	width: 500px;
+	border: 3px solid rgb(0,30,255);
+}
+
+body table tr td .Art_1{
+	text-align: justify;
+	color: blue;
+	font: 15px bold;
+	background-color: rgba(240,248,255,.5);
+	width: 485px;
+	border: transparent;
+	margin-top: 0px;
+	padding: 10px;
+	text-shadow: #696969 2px 2px 7px;
+}
+
+body table tr td .Art_1 span{
+	font-size: 11px;
+	color: #333333;
+}
+
+body table tr td .Art{
+	text-align: justify;
+	color: blue;
+	font: 15px bold;
+	background-color: rgba(240,248,255,.5);
+	width: 485px;
+	border: transparent;
+	margin-top: -1px;
+	padding: 10px;
+	text-shadow: #696969 2px 2px 7px;
+}
+
+body table tr td .Art span{
+	font-size: 11px;
+	color: #333333;
+}
+
+body table tr td hr{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 1px;
+	border: 1px dashed rgba(0,30,255,.5);
+	width: 500px; 
+}
+
+body table tr td a .Art_1:hover{
+    background-color: #97ffff;
+}
+
+body table tr td a .Art:hover{
+    background-color: #97ffff;
+}
+
+body table tr td a:active{
+    position: relative;
+    top: 1px;
+}
+
+@media screen and (max-width: 525px){
+	body table tr th p{
+		text-align: center;
+		font: 20px bold;
+		background-color: #ee3b3b;
+		width: 355px;
+		border: 3px solid rgb(0,30,255);
+	}
+
+	body table tr td .Art_1{
+		text-align: justify;
+		color: blue;
+		font: 15px bold;
+		background-color: rgba(240,248,255,.5);
+		width: 340px;
+		border: transparent;
+		margin-top: 0px;
+		padding: 10px;
+		text-shadow: #696969 2px 2px 7px;
+	}
+
+	body table tr td .Art{
+		text-align: justify;
+		color: blue;
+		font: 15px bold;
+		background-color: rgba(240,248,255,.5);
+		width: 340px;
+		border: transparent;
+		margin-top: -1px;
+		padding: 10px;
+		text-shadow: #696969 2px 2px 7px;
+	}
+
+	body table tr td hr{
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-left: 1px;
+		border: 1px dashed rgba(0,30,255,.5);
+		width: 355px; 
+	}
+
+}
