@@ -26,30 +26,8 @@ q:before, q:after { content:''; }
 /* INICIO CÓDIGO CSS PARA APARIENCIA DE PÁGINA WEB */
 
 body{
-	background-color: #7ac5cd;
+	background-color: #FFFFFF;
 }
-
-#particles-js{
-	margin-top: -20px;
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	z-index: -1;
-}
-
-/*#Fecha{
-    background-color:rgba(0,30,255,0.1);
-    color: #303030;
-    text-align: center;
-    font: bold 0.75em Verdana, Geneva, sans-serif;
-    margin: -8px auto;
-    width: auto;
-    text-shadow: #696969 3px 3px 3px;
-    border: 2px solid #0000FF;
-    border-radius: 10px;
-    box-shadow: #696969 10px 10px 15px;
-    position: absolute;
-}*/
 
 #Encabezado img{
 	margin: 5px 0px auto;
@@ -73,8 +51,8 @@ body{
 #envoltura{
     margin: 137px auto;
     width: 330px;
-    background-color:rgba(0,30,255,0.1);
-    border: 3px solid rgb(0,30,255);
+    background-color:rgba(242,242,242,.9);
+    border: 3px solid rgba(0,30,255,.75);
     border-radius: 10px;
     box-shadow: #696969 10px 10px 15px;
     -moz-transition: -moz-transform 0.3s ease-in-out 0.1s;
@@ -91,20 +69,20 @@ body{
 }
  
 #cuerpo{
-    background:rgba(0,30,255,0.3);
+    background:rgba(242,242,242,.9);
     padding:15px 35px;
 }
  
 label{
     color: #303030;
-    font: bold 1em Verdana, Geneva, sans-serif;
+    font: bold 1em 'Play', sans-serif;
     text-shadow: #696969 3px 3px 3px;
 }
  
 input{
     border-radius:5px;
     box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8);
-    font:bold 12px Arial, Helvetica, sans-serif;
+    font:bold 12px 'Play', sans-serif;
     height: 24px;
     line-height: 20px;
     padding:0 2px;
@@ -145,7 +123,7 @@ input.Pass{
 #Check p{
     margin-left: 15px;
     padding: 2px;
-    font: normal 0.75em Verdana, Geneva, sans-serif;
+    font: normal 0.75em 'Play', sans-serif;
     text-shadow: #696969 0px 0px 0px;
     color: #000000;
 }
@@ -167,7 +145,9 @@ input.Pass{
 #bot{
     padding-top: 10px;
     text-align: center;
-}#cuerpo{
+}
+
+#cuerpo{
     background:rgba(0,30,255,0.3);
     padding:15px 35px;
 }
@@ -177,7 +157,7 @@ p{
 }
 
 #Rec{
-	font: normal 0.75em Verdana, Geneva, sans-serif;
+	font: normal 0.75em 'Play', sans-serif;
 	text-align: right;
 	text-shadow: #696969 3px 3px 3px;
 }
@@ -193,11 +173,12 @@ footer{
     position: relative;
     bottom: 0;
     width: 100%;
+    background-color: #333;
 }
 
 footer p{
-	font: 1.1em Georgia, "Times New Roman", Times, serif;
-	color: #303030;
+	font: 1.1em 'Play', sans-serif;
+	color: #FFFFFF;
 	text-shadow: #696969 3px 3px 3px;
 }
 
