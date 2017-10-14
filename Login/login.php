@@ -35,11 +35,6 @@
         
         ?>
 
-        <div id="particles-js">
-            <script src="../Efecto-Particulas-Fondo/particles.js"></script>
-            <script src="../Efecto-Particulas-Fondo/particulas.js"></script>
-        </div>
-
         <figure id="Encabezado">
             <img src="../Imagenes/Encabezado WC.png"/>
         </figure>
