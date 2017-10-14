@@ -26,7 +26,7 @@
                 
 		<div id="ventanaModal">
 			<script src="modal.js"></script>
-			<img src="../Imagenes/Logo Unimar.png" id="contenido" onclick="cerrarVentana()">
+			<img src="../Imagenes/modal.png" id="contenido" onclick="cerrarVentana()">
 		</div>
 
 	    <?php require_once '../banner/banner.php';?>
