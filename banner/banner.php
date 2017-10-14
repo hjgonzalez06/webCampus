@@ -15,7 +15,7 @@
     $user->__connect();
 
 ?>
- <link rel="stylesheet" type="text/css" href="../banner/banner.css">
+ <link rel="stylesheet" type="text/css" href="banner.css">
 
 <header id="Header">
     <nav class="Menu">
