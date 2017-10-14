@@ -8,7 +8,7 @@
 -->
 
 <?php
-    require_once '../Config/Bd_conexion.php';
+    require_once '../Config/Bd_Gestion.php';
     require_once '../Config/check.php';
     
     $conexion = new Bd_Gestion();

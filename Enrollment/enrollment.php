@@ -7,7 +7,7 @@
     TODOS LOS DERECHOS RESERVADOS
 -->
 <?php
-    require_once '../Config/Bd_conexion.php';
+    require_once '../Config/Bd_Gestion.php';
     $datosBase = new Bd_Gestion();
 ?>
 <html>
