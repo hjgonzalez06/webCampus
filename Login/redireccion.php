@@ -7,40 +7,35 @@
  *  cfranklinmoreno@gmail.com
  */
     
-require_once '../Config/Bd_Gestion.php';
+require_once './logic_login.php';
+require_once '../users/student.php';
+require_once '../users/admin.php';
+    $login = new logic_login();
+    $admin = $login->__admin();
+    $student = $login->__student();
 
-    $comprobacion = new Bd_Gestion();
-    $informacion;
+    session_start();
     
-    if($comprobacion->login($_POST["usuario"], $_POST["pass"])==0){
+    if($student->login()==0){
         
-        session_start();
+        $student->__destruct();
+        $_SESSION["user"] = serialize($student);
         
-        $_SESSION["usuario"] = $comprobacion->data($_POST["usuario"], "alumnos");
+      header ("location: ../Index/index.php" );
+      
+    } elseif ($admin->login() ==0 ) {
         
-        if (isset($_POST["remember"])) {
-            setcookie("login", $_SESSION["usuario"]["id_cuenta"], time()+86400, "/");
-        }
-        
-        
-        header ("location: ../Index/index.php" );
-        
-    }elseif($comprobacion->comprobar_admin($_POST["usuario"], $_POST["pass"])!=0){
-        
-        session_start();
-        
-        $_SESSION["admin"]=1;
+        $_SESSION["user"]= serialize($admin);
         
         header("location: ../admin/area_admin.php");
-    } else {
-        session_start();
+        
+    }else{
     
         $_SESSION["error"] = 1;
     
         header("location: ../Login/login.php");
-
+        
     }
-    
     
 ?>
 

@@ -9,19 +9,21 @@
     session_start();
     
     $url = $_SERVER["REQUEST_URI"];
-    $login = "/WebCampus/Login/login.php";
-
-    if(!isset($_SESSION["usuario"])){
+    $login = "/webCampusTEST/Login/login.php";
+    
+    
+    if (!isset($_SESSION["user"])) {
         
-        if (isset($_COOKIE["login"])) {
-            $conexionDirecta = new Bd_Gestion();
-            $idTemporal=$_COOKIE["login"];
-            $_SESSION["usuario"] = $conexionDirecta->data($idTemporal, "alumnos");
-        }elseif($login != $url){
+        if ($login != $url){
+            
             header("Location: ../Login/login.php"); 
+            
         }
-    } elseif ($url==$login) {
+        
+    }elseif ($url==$login){
+        
         header("Location: ../Index/index.php");
+        
     }
 
 ?>

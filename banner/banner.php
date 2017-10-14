@@ -9,8 +9,10 @@
 <?php
     
     include_once '../Config/check.php';
-    $nombre = $_SESSION["usuario"]["nombre"];
-    $apellido = $_SESSION["usuario"]["apellido"];
+    require_once '../users/student.php';
+    require_once '../users/admin.php';
+    $user = unserialize($_SESSION["user"]);
+    $user->__connect();
 
 ?>
  <link rel="stylesheet" type="text/css" href="../banner/banner.css">
@@ -34,7 +36,7 @@
         <p>
         <?php                   
             echo "Bienvenido, ";
-            echo  $nombre. " ".$apellido;
+            echo  $user->getNombre(). " " . $user->getApellido();
         ?>
             
         </p>

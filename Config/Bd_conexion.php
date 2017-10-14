@@ -5,7 +5,7 @@
  * Contacto cfranklinmoreno@gmail.com
  */
 
-include_once './config.php';
+include_once 'config.php';
     
 class conexion {
     
@@ -22,9 +22,21 @@ class conexion {
         
     }
     
-    function __destruct() {
+    public function __destruct() {
         
         $this->conexionBase=NULL;
+        
+    }
+    
+    public function __connect() {
+        
+        try {
+            $this->conexionBase = new PDO(bd_name, bd_user, bd_pass);
+        } catch (Exception $e) {
+            echo "No se ha podido conectar con la base de datos. "
+            . "ERROR " + $e->getMessage();
+        }
+        
         
     }
     
