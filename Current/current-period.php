@@ -2,7 +2,8 @@
 
 <!--
     CÓDIGO FUENTE DESARROLLADO POR FRANKLIN MORENO E HIRAM GONZÁLEZ
-    CONTACTO: hiramjgonzalez98@gmail.com
+    CONTACTO: -hiramjgonzalez98@gmail.com
+    		  -cfranklinmoreno@gmail.com
     TODOS LOS DERECHOS RESERVADOS
 -->
 
@@ -42,16 +43,11 @@
 		<link rel="stylesheet" type="text/css" href="current-period-style.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css"/>
                 <link rel="stylesheet" type="text/css" href="../banner/banner.css">
-	    <link rel="shortcut icon" type="image/ico" href="../Imagenes/Logo Unimar.png"/>
+        <link rel="shortcut icon" type="image/ico" href="../Imagenes/Logo Unimar.png"/>
 
 	</head>
 
 	<body>
-
-		<div id="particles-js">
-	        <script src="../Efecto-Particulas-Fondo/particles.js"></script>
-            <script src="../Efecto-Particulas-Fondo/particulas.js"></script>
-	    </div>
 
 	   <?php require_once '../banner/banner.php'; ?>
 	    <main>
