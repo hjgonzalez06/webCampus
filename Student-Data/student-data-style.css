@@ -27,22 +27,15 @@ q:before, q:after { content:''; }
 /* INICIO CÓDIGO CSS PARA APARIENCIA GENERAL DE LA PÁGINA WEB */
 
 body{
-	background-color: #7ac5cd;
-	font-family: 'Nunito Sans', sans-serif;
+	background-color: #FFFFFF;
+	font-family: 'Play', sans-serif;
 	font-size: 16px;
 	padding-top: 55px;
 }
 
-#particles-js{
-	margin-top: -20px;
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	z-index: -1;
-}
-
 header{
-	background-color: #00b2ee;
+	background-color: rgb(51,153,255);
+	font-family: 'Play', sans-serif;
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -69,6 +62,8 @@ header{
 }
 
 .Menu{
+	font-family: 'Play', sans-serif;
+	font-style: 'Play';
 	width: 100%;
 	max-width: 1000px;
 	margin: auto;
@@ -98,18 +93,20 @@ header{
 
 .Ident_Fecha p{
 	margin-right: 245px;
-	font: bold 1em 'Nunito Sans', sans-serif;
-	color: #696969;
+	font: bold 1em 'Play', sans-serif;
+	color: #FFFFFF;
+	text-shadow: #696969 1px 1px 2px;
 }
 
 .Ident_Fecha span{
 	margin-left: 245px;
-	font: bold 1em 'Nunito Sans', sans-serif;
-	color: #696969;
+	font: bold 1em 'Play', sans-serif;
+	color: #FFFFFF;
+	text-shadow: #696969 1px 1px 2px;
 }
 
 .Menu .Enlaces a{
-	color: #696969;
+	color: #FFFFFF;
 	text-decoration: none;
 	display: inline-block;
 	padding: 1em;
@@ -118,12 +115,16 @@ header{
 }
 
 .Menu .Enlaces a:hover{
-	background-color: #ee3b3b;
-	color: #00b2ee;
+	background-color: rgba(242,242,242,.7);
+	color: rgb(51,153,255);
 }
 
 .Menu .Enlaces i{
 	margin-right: 5px;
+}
+
+.Menu .Enlaces i span{
+	font-family: 'Play', sans-serif;
 }
 
 main{
@@ -133,21 +134,24 @@ main{
 	margin-bottom: 20px;
 	margin-right: auto;
 	margin-left: auto;
-	background-color: rgba(0,30,255,.5);
+	background-color: rgba(242,242,242,.9);
 	padding: 20px;
 	box-shadow: #696969 10px 10px 15px;
+	font-style: 'Play', sans-serif;
 }
 
 article{
-	background-color: rgba(240,248,255,.5);
-	border: 3px solid rgb(0,30,255);
+	background-color: rgba(242,242,242,.9);
+	border: 3px solid rgba(0,30,255,.75);
 	padding: 5px;
 }
 
 main article h1{
 	font: 25px bold;
+	color: #FFFFFF;
 	text-align: center;
-	background-color: #ee3b3b;
+	background-color: rgb(51,153,255) ;
+	font-family: 'Play', sans-serif;
 }
 
 main article hr{
@@ -164,11 +168,12 @@ footer{
 	bottom: 0;
 	width: 100%;
 	z-index: -1;
+	background-color: #333;
 }
 
 footer p{
-	font: 1em Georgia, "Times New Roman", Times, serif;
-	color: #303030;
+	font: 1em 'Play', serif;
+	color: #F6F6F6;
 	text-shadow: #696969 3px 3px 3px;
 }
 
@@ -177,24 +182,26 @@ footer p{
 /* INICIO CÓDIGO DATOS ACADÉMICOS */
 
 #Datos_Est{
-	border: 3px solid rgb(0,30,255);
+	border: 3px solid rgba(0,30,255,.75);
 	border-collapse: separate;
 	border-spacing: 88px 20px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	background-color: #FFFFFF;
 }
 
 #Datos_Est tr td p{
 	margin-top: -5px;
 	margin-bottom: 0px;
 	color: #303030;
-	font: bold 1em 'Nunito Sans', sans-serif;
+	font: bold 1em 'Play', sans-serif;
 }
 
 #Datos_Est tr td input{
 	text-align: center;
-        color: #333333;
+	font-family: 'Play', sans-serif;
+    color: #333333;
 	width: 200px; 
 	background-color: rgba(240,248,255,.5);
 	margin-top: -5px;
@@ -208,17 +215,19 @@ footer p{
 /* INICIO CÓDIGO DATOS DE CONTACTO */
 
 #Datos_C{
-	border: 3px solid rgb(0,30,255);
+	border: 3px solid rgba(0,30,255,.75);
 	border-collapse: separate;
 	border-spacing: 88px 20px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	background-color: #FFFFFF;
 }
 
 #Datos_C tr td input{
 	text-align: center;
-        color: #333333;
+	font-family: 'Play', sans-serif;
+    color: #333333;
 	width: 200px; 
 	background-color: rgba(240,248,255,.5);
 	margin-top: -5px;
@@ -231,7 +240,7 @@ footer p{
 	margin-top: -5px;
 	margin-bottom: 0px;
 	color: #303030;
-	font: bold 1em 'Nunito Sans', sans-serif;
+	font: bold 1em 'Play', sans-serif;
 }
  
 .Tel_Mov{
@@ -265,6 +274,7 @@ footer p{
     background: linear-gradient(top,#fc6,#f63);
     color: #303030;
     width: 120px;
+    font-family: 'Play', sans-serif;
 }
 
 .boton:active{
@@ -282,30 +292,32 @@ footer p{
 /* INICIO CÓDIGO ACTUALIZACIÓN DE CONTRASEÑA */
 
 #Cambio{
-	border: 3px solid rgb(0,30,255);
+	border: 3px solid rgba(0,30,255,.75);
 	border-collapse: separate;
 	border-spacing: 88px 20px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	background-color: #FFFFFF;
 }
 
 #Cambio tr td input{
 	text-align: center;
-        color: #333333;
+    color: #333333;
 	width: 200px; 
 	background-color: rgba(240,248,255,.5);
 	margin-top: -5px;
 	border-color: transparent;
 	box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8);
 	border-radius:5px;
+	font-family: 'Play', sans-serif;
 }
 
 #Cambio tr td p {
 	margin-top: -5px;
 	margin-bottom: 0px;
 	color: #303030;
-	font: bold 1em 'Nunito Sans', sans-serif;
+	font: bold 1em 'Play', sans-serif;
 }
  
 .Act_Pass{
@@ -339,6 +351,7 @@ footer p{
     background: linear-gradient(top,#fc6,#f63);
     color: #303030;
     width: 120px;
+    font-family: 'Play', sans-serif;
 }
 
 .boton:active{
@@ -385,6 +398,7 @@ footer p{
 		justify-content: space-between;
 		width: 90%;
 		padding: 1em;
+		vertical-align: top;
 	}
 
 	#Encabezado2{
@@ -405,6 +419,7 @@ footer p{
 
 	header .Menu .Logo .btn-Menu{
 		display: inline-block;
+		color: #FFFFFF;
 	}
 
 	header .Menu .Enlaces{
@@ -424,15 +439,15 @@ footer p{
 	.Ident_Fecha p{
 		margin-right: 0px;
 		text-align: center;
-		font: bold .75em 'Nunito Sans', sans-serif;
-		color: #696969;
+		font: bold .75em 'Play', sans-serif;
+		color: #FFFFFF;
 	}
 
 	.Ident_Fecha span{
 		margin-left: 0px;
 		text-align: center;
-		font: bold .75em 'Nunito Sans', sans-serif;
-		color: #696969;
+		font: bold .75em 'Play', sans-serif;
+		color: #FFFFFF;
 	}
 
 	main{
@@ -442,19 +457,20 @@ footer p{
 		margin-bottom: 20px;
 		margin-right: auto;
 		margin-left: auto;
-		background-color: rgba(0,30,255,.5);
+		background-color: rgba(242,242,242,.9);
 		padding: 20px;
 		box-shadow: #696969 10px 10px 15px;
+		font-family: #FFFFFF;
 	}
 
 	main article h1{
-		font: 20px bold;
+		font: 20px bold 'Play', sans-serif;
 		text-align: center;
-		background-color: #ee3b3b;
+		background-color: rgb(51,153,255);
 	}
 
 	#Datos_Est{
-		border: 3px solid rgb(0,30,255);
+		border: 3px solid rgba(0,30,255,.75);
 		border-spacing: auto;
 		display: flex;
 		flex-direction: column;
@@ -476,13 +492,12 @@ footer p{
 		text-align: center;
 		width: 200px; 
 		background-color: rgba(240,248,255,.5);
-		color: #333333;
 		margin-top: 0px;
 		border-color: transparent;
 	}
 
 	#Datos_C{
-		border: 3px solid rgb(0,30,255);
+		border: 3px solid rgba(0,30,255,.75);
 		border-spacing: auto;
 		display: flex;
 		flex-direction: column;
@@ -504,13 +519,12 @@ footer p{
 		text-align: center;
 		width: 200px; 
 		background-color: rgba(240,248,255,.5);
-		color: #333333;
 		margin-top: 0px;
 		border-color: transparent;
 	}
 
 	#Cambio{
-		border: 3px solid rgb(0,30,255);
+		border: 3px solid rgba(0,30,255,.75);
 		border-spacing: auto;
 		display: flex;
 		flex-direction: column;
@@ -532,14 +546,13 @@ footer p{
 		text-align: center;
 		width: 200px; 
 		background-color: rgba(240,248,255,.5);
-		color: #333333;
 		margin-top: 0px;
 		border-color: transparent;
 	}
 
 	footer p{
-		font: .78em Georgia, "Times New Roman", Times, serif;
-		color: #303030;
+		font: .78em 'Play', sans-serif;
+		color: #F6F6F6;
 		text-shadow: #696969 3px 3px 3px;
 	}
 

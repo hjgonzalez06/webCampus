@@ -44,25 +44,25 @@
         </div>
             <div class="Enlaces" id="Enlaces">
                    <a href="../Index/index.php">
-                           <i class="fa fa-university" aria-hidden="true"> Inicio</i>
+                           <i class="fa fa-university" aria-hidden="true"><span> Inicio</span></i>
                    </a>
                    <a href="../Student-Data/student-data.php">
-                           <i class="fa fa-user-circle" aria-hidden="true"> Datos</i>
+                           <i class="fa fa-user-circle" aria-hidden="true"><span> Datos</span></i>
                    </a>
                    <a href="../Schedule/schedule.php">
-                           <i class="fa fa-calendar-o" aria-hidden="true"> Horario</i>
+                           <i class="fa fa-calendar-o" aria-hidden="true"><span> Horario</span></i>
                    </a>
                    <a href="../Current/current-period.php">
-                           <i class="fa fa-graduation-cap" aria-hidden="true"> Período Actual</i>
+                           <i class="fa fa-graduation-cap" aria-hidden="true"><span> Período Actual</span></i>
                    </a>
                    <a href="../Calendar/calendar.php">
-                           <i class="fa fa-calendar" aria-hidden="true"> Calendario</i>
+                           <i class="fa fa-calendar" aria-hidden="true"><span> Calendario</span></i>
                    </a>
                    <a href="../Enrollment/enrollment.php">
-                           <i class="fa fa-pencil-square-o" aria-hidden="true"> e-Inscripciones</i>
+                           <i class="fa fa-pencil-square-o" aria-hidden="true"><span> e-Inscripciones</span></i>
                    </a>
                    <a href="../Logout/logout.php">
-                           <i class="fa fa-power-off" aria-hidden="true"> Cerrar Sesión</i>
+                           <i class="fa fa-power-off" aria-hidden="true"><span> Cerrar Sesión</span></i>
                    </a>
             </div>
             

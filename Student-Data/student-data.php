@@ -24,9 +24,9 @@
 	    <meta name="description" content="Página oficial del WebCampus de la Universidad de Margarita: Alma Mater del Caribe."/>
 	    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
 		<title>Datos Generales - WebCampus UNIMAR</title>
-		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="student-data-style.css"/>
-                <link rel="stylesheet" type="text/css" href="../banner/banner.css">
+        <link rel="stylesheet" type="text/css" href="../banner/banner.css">
 		<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css"/>
 	    <link rel="shortcut icon" type="image/ico" href="../Imagenes/Logo Unimar.png"/>
             
@@ -35,11 +35,6 @@
 	</head>
 
 	<body>
-            
-		<div id="particles-js">
-	        <script src="../Efecto-Particulas-Fondo/particles.js"></script>
-            <script src="../Efecto-Particulas-Fondo/particulas.js"></script>
-	    </div>
             
             <?php include_once '../banner/banner.php';?>
 

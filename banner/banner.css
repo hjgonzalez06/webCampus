@@ -21,6 +21,8 @@
 }
 
 .Menu{
+	font-family: 'Play', sans-serif;
+	font-style: 'Play';
 	width: 100%;
 	max-width: 1000px;
 	margin: auto;
@@ -37,6 +39,11 @@
 	font-size: 1em;
 }
 
+.Menu .Enlaces{
+	display: inline-block;
+	text-align: right;
+}
+
 .Ident_Fecha{
 	display: flex;
 	flex-direction: row;
@@ -45,23 +52,20 @@
 
 .Ident_Fecha p{
 	margin-right: 245px;
-	font: bold 1em 'Nunito Sans', sans-serif;
-	color: #696969;
+	font: bold 1em 'Play', sans-serif;
+	color: #FFFFFF;
+	text-shadow: #696969 1px 1px 2px;
 }
 
 .Ident_Fecha span{
 	margin-left: 245px;
-	font: bold 1em 'Nunito Sans', sans-serif;
-	color: #696969;
-}
-
-.Menu .Enlaces{
-	display: inline-block;
-	text-align: right;
+	font: bold 1em 'Play', sans-serif;
+	color: #FFFFFF;
+	text-shadow: #696969 1px 1px 2px;
 }
 
 .Menu .Enlaces a{
-	color: #696969;
+	color: #FFFFFF;
 	text-decoration: none;
 	display: inline-block;
 	padding: .75em;
@@ -70,12 +74,16 @@
 }
 
 .Menu .Enlaces a:hover{
-	background-color: #ee3b3b;
-	color: #00b2ee;
+	background-color: rgba(242,242,242,.7);
+	color: rgb(51,153,255);
 }
 
 .Menu .Enlaces i{
 	margin-right: 5px;
+}
+
+.Menu .Enlaces i span{
+	font-family: 'Play', sans-serif;
 }
 
 /* COMIENZO CÓDIGO EFECTOS DEL MENÚ */
@@ -108,6 +116,7 @@
 		justify-content: space-between;
 		width: 90%;
 		padding: 1em;
+		vertical-align: top; 
 	}
 
 	#Encabezado2{
@@ -128,6 +137,7 @@
 
 	header .Menu .Logo .btn-Menu{
 		display: inline-block;
+		color: #FFFFFF;
 	}
 
 	header .Menu .Enlaces{
@@ -147,14 +157,14 @@
 	.Ident_Fecha p{
 		margin-right: 0px;
 		text-align: center;
-		font: bold .75em 'Nunito Sans', sans-serif;
-		color: #696969;
+		font: bold .75em 'Play', sans-serif;
+		color: #FFFFFF;
 	}
 
 	.Ident_Fecha span{
 		margin-left: 0px;
 		text-align: center;
-		font: bold .75em 'Nunito Sans', sans-serif;
-		color: #696969;
+		font: bold .75em 'Play', sans-serif;
+		color: #FFFFFF;
 	}  
 }
