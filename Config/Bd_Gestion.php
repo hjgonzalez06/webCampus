@@ -5,6 +5,7 @@
  * Contacto cfranklinmoreno@gmail.com
  */
 
+//
 include_once 'config.php';
 
 class Bd_Gestion  {
