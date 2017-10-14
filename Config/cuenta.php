@@ -1,7 +1,7 @@
 <?php   
 
-require_once './Bd_conexion.php';
-require_once './configUsers.php';
+require_once 'Bd_conexion.php';
+require_once 'configUsers.php';
 
 abstract class cuenta extends conexion {
     
@@ -32,8 +32,8 @@ abstract class cuenta extends conexion {
     
     public function login(){
         
-        if ($this->comprobar_usuario()==1 
-                && $this->comprobar_contra($this->contraseña, $this->idCuenta)){
+        if ($this->comprobar_usuario() == 1 && 
+              $this->comprobar_contra($this->contraseña, $this->idCuenta) == 0){
             
             return 0;
             

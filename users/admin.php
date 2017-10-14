@@ -48,7 +48,6 @@ class admin extends cuenta {
         
     }
     
-    
     /**
      * Comprobación de contraseña, modificado para el nivel de usuario -ADMIN-
      * 

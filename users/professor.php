@@ -8,9 +8,6 @@
  */
 abstract class professor extends cuenta {
     
-    
-    
-    
     public function getCodigo(){
         
          $sql = "SELECT ".COD_PRO." FROM ".TABLE_PROFESSOR." WHERE ".ID_ACCOUNT.

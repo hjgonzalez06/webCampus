@@ -25,6 +25,16 @@ define("TABLE_CAREER", "carreras");
     define("NRO_STU", "nro_est");
     define("NAME_CA", "nombre");
     
+//data of course´s table    
+define("TABLE_COURSE", "materias");
+    define("COD_MAT", "cod_mat");
+    define("NAME_CRS", "nombre");
+    define("PRE_COD", "pre_cod");
+    define("PRE_UNIT", "uc_pre");
+    define("NRO_MAT", "nro_tri");
+    define("FOREN_COD", "cod_for");
+    define("COST", "uc_cost");
+    
 //data of profesor's table
 define("TABLE_PROFESSOR", "profesores");
     define("COD_PRO", "cod_pro");
@@ -43,7 +53,7 @@ define("TABLE_TRIMESTER", "trimestres");
 //data of section's table
 define("TABLE_SECTION", "secccion");
     define("COD_SEC", "cod_sec");
-    define("COD_MAT", "cod_mat");
+    define("COD_MAT2", "cod_mat");
     define("COD_PRO2", "cod_pro");
     define("HOUR", "hora_uno");
     define("HOUR2", "hora_dos");
