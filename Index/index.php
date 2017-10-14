@@ -103,7 +103,7 @@
 					      // [cadena] Puede ser "slide" o "fade".
 					    interval: 2500,
 					      // [número] Tiempo de espera antes de cambiar de diapositiva (en milisegundos).
-					    auto: true,
+					    auto: false,
 					      // [booleano] Iniciar reproducción al cargar página.
 					    swap: true,
 					      // [booleano] Muestra/Oculta los botones de Inicio y Pausa.
