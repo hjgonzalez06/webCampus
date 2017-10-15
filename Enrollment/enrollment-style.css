@@ -27,22 +27,15 @@ q:before, q:after { content:''; }
 /* INICIO CÓDIGO CSS PARA APARIENCIA DE PÁGINA WEB */
 
 body{
-	background-color: #7ac5cd;
-	font-family: 'Nunito Sans', sans-serif;
+	background-color: #FFFFFF;
+	font-family: 'Play', sans-serif;
 	font-size: 16px;
-	padding-top: 75px;
-}
-
-#particles-js{
-	margin-top: -20px;
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	z-index: -1;
+	padding-top: 55px;
 }
 
 header{
-	background-color: #00b2ee;
+	background-color: rgb(51,153,255);
+	font-family: 'Play', sans-serif;
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -69,6 +62,8 @@ header{
 }
 
 .Menu{
+	font-family: 'Play', sans-serif;
+	font-style: 'Play';
 	width: 100%;
 	max-width: 1000px;
 	margin: auto;
@@ -85,6 +80,11 @@ header{
 	font-size: 1em;
 }
 
+.Menu .Enlaces{
+	display: inline-block;
+	text-align: right;
+}
+
 .Ident_Fecha{
 	display: flex;
 	flex-direction: row;
@@ -92,24 +92,21 @@ header{
 }
 
 .Ident_Fecha p{
-	margin-right: 230px;
-	font: normal 1em 'Nunito Sans', sans-serif;
-	color: #696969;
+	margin-right: 245px;
+	font: bold 1em 'Play', sans-serif;
+	color: #FFFFFF;
+	text-shadow: #696969 1px 1px 2px;
 }
 
 .Ident_Fecha span{
-	margin-left: 230px;
-	font: italic 1em 'Nunito Sans', sans-serif;
-	color: #696969;
-}
-
-.Menu .Enlaces{
-	display: inline-block;
-	text-align: right;
+	margin-left: 245px;
+	font: bold 1em 'Play', sans-serif;
+	color: #FFFFFF;
+	text-shadow: #696969 1px 1px 2px;
 }
 
 .Menu .Enlaces a{
-	color: #696969;
+	color: #FFFFFF;
 	text-decoration: none;
 	display: inline-block;
 	padding: 1em;
@@ -118,37 +115,43 @@ header{
 }
 
 .Menu .Enlaces a:hover{
-	background-color: #ee3b3b;
-	color: #00b2ee;
+	background-color: rgba(242,242,242,.7);
+	color: rgb(51,153,255);
 }
 
 .Menu .Enlaces i{
 	margin-right: 5px;
 }
 
+.Menu .Enlaces i span{
+	font-family: 'Play', sans-serif;
+}
+
 main{
 	width: 90%;
 	max-width: 1000px;
-	margin-top: 70px;
+	margin-top: 85px;
 	margin-bottom: 20px;
 	margin-right: auto;
 	margin-left: auto;
-	background-color: rgba(0,30,255,.5);
+	background-color: rgba(242,242,242,.9);
 	padding: 20px;
 	box-shadow: #696969 10px 10px 15px;
+	font-style: 'Play', sans-serif;
 }
 
 article{
-	background-color: rgba(240,248,255,.5);
-	border: 3px solid rgb(0,30,255);
+	background-color: #FFFFFF;
+	border: 3px solid rgba(0,30,255,.75);
 	padding: 5px;
 }
 
 main article h1{
 	font: 25px bold;
-	margin-bottom: 0px;
+	font-family: 'Play', sans-serif;
+	color: #FFFFFF;
 	text-align: center;
-	background-color: #ee3b3b;
+	background-color: rgb(51,153,255);
 }
 
 main article hr{
@@ -168,9 +171,10 @@ main article hr{
 .Asig{
 	width: 40%;
 	height: 350px;
-	background-color: rgba(240,248,255,.5);
-	border: 3px solid rgb(0,30,255);
+	background-color: rgba(242,242,242,.9);
+	border: 3px solid rgba(0,30,255,.75);
 	overflow: auto;
+	font-family: 'Play', sans-serif;
 }
 
 .Desp_Opc{
@@ -180,27 +184,17 @@ main article hr{
 	align-items: center;
 	width: 165px;
 	height: 350px;
-	background-color: rgba(240,248,255,.5);
+	background-color: rgba(242,242,242,.9);
 	float: center;
-	border: 3px solid rgb(0,30,255);
-}
-
-#Lista1{
-	width: 40px;
-	margin-top: -30px;
-	margin-bottom: -20px;
-}
-
-#Lista2{
-	width: 40px;
-	margin-top: -35px;
-	margin-bottom: 50px;
+	border: 3px solid rgba(0,30,255,.75);
+	font-family: 'Play', sans-serif;
 }
 
 #bot1{
     padding-top: 10px;
     text-align: center;
     margin-bottom: -50px;
+    font-family: 'Play', sans-serif;
 }
 
 #bot2{
@@ -208,14 +202,16 @@ main article hr{
     text-align: center;
     margin-top: -40px;
     margin-bottom: -30px;
+    font-family: 'Play', sans-serif;
 }
 
 .Ins{
 	width: 40%;
 	height: 350px;
-	background-color: rgba(240,248,255,.5);
-	border: 3px solid rgb(0,30,255);
+	background-color: rgba(242,242,242,.9);
+	border: 3px solid rgba(0,30,255,.75);
 	overflow: auto;
+	font-family: 'Play', sans-serif;
 }
 
 table{
@@ -226,33 +222,39 @@ table{
 #Titulo{
 	width: 100%;
 	text-align: center;
-	background-color: #ee3b3b;
+	background-color: rgb(51,153,255);
 	font: 20px bold;
+	font-family: 'Play', sans-serif;
+	color: #FFFFFF;
 }
 
 .Cod{
 	width: 90px;
 	border-color: transparent;
-	background-color: rgba(240,248,255,.5);
+	background-color: rgba(240,248,255,.95);
 	margin: auto;
 	text-align: center;
+	font-family: 'Play', sans-serif;
 }
+
 .mat{
 	width: 100%;
-        border-color: #cccccc;
+    border-color: #cccccc;
 	background-color: azure;
 	margin: 1%;
 	text-align: center;
-        border-style: ridge;
+    border-style: ridge;
+    font-family: 'Play', sans-serif;
 }
 
 .mate{
 	width: 100%;
-        border-color: #cccccc;
+    border-color: #cccccc;
 	background-color: seashell;
 	margin: 1%;
 	text-align: center;
-        border-style: ridge;
+    border-style: ridge;
+    font-family: 'Play', sans-serif;
 }
 
 tbody tr td{
@@ -263,7 +265,7 @@ tbody tr td{
 tbody tr td .U_C{
 	width: 25px;
 	border-color: transparent;
-	background-color: rgba(240,248,255,.5);
+	background-color: rgba(240,248,255,.95);
 	margin: auto;
 	text-align: center;
 }
@@ -278,7 +280,8 @@ tr:hover{
 
 table thead p{
 	text-align: center;
-	background-color: rgba(238,59,59,.8);
+	background-color: rgb(51,153,255);
+	color: #FFFFFF;
 }
 
 #Can_Fin{
@@ -291,6 +294,9 @@ table thead p{
 	margin-bottom: 7px;
 	margin-left: auto;
 	margin-right: auto;
+	font-family: 'Play', sans-serif;
+	background-color: transparent;
+	position: static;
 }
 
 .boton{
@@ -301,6 +307,7 @@ table thead p{
     color: #303030;
     width: 120px;
     border-radius: 5px;
+    font-family: 'Play', sans-serif;
 }
 
 .boton:active{
@@ -313,17 +320,22 @@ table thead p{
     text-align: center;
 }
 
+#secciones{
+	font-family: 'Play', sans-serif;
+}
+
 footer{
 	text-align: center;
 	font-size: 1em;
-	position: relative;
+	position: fixed;
 	bottom: 0;
 	width: 100%;
+	background-color: #333;
 }
 
 footer p{
-	font: 1em Georgia, "Times New Roman", Times, serif;
-	color: #303030;
+	font: 1em 'Play', sans-serif;
+	color: #F6F6F6;
 	text-shadow: #696969 3px 3px 3px;
 }
 
@@ -401,33 +413,36 @@ footer p{
 	.Ident_Fecha p{
 		margin-right: 0px;
 		text-align: center;
-		font: bold .75em 'Nunito Sans', sans-serif;
-		color: #696969;
+		font: bold .75em 'Play', sans-serif;
+		color: #FFFFFF;
 	}
 
 	.Ident_Fecha span{
 		margin-left: 0px;
 		text-align: center;
-		font: bold .75em 'Nunito Sans', sans-serif;
-		color: #696969;
+		font: bold .75em 'Play', sans-serif;
+		color: #FFFFFF;
 	}
 
 	main{
 		width: 90%;
 		max-width: 1000px;
-		margin-top: 50px;
+		margin-top: 70px;
 		margin-bottom: 20px;
 		margin-right: auto;
 		margin-left: auto;
-		background-color: rgba(0,30,255,.5);
+		background-color: rgba(242,242,242,.9);
 		box-shadow: #696969 10px 10px 15px;
+		font-family: 'Play', sans-serif;
 	}
 
 	main article h1{
 		font: 20px bold;
+		color: #FFFFFF;
 		margin-bottom: 0px;
 		text-align: center;
-		background-color: #ee3b3b;
+		background-color: rgb(51,153,255);
+		font-family: 'Play', sans-serif;
 	}
 
 	main article hr{
@@ -448,8 +463,8 @@ footer p{
 	.Asig{
 		width: 100%;
 		height: 375px;
-		background-color: rgba(240,248,255,.5);
-		border: 3px solid rgb(0,30,255);
+		background-color: rgba(242,242,242,.9);
+		border: 3px solid rgba(0,30,255,.75);
 		overflow: auto;
 		margin: 2px -3px;
 	}
@@ -461,31 +476,33 @@ footer p{
 		align-items: center;
 		width: 50%;
 		height: 375px;
-		background-color: rgba(240,248,255,.5);
+		background-color: rgba(242,242,242,.9);
 		float: center;
-		border: 3px solid rgb(0,30,255);
+		border: 3px solid rgba(0,30,255,.75);
 		margin: 2px -3px;
 	}
 
 	.Ins{
 		width: 100%;
 		height: 375px;
-		background-color: rgba(240,248,255,.5);
-		border: 3px solid rgb(0,30,255);
+		background-color: rgba(242,242,242,.9);
+		border: 3px solid rgba(0,30,255,.75);
 		overflow: auto;
 		margin: 2px -3px;
+		font-family: 'Play', sans-serif;
 	}
 
 	#Titulo{
 		width: 100%;
 		text-align: center;
-		background-color: #ee3b3b;
+		background-color: rgb(51,153,255);
 		font: 15px bold;
+		font-family: 'Play', sans-serif;
 	}
 
 	footer p{
-		font: .78em Georgia, "Times New Roman", Times, serif;
-		color: #303030;
+		font: .78em 'Play', serif;
+		color: #F6F6F6;
 		text-shadow: #696969 3px 3px 3px;
 	}
 
