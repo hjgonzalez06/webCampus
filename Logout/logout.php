@@ -27,7 +27,7 @@
 	    <meta name="description" content="Página oficial del WebCampus de la Universidad de Margarita: Alma Mater del Caribe."/>
 	    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
 		<title>Cierre de Sesión - WebCampus UNIMAR</title>
-		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="logout-style.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css"/>
                 <link rel="stylesheet" type="text/css" href="../banner/banner.css">
@@ -36,11 +36,6 @@
 	</head>
 
 	<body>
-
-		<div id="particles-js">
-	        <script src="../Efecto-Particulas-Fondo/particles.js"></script>
-            <script src="../Efecto-Particulas-Fondo/particulas.js"></script>
-	    </div>
 
 	    <header id="Header">
 		    <nav class="Menu">
@@ -62,7 +57,7 @@
 	    	<div id="envoltura">      
                 <div id="cuerpo">
                     <p id="Despedida">Esperamos que hayas tenido una grata experiencia.</p>
-                    <p id="Despedida">Vuelva pronto.</p>
+                    <p id="Despedida">Vuelve pronto.</p>
                 </div>
             </div>
             <footer id="Cita">"<cite>La educación es nuestro pasaporte para el futuro, porque el mañana pertenece a la gente que se prepara para el hoy.</cite>" -Malcolm X.</footer>
