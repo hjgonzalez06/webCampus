@@ -27,22 +27,15 @@ q:before, q:after { content:''; }
 /* INICIO CÓDIGO CSS PARA APARIENCIA DE PÁGINA WEB */
 
 body{
-	background-color: #7ac5cd;
-	font-family: 'Nunito Sans', sans-serif;
+	background-color: #FFFFFF;
+	font-family: 'Play', sans-serif;
 	font-size: 16px;
 	padding-top: 55px;
 }
 
-#particles-js{
-	margin-top: -20px;
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	z-index: -1;
-}
-
 header{
-	background-color: #00b2ee;
+	background-color: rgb(51,153,255);
+	font-family: 'Play', sans-serif;
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -58,13 +51,19 @@ header{
 	display: inline-block;
 	width: 180px;
 	text-align: center;
+	margin-right: 230px;
 }
 
-.Menu .Logo:hover{
-	background-color: #ee3b3b;
+#Encabezado3{
+	display: inline-block;
+	width: 180px;
+	text-align: center;
+	margin-left: 215px;
 }
 
 .Menu{
+	font-family: 'Play', sans-serif;
+	font-style: 'Play';
 	width: 100%;
 	max-width: 1000px;
 	margin: auto;
@@ -86,8 +85,28 @@ header{
 	text-align: right;
 }
 
+.Ident_Fecha{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.Ident_Fecha p{
+	margin-right: 245px;
+	font: bold 1em 'Play', sans-serif;
+	color: #FFFFFF;
+	text-shadow: #696969 1px 1px 2px;
+}
+
+.Ident_Fecha span{
+	margin-left: 245px;
+	font: bold 1em 'Play', sans-serif;
+	color: #FFFFFF;
+	text-shadow: #696969 1px 1px 2px;
+}
+
 .Menu .Enlaces a{
-	color: #696969;
+	color: #FFFFFF;
 	text-decoration: none;
 	display: inline-block;
 	padding: 1em;
@@ -96,36 +115,43 @@ header{
 }
 
 .Menu .Enlaces a:hover{
-	background-color: #ee3b3b;
-	color: #00b2ee;
+	background-color: rgba(242,242,242,.7);
+	color: rgb(51,153,255);
 }
 
 .Menu .Enlaces i{
 	margin-right: 5px;
 }
 
+.Menu .Enlaces i span{
+	font-family: 'Play', sans-serif;
+}
+
 main{
 	width: 90%;
 	max-width: 1000px;
-	margin-top: 70px;
+	margin-top: 85px;
 	margin-bottom: 20px;
 	margin-right: auto;
 	margin-left: auto;
-	background-color: rgba(0,30,255,.5);
+	background-color: rgba(242,242,242,.9);
 	padding: 20px;
 	box-shadow: #696969 10px 10px 15px;
+	font-style: 'Play', sans-serif;
 }
 
 article{
-	background-color: rgba(240,248,255,.5);
-	border: 3px solid rgb(0,30,255);
+	background-color: rgba(242,242,242,.9);
+	border: 3px solid rgba(0,30,255,.75);
 	padding: 5px;
 }
 
 main article h1{
 	font: 25px bold;
+	color: #FFFFFF;
 	text-align: center;
-	background-color: #ee3b3b;
+	background-color: rgb(51,153,255) ;
+	font-family: 'Play', sans-serif;
 }
 
 main article hr{
@@ -147,7 +173,7 @@ main article p{
 
 #Datos_G tr td p{
 	color: #303030;
-	font: bold 1em 'Nunito Sans', sans-serif;
+	font: bold 1em 'Play', sans-serif;
 	margin-bottom: 12px;
 }
 
@@ -167,15 +193,18 @@ main article p{
 #Titulo_M{
 	text-align: center;
 	font: 20px bold;
-	background-color: rgba(238,59,59,.9);
+	background-color: rgb(51,153,255) ;
+	font-family: 'Play', sans-serif;
+	color: #FFFFFF;
 	margin-bottom: 0px;
-	border-top: 3px solid rgb(0,30,255);
-	border-left: 3px solid rgb(0,30,255);
-	border-right: 3px solid rgb(0,30,255);
+	border-top: 3px solid rgba(0,30,255,.75);
+	border-left: 3px solid rgba(0,30,255,.75);
+	border-right: 3px solid rgba(0,30,255,.75);
 	border-radius:5px;
 }
 
 #Datos_M{
+	background-color: #FFFFFF;
 	border: 3px solid rgb(0,30,255);
 	border-collapse: separate;
 	border-spacing: 30px 5px;
@@ -183,6 +212,7 @@ main article p{
 	flex-direction: row;
 	justify-content: space-around;
 	border-radius:5px;
+	font-family: 'Play', sans-serif;
 }
 
 #Datos_M tr td .Cod{
@@ -192,6 +222,7 @@ main article p{
 	border-color: transparent;
 	background-color: rgba(240,248,255,.5);
 	border-radius:5px;
+	font-family: 'Play', sans-serif;
 }
 
 #Datos_M tr td .Asig{
@@ -201,6 +232,7 @@ main article p{
 	border-color: transparent;
 	background-color: rgba(240,248,255,.5);
 	border-radius:5px;
+	font-family: 'Play', sans-serif;
 }
 
 #Datos_M tr td .Sec{
@@ -210,6 +242,7 @@ main article p{
 	border-color: transparent;
 	background-color: rgba(240,248,255,.5);
 	border-radius:5px;
+	font-family: 'Play', sans-serif;
 }
 
 #Datos_M tr td .Prof{
@@ -219,6 +252,7 @@ main article p{
 	border-color: transparent;
 	background-color: rgba(240,248,255,.5);
 	border-radius:5px;
+	font-family: 'Play', sans-serif;
 }
 
 #Datos_M tr td .Uc{
@@ -228,6 +262,7 @@ main article p{
 	border-color: transparent;
 	background-color: rgba(240,248,255,.5);
 	border-radius:5px;
+	font-family: 'Play', sans-serif;
 }
 
 #Datos_M tr td .Def{
@@ -237,6 +272,7 @@ main article p{
 	border-color: transparent;
 	background-color: rgba(240,248,255,.5);
 	border-radius:5px;
+	font-family: 'Play', sans-serif;
 }
 
 footer{
@@ -245,11 +281,12 @@ footer{
 	position: relative;
 	bottom: 0;
 	width: 100%;
+	background-color: #333;
 }
 
 footer p{
-	font: 1em Georgia, "Times New Roman", Times, serif;
-	color: #303030;
+	font: 1em 'Play', sans-serif;
+	color: #F6F6F6;
 	text-shadow: #696969 3px 3px 3px;
 }
 
@@ -287,10 +324,28 @@ footer p{
 		justify-content: space-between;
 		width: 90%;
 		padding: 1em;
+		vertical-align: top;
+	}
+
+	#Encabezado2{
+		display: inline-block;
+		width: 150px;
+		text-align: center;
+		margin-right: 0px;
+		vertical-align: top;
+	}
+
+	#Encabezado3{
+		display: inline-block;
+		width: 120px;
+		text-align: center;
+		margin-left: 0px;
+		vertical-align: top;
 	}
 
 	header .Menu .Logo .btn-Menu{
 		display: inline-block;
+		color: #FFFFFF;
 	}
 
 	header .Menu .Enlaces{
@@ -300,22 +355,43 @@ footer p{
 		flex-wrap: wrap;
 	}
 
+	.Ident_Fecha{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.Ident_Fecha p{
+		margin-right: 0px;
+		text-align: center;
+		font: bold .75em 'Play', sans-serif;
+		color: #FFFFFF;
+	}
+
+	.Ident_Fecha span{
+		margin-left: 0px;
+		text-align: center;
+		font: bold .75em 'Play', sans-serif;
+		color: #FFFFFF;
+	}
+
 	main{
 		width: 90%;
 		max-width: 1000px;
-		margin-top: 45px;
+		margin-top: 70px;
 		margin-bottom: 20px;
 		margin-right: auto;
 		margin-left: auto;
-		background-color: rgba(0,30,255,.5);
+		background-color: rgba(242,242,242,.9);
 		padding: 20px;
 		box-shadow: #696969 10px 10px 15px;
 	}
 
 	main article h1{
-		font: 20px bold;
+		font: 20px bold 'Play', sans-serif;
 		text-align: center;
-		background-color: #ee3b3b;
+		background-color: rgb(51,153,255);
 	}
 
 	#Datos_G{
@@ -332,8 +408,8 @@ footer p{
 
 	#Datos_G tr td p{
 		color: #303030;
-		font: bold 1em 'Nunito Sans', sans-serif;
-		margin-bottom: -5px;
+		font: bold 1em 'Play', sans-serif;
+		margin-bottom: 0px;
 		margin-top: -5px;
 	}
 
@@ -351,7 +427,7 @@ footer p{
 	}
 
 	#Datos_M{
-		border: 3px solid rgb(0,30,255);
+		border: 3px solid rgba(0,30,255,.75);
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -373,6 +449,7 @@ footer p{
 		border-color: transparent;
 		background-color: rgba(240,248,255,.5);
 		border-radius:5px;
+		font-family: 'Play', sans-serif;
 	}
 
 	#Datos_M tr td .Asig{
@@ -382,6 +459,7 @@ footer p{
 		border-color: transparent;
 		background-color: rgba(240,248,255,.5);
 		border-radius:5px;
+		font-family: 'Play', sans-serif;
 	}
 
 	#Datos_M tr td .Sec{
@@ -391,6 +469,7 @@ footer p{
 		border-color: transparent;
 		background-color: rgba(240,248,255,.5);
 		border-radius:5px;
+		font-family: 'Play', sans-serif;
 	}
 
 	#Datos_M tr td .Prof{
@@ -400,6 +479,7 @@ footer p{
 		border-color: transparent;
 		background-color: rgba(240,248,255,.5);
 		border-radius:5px;
+		font-family: 'Play', sans-serif;
 	}
 
 	#Datos_M tr td .Uc{
@@ -409,6 +489,7 @@ footer p{
 		border-color: transparent;
 		background-color: rgba(240,248,255,.5);
 		border-radius:5px;
+		font-family: 'Play', sans-serif;
 	}
 
 	#Datos_M tr td .Def{
@@ -418,11 +499,12 @@ footer p{
 		border-color: transparent;
 		background-color: rgba(240,248,255,.5);
 		border-radius:5px;
+		font-family: 'Play', sans-serif;
 	}
 
 	footer p{
-		font: .78em Georgia, "Times New Roman", Times, serif;
-		color: #303030;
+		font: .78em 'Play', sans-serif;
+		color: #F6F6F6;
 		text-shadow: #696969 3px 3px 3px;
 	}
 
