@@ -118,7 +118,7 @@ function hora_final($hora) {
     <body>
         <table border="1" width=100% align="center" cellpadding="0" cellspacing="0">
             <tr>
-                <td width="126" bgcolor="#C4D2E2"><div align="center"><strong>hora </strong></div></td>
+                <td width="126" bgcolor="#C4D2E2"><div align="center"><strong>Hora </strong></div></td>
                   <td width="126" bgcolor="#C4D2E2"><div align="center"><strong>Lunes</strong></div></td>
                   <td width="126" bgcolor="#C4D2E2"><div align="center"><strong>Martes</strong></div></td>
                   <td width="126" bgcolor="#C4D2E2"><div align="center"><strong>Miercoles</strong></div></td>
