@@ -52,11 +52,16 @@ abstract class cuenta extends conexion {
         
     } //Funcional
     
-    public function actContra($nueva, $repeticion) {
+    public function actContra() {
+        
+        $nueva = htmlentities(addslashes(filter_input(INPUT_POST, "newContra")));
+        $repeticion = htmlentities(addslashes(filter_input(INPUT_POST, "veContra")));
+        $candidato = htmlentities(addslashes(filter_input(INPUT_POST, "contra")));
         
         $sql = "UPDATE ".TABLE_ACCOUNT." SET ".PASSWRD_AC." = :contra, estado = 1"
                 . " WHERE ".ID_ACCOUNT." = :id";
         $tmpContraseña = $this->contraseña;
+        $this->contraseña = $candidato;
         
         if ($this->verficar_nueva($nueva, $repeticion)==0 
                 && $this->comprobar_contra()) {
@@ -98,7 +103,9 @@ abstract class cuenta extends conexion {
         
         $resultado = $conexion->rowCount();
         if ($resultado==1) {
+            
             return cuenta::nueva_contra($cnx, $cedula);
+            
         }
         
         return  "Usuario o contraseña incorrectos. ";

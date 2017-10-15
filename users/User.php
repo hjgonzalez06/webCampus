@@ -261,6 +261,17 @@ abstract class User extends cuenta {
         return $resultado->fetch()[UNIT_V];
         
     }
+    
+    public function getStatus() {
+        
+        $sql = "SELECT ".STATUS_STU." FROM ".TABLE_STUDENT." WHERE ".ID_ACCOUNT.
+                "= ".$this->idCuenta;
+        $resultado = $this->conexionBase->prepare($sql);
+        $resultado->execute();
+        
+        return $resultado->fetch()[STATUS_STU];
+        
+    }
 
 
     public function setNacionalidad($nacionalidad) {
