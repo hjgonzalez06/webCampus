@@ -11,7 +11,7 @@ class conexion {
     
     protected $conexionBase;
     
-    function __construct() {
+    public function __construct() {
 
         try {
             $this->conexionBase = new PDO(bd_name, bd_user, bd_pass);
@@ -43,6 +43,12 @@ class conexion {
     public function __conected(){
         
         return $this->conexionBase != NULL;
+        
+    }
+    
+    public function __conexion(){
+        
+        return $this->conexionBase;
         
     }
 }

@@ -19,12 +19,11 @@ abstract class cuenta extends conexion {
     public function establecer_id(){
         
         $contra = password_hash($this->idCuenta, PASSWORD_DEFAULT);
-        $this->contraseña = $contra;
         
-        $sql = "INSERT INTO".TABLE_ACCOUNT." (".ID_ACCOUNT.", ".PASSWRD_A.")"
-                . " VALUES (':cedula', '$contra') ";
+        $sql = "INSERT INTO ".TABLE_ACCOUNT." (".ID_ACCOUNT.", ".PASSWRD_AC.")"
+                . " VALUES (:id, '$contra') ";
         $resultado = $this->conexionBase->prepare($sql);
-        $resultado->execute(array(":cedula"=> $this->idCuenta));
+        $resultado->execute(array("id"=> $this->idCuenta));
         
         $resultado->closeCursor();
         
@@ -32,8 +31,7 @@ abstract class cuenta extends conexion {
     
     public function login(){
         
-        if ($this->comprobar_usuario() == 1 && 
-              $this->comprobar_contra($this->contraseña, $this->idCuenta) == 0){
+        if ($this->comprobar_usuario() == 1 &&  $this->comprobar_contra()){
             
             return 0;
             
@@ -84,6 +82,42 @@ abstract class cuenta extends conexion {
         return strcmp($nueva, $repeticion);
         
     } //Funcional
+    
+    public static function recuperar(){
+        
+        $cnx = (new conexion())->__conexion();
+        
+        $cedula = htmlentities(addslashes(filter_input(INPUT_POST, "usuario")));
+        $email= htmlentities(addslashes(filter_input(INPUT_POST, "email")));
+        
+        $sentencia = "SELECT * FROM ".TABLE_ACCOUNT." INNER JOIN ".TABLE_STUDENT
+                . " WHERE ".TABLE_ACCOUNT.".".ID_ACCOUNT." = :cedula AND "
+                . " ".TABLE_STUDENT.".".EMAIL." = :correo";
+        $conexion = $cnx->prepare($sentencia);
+        $conexion->execute(array(":cedula"=>$cedula, ":correo"=>$email));
+        
+        $resultado = $conexion->rowCount();
+        if ($resultado==1) {
+            return cuenta::nueva_contra($cnx, $cedula);
+        }
+        
+        return  "Usuario o contraseña incorrectos. ";
+    }
+    
+    private static function nueva_contra($cnx, $cedula) {
+        
+        $contraseña = rand(100000, 900000);
+        $hash = password_hash($contraseña, PASSWORD_DEFAULT);
+        
+        $sql = "UPDATE ".TABLE_ACCOUNT." SET ".PASSWRD_AC." "
+                . "= :contra WHERE ".ID_ACCOUNT." = :cedula";
+        $resultado = $cnx->prepare($sql);
+        $resultado->execute(array(":contra"=>$hash, ":cedula"=>$cedula));
+        $resultado->closeCursor();
+        
+        return $contraseña;
+        
+    }
     
     public function comprobar_contra() {
         
