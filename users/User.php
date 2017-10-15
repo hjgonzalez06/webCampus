@@ -32,7 +32,7 @@ abstract class User extends cuenta {
 //    private $ucc;
 //    private $indiceAct;
 //    private $indiceTol;
-
+    
     public function getNacionalidad() {
         
         $sql = "SELECT ".NAOTY." FROM ".TABLE_STUDENT." WHERE ".ID_ACCOUNT.
@@ -261,6 +261,17 @@ abstract class User extends cuenta {
         return $resultado->fetch()[UNIT_V];
         
     }
+    
+    public function getStatus() {
+        
+        $sql = "SELECT ".STATUS_STU." FROM ".TABLE_STUDENT." WHERE ".ID_ACCOUNT.
+                "= ".$this->idCuenta;
+        $resultado = $this->conexionBase->prepare($sql);
+        $resultado->execute();
+        
+        return $resultado->fetch()[STATUS_STU];
+        
+    }
 
 
     public function setNacionalidad($nacionalidad) {
@@ -437,6 +448,16 @@ abstract class User extends cuenta {
         
         $sql = "UPDATE ".TABLE_STUDENT." SET ".TRI_PASS." = '".$triAprob.
                 "' WHERE ".ID_STU." = '".$this->idCuenta."'";
+        $resultado = $this->conexionBase->prepare($sql);
+        $resultado->execute();
+        
+    }
+    
+    public function setStatus($status){
+        
+        $sql = "UPDATE ".TABLE_STUDENT." SET ".STATUS_STU." = '".$status.
+                "' WHERE ".ID_STU." = '".$this->idCuenta."'";
+        
         $resultado = $this->conexionBase->prepare($sql);
         $resultado->execute();
         

@@ -15,6 +15,8 @@
 
 require_once '../users/student.php';
 require_once '../users/admin.php';
+require_once '../Config/cuenta.php';
+require_once '../Config/Bd_conexion.php';
 
 class logic_login {
     
@@ -69,5 +71,19 @@ class logic_login {
         return ($this->idUser == null || $this->password == null ) ? 1 : 0;
         
     }
-
+    
+    
+     /**
+     * recuperar: reestablece la contraseña del usuario, asignando un numero
+     * aletorio, el cual es envia al correo del usuario.<br>
+     * <tr>-En caso de existir similitud, manda correo con la nueva contraseña. <br>
+     * <tr>-En caso contrario, solo muestra error.
+     * @return string
+     */
+    public function forgot(){
+        
+        return cuenta::recuperar();
+        
+    }
+    
 }

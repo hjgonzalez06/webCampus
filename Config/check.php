@@ -9,7 +9,7 @@
     session_start();
     
     $url = $_SERVER["REQUEST_URI"];
-    $login = "/webCampus/Login/login.php";
+    $login = "/webCampusTEST/Login/login.php";
     
     
     if (!isset($_SESSION["user"])) {
