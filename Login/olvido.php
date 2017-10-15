@@ -7,7 +7,7 @@
 -->
 
 <?php
-    require_once '../Config/Bd_conexion.php';
+    require_once 'logic_login.php';
 ?>
 
 
@@ -44,22 +44,21 @@
                             <p><label >Cédula de Identidad</label></p>
                             <input class="User" type="text" id="usuario" name="usuario" placeholder="Introduzca su cédula" autofocus="" required=""></p>
                             <p><label>Correo</label></p>
-                            <input class="Pass" type="text" id="correo" name="correo" placeholder="Introduzca correo" required=""></p>
+                            <input class="Pass" type="text" id="email" name="email" placeholder="Introduzca correo" required=""></p>
                             <p id="bot"><input type="submit" id="recuperar" name="recuperar" value="Enviar Correo" class="boton"></p>
                         </form>
+                        <?php if (isset($_POST["recuperar"])) {
+
+                                $login = new logic_login();
+                                echo "<br>";
+                                echo $login->forgot();
+                                echo "<br>";
+                            }?>
                     </div>
             </div>
         </section>
         
-        <?php
-        if (isset($_POST["recuperar"])) {
-            $conexion = new Bd_Gestion();
-            
-            echo "<br>";
-            echo $conexion->recuperar($_POST["usuario"], $_POST["correo"]);
-            echo "<br>";
-        }
-        ?>
+        
 
 		<footer>
 			<p><small><em>© 2017 Universidad de Margarita, Rif: J-30660040-0. Teléfono: 800-UNIMAR (800-864627). Isla de Margarita - Venezuela.</em></small></p>
