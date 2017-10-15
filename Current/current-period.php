@@ -7,27 +7,12 @@
 -->
 
 <?php
-
-    require_once '../Config/Bd_Gestion.php';
-    require_once '../Config/check.php';
-    $conexion = new Bd_Gestion();   
-
-
-
-    $informacion = $conexion->data($_SESSION["usuario"]["cedula"], "alumnos");
-    $carrera = $conexion->data($informacion["carrera"], "carreras");
-    $nombreComple = $informacion["apellido_do"] ." ".$informacion["apellido"]." "
-            . "".$informacion["nombre"]." ".$informacion["nombre_do"];
-    $carrera = $conexion->data($informacion["carrera"], "carreras");
-    
-    
-    
-    $secciones = $conexion->secciones("", "");
-    foreach ($secciones as $listaSeccion) {
-
-        $registro[]=$listaSeccion["cod_sec"];
-    }
-    $resultado = $conexion->buscar($registro, "26501690");
+//    $secciones = $conexion->secciones("", ""); 
+//    foreach ($secciones as $listaSeccion) {
+//
+//        $registro[]=$listaSeccion["cod_sec"];
+//    }
+//    $resultado = $conexion->buscar($registro, "26501690");
     
 ?>
 
@@ -53,43 +38,42 @@
             <script src="../Efecto-Particulas-Fondo/particulas.js"></script>
 	    </div>
 
-	   <?php require_once '../banner/banner.php'; ?>
+	   <?php require_once '../banner/banner.php'; 
+                $fullName = $user->getApellido()." ".$user->getApellido2().
+                        " ".$user->getNombre() ." ".$user->getNombre2();
+           ?>
 	    <main>
 	    	<article>
 	    		<h1>RESUMEN ACADÉMICO DEL ESTUDIANTE</h1>
 	    		<hr></hr>
 	    		<table id="Datos_G">
 	    			<tr>
-	    				<td>
-	    					<p>Cédula de Identidad: &nbsp</p>
-	    				</td>
-	    				<td>
-                                            <input type="text" name="CI" value="<?php echo $informacion['cedula'];?>" readonly="true">
-	    				</td>
+                                    <td> <p>Cédula de Identidad: &nbsp</p>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="CI" value="<?php echo $user->getCedula();?>" readonly="true">
+                                    </td>
 	    			</tr>
 	    			<tr>
-	    				<td>
-	    					<p>Apellidos y Nombres: &nbsp</p>
-	    				</td>
-	    				<td>
-	    					<input type="text" name="nombre" value="<?php echo $nombreComple;?>" readonly="true">
-	    				</td>
+                                    <td><p>Apellidos y Nombres: &nbsp</p>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="nombre" value="<?php echo $fullName;?>" readonly="true">
+                                    </td>
 	    			</tr>
 	    			<tr>
-	    				<td>
-	    					<p>Carrera: &nbsp</p>
-	    				</td>
-	    				<td>
-                                            <input type="text" name="carrera" value="<?php echo $carrera['nombre'];?>" readonly="true">
-	    				</td>
+                                    <td><p>Carrera: &nbsp</p>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="carrera" value="<?php echo $user->getCodigoCa();?>" readonly="true">
+                                    </td>
 	    			</tr>
 	    			<tr>
-	    				<td>
-	    					<p>Período Activo: &nbsp</p>
-	    				</td>
-	    				<td>
-	    					<input type="text" name="CI" value="<?php echo $informacion['lapso_act'];?>" readonly="true">
-	    				</td>
+                                    <td><p>Período Activo: &nbsp</p>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="CI" value="<?php echo $user->getLapso();?>" readonly="true">
+                                    </td>
 	    			</tr>
 	    		</table>
 	    		<br>
