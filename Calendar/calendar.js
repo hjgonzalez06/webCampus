@@ -1,113 +1,45 @@
-var CALENDAR = function () { 
-    var wrap;
-    var label;
-    var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]; 
- 
-    function init(newWrap) { 
-        wrap     = $(newWrap || "#Cal"); 
-        label    = wrap.find("#label"); 
-        wrap.find("#Prev").bind("click.calendar", function () { switchMonth(false); }); 
-        wrap.find("#Next").bind("click.calendar", function () { switchMonth(true);  }); 
-        label.bind("click", function () { switchMonth(null, new Date().getMonth(), new Date().getFullYear()); });        
-        label.click();
-    } 
- 
-    function switchMonth(next, month, year) { 
-        var curr = label.text().trim().split(" "), calendar, tempYear =  parseInt(curr[1], 10);
-
-        month = month || ((next) ? ( (curr[0] === "Diciembre") ? 0 : months.indexOf(curr[0]) + 1 ) : ( (curr[0] === "Enero") ? 11 : months.indexOf(curr[0]) - 1 ));
-
-        year = year || ((next && month === 0) ? tempYear + 1 : (!next && month === 11) ? tempYear - 1 : tempYear);
-
-        console.profile("createCal");
-        calendar = createCal(year, month);
-        console.profileEnd("createCal");
-
-        var calendar =  createCal(year, month); 
-        $("#Cal-frame", wrap) 
-            .find(".Curr") 
-                .removeClass("Curr")
-                .addClass("temp") 
-            .end() 
-            .prepend(calendar.calendar()) 
-            .find(".temp") 
-                .fadeOut("slow", function () { $(this).remove(); }); 
-         
-        $('#label').text(calendar.label);
-
+function mesActual(){
+    var obj = document.getElementById('calendario');
+    var FActual = new Date();
+    var MActual = parseInt(FActual.getMonth()) + 1;
+    switch (MActual){
+        case 1:
+            obj.src = 'Meses/enero.html';
+            break;
+        case 2:
+            obj.src = 'Meses/febrero.html';
+            break;
+        case 3:
+            obj.src = 'Meses/marzo.html';
+            break;
+        case 4:
+            obj.src = 'Meses/abril.html';
+            break;
+        case 5:
+            obj.src = 'Meses/mayo.html';
+            break;
+        case 6:
+            obj.src = 'Meses/junio.html';
+            break;
+        case 7:
+            obj.src = 'Meses/julio.html';
+            break;
+        case 8:
+            obj.src = 'Meses/agosto.html';
+            break;
+        case 9:
+            obj.src = 'Meses/septiembre.html';
+            break;
+        case 10:
+            obj.src = 'Meses/octubre.html';
+            break;
+        case 11:
+            obj.src = 'Meses/noviembre.html';
+            break;
+        case 12:
+            obj.src = 'Meses/diciembre.html';
+            break;
     }
- 
-    function createCal(year, month) { 
-        var day = 1, i, j, haveDays = true,  
-        startDay = new Date(year, month, day).getDay(), 
-        daysInMonths = [31, (((year%4==0)&&(year%100!=0))||(year%400==0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31], 
-        calendar = [];
+}
 
-        if (createCal.cache[year]) { 
-            if (createCal.cache[year][month]) { 
-                return createCal.cache[year][month]; 
-            } 
-        } else { 
-            createCal.cache[year] = {}; 
-        }
-
-        i = 0; 
-        while (haveDays) { 
-            calendar[i] = []; 
-            for (j = 0; j < 7; j++) { 
-                if (i === 0) { 
-                    if (j === startDay) { 
-                        calendar[i][j] = day++; 
-                        startDay++; 
-                    } 
-                } else if (day <= daysInMonths[month]) { 
-                    calendar[i][j] = day++; 
-                } else { 
-                    calendar[i][j] = ""; 
-                    haveDays = false; 
-                } 
-                if (day > daysInMonths[month]) { 
-                    haveDays = false; 
-                } 
-            } 
-            i++; 
-        }
-
-        if (calendar[5]) { 
-            for (i = 0; i < calendar[5].length; i++) { 
-                if (calendar[5][i] !== "") { 
-                    calendar[4][i] = "<span>" + calendar[4][i] + "</span><span>" + calendar[5][i] + "</span>"; 
-                } 
-            } 
-            calendar = calendar.slice(0, 5); 
-        }
-
-        for (i = 0; i < calendar.length; i++) { 
-            calendar[i] = "<tr><td>" + calendar[i].join("</td><td>") + "</td></tr>"; 
-        } 
-
-        calendar = $("<table>" + calendar.join("") + "</table>").addClass("Curr"); 
-         
-        $("td:empty", calendar).addClass("nil");
-
-        if (month === new Date().getMonth()) { 
-            $('td', calendar).filter(function () { return $(this).text() === new Date().getDate().toString(); }).addClass("today"); 
-        } 
-
-        createCal.cache[year][month] = { calendar : function () { return calendar.clone() }, label : months[month] + " " + year }; 
-         
-        return createCal.cache[year][month];
-
-        console.dir(calendar);
-    }
-
-    createCal.cache = {
-
-    }
-
-    return { 
-        init : init, 
-        switchMonth : switchMonth, 
-        createCal   : createCal 
-    }; 
-};
+calendario.onload = mesActual();
