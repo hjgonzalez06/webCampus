@@ -46,8 +46,14 @@ body{
 
 #contenido{
 	margin: auto;
+<<<<<<< HEAD
 	width: 400px;
 	height: 200px;
+=======
+	width: 35%;
+	height: 50%;
+	background-color: rgba(240,248,255,.75);
+>>>>>>> Reparación de "DATOS"
 	border-radius: 10px;
 	cursor: pointer;
 	z-index: 55;
@@ -84,7 +90,6 @@ header{
 .Menu{
 	font-family: 'Play', sans-serif;
 	font-style: 'Play';
-	font
 	width: 100%;
 	max-width: 1000px;
 	margin: auto;
