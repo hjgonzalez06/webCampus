@@ -2,7 +2,8 @@
 
 /* 
  * Código fuente desarrollado por Franklin Moreno e Hiram González
- * Contacto cfranklinmoreno@gmail.com
+ * Contacto -cfranklinmoreno@gmail.com
+ *          -hiramjgonzalez98@gmai.com
  */
 
 
@@ -21,14 +22,19 @@ abstract class options_course extends course {
 
         parent::__construct($codigoMat);
 
+
     }
 
+    /*
+     * Inicio de los metodos gets, tabla materia
+     */
 
     public function getName(){
 
         $sql = "SELECT ".NAME_CRS." FROM ".TABLE_COURSE." WHERE ".COD_MAT." = :codigo";
 
         $resultado = $this->conexionBase->prepare($sql);
+        $this->conexionBase->
         $resultado->execute(array(":codigo"=>$this->codigoMat));
 
         return $resultado->fetch()[NAME_CRS];
@@ -56,7 +62,6 @@ abstract class options_course extends course {
         return $resultado->fetch()[PRE_UNIT];
 
     }
-
 
     public function getNroTri(){
 
@@ -88,6 +93,65 @@ abstract class options_course extends course {
         $resultado->execute(array(":codigo"=>$this->codigoMat));
 
         return $resultado->fetch()[COST];
+
+    }
+
+    /*
+     * Inicio de los metodos sets, tabla materia
+     */
+
+    public function setName($nombreMateria){
+
+
+        $sql = "UPDATE ".TABLE_COURSE." SET ".NAME_CRS." = :parametro1 WHERE ".COD_MAT." = :parametro2";
+
+        $resultado = $this->conexionBase->prepare($sql);
+        $resultado->execute(array(":parametro1"=>$nombreMateria, ":parametro2"=>$this->codigoMat));
+
+    }
+
+    public function setPreCod($preCod){
+
+        $sql = "UPDATE ".TABLE_COURSE." SET ".PRE_COD." = :parametro1 WHERE ".COD_MAT." = :parametro2";
+
+        $resultado = $this->conexionBase->prepare($sql);
+        $resultado->execute(array(":parametro1"=>$preCod, ":parametro2"=>$this->codigoMat));
+
+    }
+
+    public function setUcPre($ucPre){
+
+        $sql = "UPDATE ".TABLE_COURSE." SET ".PRE_COD." = :parametro1 WHERE ".COD_MAT." = :parametro2";
+
+        $resultado = $this->conexionBase->prepare($sql);
+        $resultado->execute(array(":parametro1"=>$ucPre, ":parametro2"=>$this->codigoMat));
+
+    }
+
+    public function setNroTri($nroTri){
+
+        $sql = "UPDATE ".TABLE_COURSE." SET ".NRO_MAT." = :parametro1 WHERE ".COD_MAT." = :parametro2";
+
+        $resultado = $this->conexionBase->prepare($sql);
+        $resultado->execute(array(":parametro1"=>$nroTri, ":parametro2"=>$this->codigoMat));
+
+    }
+
+    public function setCodFor($codFor){
+
+        $sql = "UPDATE ".TABLE_COURSE." SET ".FOREN_COD." = :parametro1 WHERE ".COD_MAT." = :parametro2";
+
+        $resultado = $this->conexionBase->prepare($sql);
+        $resultado->execute(array(":parametro1"=>$codFor, ":parametro2"=>$this->codigoMat));
+
+    }
+
+    public function setUcCost($ucCost){
+
+        $sql = "UPDATE ".TABLE_COURSE." SET ".COST." = :parametro1 WHERE ".COD_MAT." = :parametro2";
+
+        $resultado = $this->conexionBase->prepare($sql);
+        $resultado->execute(array(":parametro1"=>$ucCost, ":parametro2"=>$this->codigoMat));
 
     }
 
