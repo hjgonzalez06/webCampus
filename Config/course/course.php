@@ -17,7 +17,7 @@ require_once './Bd_conexion.php';
 
 abstract class course extends conexion {
     
-    private $codigoMat;
+    protected $codigoMat;
 
     public function __construct($codigoMat) {
         
@@ -32,10 +32,12 @@ abstract class course extends conexion {
         $sql = "SELECT * FROM ".TABLE_SECTION." WHERE ".COD_MAT2." = '".$this->codigoMat."'";
         $resultado = $this->conexionBase->prepare($sql);
         $resultado->execute();
-        
+
         return $resultado->fetchAll(PDO::FETCH_ASSOC);
-        
+
     }
+
+
     
     
     
