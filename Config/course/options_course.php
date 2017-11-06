@@ -13,19 +13,18 @@
  * @author nookamb
  */
 
-require_once '../Bd_conexion.php';
+require_once 'course.php';
 
-abstract class options_course extends conexion {
+abstract class options_course extends course {
     
-    protected $courseName;
+public function __construct($codigoMat) {
+    parent::__construct($codigoMat);
+}
 
-    public function __construct() {
+
+public function getCodMat(){
         
-        parent::__construct();
-        
-    }
-    
-    public function getCodMat(){
+        $sql = "SELECT ".COD_MAT." FROM".TABLE_COURSE." WHERE ".COD_MAT." = ".$id;
         
         
     }

@@ -51,7 +51,7 @@ define("TABLE_TRIMESTER", "trimestres");
     define("NRO_STU_TRI", "n_est_tri");
 
 //data of section's table
-define("TABLE_SECTION", "secccion");
+define("TABLE_SECTION", "seccion");
     define("COD_SEC", "cod_sec");
     define("COD_MAT2", "cod_mat");
     define("COD_PRO2", "cod_pro");
