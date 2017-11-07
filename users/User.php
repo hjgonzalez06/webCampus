@@ -482,7 +482,7 @@ abstract class User extends cuenta {
      */
     private function only_codes(){
 
-        $secciones = coursre::show_all_sections();
+        $secciones = course::show_all_sections();
 
         foreach ($secciones as $seccion){
 
