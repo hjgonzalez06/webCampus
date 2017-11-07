@@ -7,22 +7,25 @@ Contacto:
 
 <?php
 
-include_once '../Config/Bd_Gestion.php';
-$conexion = new Bd_Gestion();
+require_once '../Config/course/course.php';
+include_once '../Config/check.php';
 
-$secciones = $conexion->secciones("", "");
-foreach ($secciones as $listaSeccion) {
-    $registro[]=$listaSeccion["cod_sec"];
-}
-$resultado = $conexion->buscar($registro, $_SESSION["usuario"]["cedula"]);
-foreach ($resultado as $lista){
-    if(empty($lista["cod_sec"])){
+$user = unserialize($_SESSION["user"]);
+$user->__connect();
+
+//documentar esto.
+
+$listaIns = $user->data_section();
+
+foreach ($listaIns as $lista){
+
+    if (empty($lista)){
         continue;
     }
-    $resultadoTemporal = $conexion->data($lista["cod_sec"], "seccion");
-    $materias[] = $resultadoTemporal;
-}
 
+    $materias[] = $lista;
+
+}
 
 $horasImprimir = array
         (

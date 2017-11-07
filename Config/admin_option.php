@@ -1,8 +1,8 @@
 <?php
 
 
-require_once './cuenta.php';
-require_once './course/materia.php';
+require_once 'cuenta.php';
+require_once 'course/materia.php';
 /**
  * Description of admin_option
  *
@@ -18,14 +18,26 @@ abstract class admin_option extends cuenta {
 
     }
 
-    public function search_materia($codigoMateria){
+    /**
+     * materia_search: retorna la información relacionada con la materia buscada.
+     *
+     * @param $codigoMateria
+     * @return mixed
+     */
+    public function materia_search($codigoMateria){
 
         $this->materia = new materia($codigoMateria);
 
-        return $this->materia->showInformation();
+        return $this->materia->show_information();
 
     }
 
 
+    /**
+     * EN PROCESO
+     */
+    public function usuario_search(){
+
+    }
 
 }

@@ -13,8 +13,6 @@
  * @author Franklin Moreno
  */
 
-require_once './Bd_conexion.php';
-
 abstract class course extends conexion {
     
     protected $codigoMat;
@@ -26,8 +24,14 @@ abstract class course extends conexion {
         $this->codigoMat = $codigoMat;
         
     }
-    
-    public function showSections(){
+
+
+    /**
+     *show_sections: retorna las secciones disponibles de la materia.
+     *
+     * @return array
+     */
+    public function show_sections(){
 
         $sql = "SELECT * FROM ".TABLE_SECTION." WHERE ".COD_MAT2." = :codigo";
         $resultado = $this->conexionBase->prepare($sql);
@@ -37,7 +41,12 @@ abstract class course extends conexion {
 
     }
 
-    public function showInformation(){
+    /**
+     * show_information: retorna toda la información relacionada con la materia.
+     *
+     * @return mixed
+     */
+    public function show_information(){
 
         $sql = "SELECT * FROM ".TABLE_COURSE." WHERE ".COD_MAT." = :codigo";
 
@@ -48,6 +57,12 @@ abstract class course extends conexion {
 
     }
 
+    /**
+     * show_all_sections: *STATIC, retorna toda la información de las secciones disponibles.
+     * <br><td> -LOCACIÓN TEMPORAL.
+     *
+     * @return array
+     */
     public static function show_all_sections(){
 
         $sql = "SELECT * FROM ".TABLE_SECTION;
@@ -59,9 +74,4 @@ abstract class course extends conexion {
 
     }
 
-
-    
-    
-    
-    
 }

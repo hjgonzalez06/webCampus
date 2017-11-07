@@ -1,17 +1,18 @@
 <?php
 
 require_once '../Config/cuenta.php';
+require_once '../Config/admin_option.php';
 
-class admin extends cuenta {
+class admin extends admin_option {
     
     private $segundaContraseña; //Espera
     
     public function __construct($idCuenta, $contraseña) {
         
         parent::__construct($idCuenta, $contraseña);
-        
+
     }
-    
+
     /**
      * Permite verificación del usuario y la contraseña.<br>
      *   -Devuelve 0 si logra comprobar ambos campos.<br>

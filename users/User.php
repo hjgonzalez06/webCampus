@@ -10,28 +10,10 @@
 require_once '../Config/cuenta.php';
 
 abstract class User extends cuenta {
-    
-//    private $nacionalidad;
-//    private $cedula;
-//    private $codigoCa;
-//    private $codigoTri;
-//    private $nombre;
-//    private $nombre2;
-//    private $apellido;
-//    private $apellido2;
-//    private $correo;
-//    private $movil;
-//    private $casa;
-//    private $direccion;
-//    private $turno;
-//    private $lapso;
-//    private $lapsoOld;
-//    private $tri_aprob;
-//    private $status;
-//    private $uca;
-//    private $ucc;
-//    private $indiceAct;
-//    private $indiceTol;
+
+    /*
+     * Inicio de los gets, tabla alumnos
+     */
     
     public function getNacionalidad() {
         
@@ -273,6 +255,9 @@ abstract class User extends cuenta {
         
     }
 
+    /*
+     * Inicio de los sets, tabla alumnos
+     */
 
     public function setNacionalidad($nacionalidad) {
         
@@ -461,6 +446,75 @@ abstract class User extends cuenta {
         $resultado = $this->conexionBase->prepare($sql);
         $resultado->execute();
         
+    }
+
+    /*
+     * Inicio metodos especiales.
+     */
+
+    /**
+     * courses_alumn_search: retorna las secciones en la cual se encuentra inscrtito el alumno.
+     *
+     * @return array
+     */
+    public function courses_alumn_search(){
+
+        $lista = $this->only_codes();
+
+        foreach ($lista as $codigo){
+
+            $sql = "SELECT ".COD_SEC2." FROM registro_".$codigo." WHERE ".ID_ACC2." = :id";
+            $resultado = $this->conexionBase->prepare($sql);
+            $resultado->execute(array(":id"=>$this->idCuenta));
+
+            $inscritas[] = $resultado->fetch(PDO::FETCH_ASSOC)[COD_SEC2];
+
+        }
+
+        return $inscritas;
+
+    }
+
+    /**
+     * only_codes: retorna todas las secciones encontradas en la base de datos.
+     *
+     * @return array
+     */
+    private function only_codes(){
+
+        $secciones = coursre::show_all_sections();
+
+        foreach ($secciones as $seccion){
+
+            $listaSecciones[] = $seccion["cod_sec"];
+
+        }
+
+        return $listaSecciones;
+
+    }
+
+    /**
+     * data_section: retorna toda la información de las secciones inscritas por el alumno.
+     *
+     * @return array
+     */
+    public function data_section(){
+
+        $secciones = $this->courses_alumn_search();
+
+        foreach ($secciones as $seccion){
+
+            $sql = "SELECT * FROM ".TABLE_SECTION." WHERE ".COD_SEC." = :codigo";
+            $resultado = $this->conexionBase->prepare($sql);
+            $resultado->execute(array(":codigo"=>$seccion));
+
+            $informacion[] = $resultado->fetch();
+
+        }
+
+        return $informacion;
+
     }
 
 }

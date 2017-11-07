@@ -5,7 +5,7 @@
  * Contacto cfranklinmoreno@gmail.com
  */
 
-include_once 'config.php';
+require_once 'config.php';
     
 class conexion {
     
