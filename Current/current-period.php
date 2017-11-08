@@ -8,7 +8,8 @@
 -->
 
 <?php
-//    $secciones = $conexion->secciones("", ""); 
+
+//    $secciones = $conexion->secciones("", "");
 //    foreach ($secciones as $listaSeccion) {
 //
 //        $registro[]=$listaSeccion["cod_sec"];
@@ -36,6 +37,7 @@
 	   <?php require_once '../banner/banner.php'; 
                 $fullName = $user->getApellido()." ".$user->getApellido2().
                         " ".$user->getNombre() ." ".$user->getNombre2();
+
            ?>
 	    <main>
 	    	<article>
@@ -77,13 +79,16 @@
 	    				MATERIAS CURSADAS PARA EL PERÍODO ACTIVO
 	    			</p>
 	    			<?php
-                                    foreach ($resultado as $lista) {
-                                        if (empty($lista["cod_sec"])) {
-                                            continue;
-                                        }
-                                        $materia = $conexion->materia($lista["cod_sec"]);
-                                        $seccion = $conexion->secciones($materia["cod_mat"], "all");
-                                        $profesor = $conexion->secciones($lista["cod_sec"], "profe");
+
+                        foreach ($user->data_section() as $lista){
+
+                            if (empty($lista)){
+                                continue;
+                            }
+
+                            $materia = $lista;
+
+
                                         echo "<tr>
 	    				<td>
 	    					<input type='text' placeholder='".$materia["cod_mat"]."' readonly='true' class='Cod' title='Código de Materia'>

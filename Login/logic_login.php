@@ -71,8 +71,7 @@ class logic_login {
         return ($this->idUser == null || $this->password == null ) ? 1 : 0;
         
     }
-    
-    
+
      /**
      * recuperar: reestablece la contraseña del usuario, asignando un numero
      * aletorio, el cual es envia al correo del usuario.<br>

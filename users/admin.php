@@ -21,7 +21,7 @@ class admin extends admin_option {
      */
     public function login(){
         
-         if ($this->comprobar_admin()==1 && $this->comprobar_contra()==0) {
+        if ($this->comprobar_admin()==1 && $this->comprobar_contra()==0) {
              
             return 0; 
             
