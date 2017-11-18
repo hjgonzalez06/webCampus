@@ -467,7 +467,13 @@ abstract class User extends cuenta {
             $resultado = $this->conexionBase->prepare($sql);
             $resultado->execute(array(":id"=>$this->idCuenta));
 
-            $inscritas[] = $resultado->fetch(PDO::FETCH_ASSOC)[COD_SEC2];
+            $codigo = $resultado->fetch(PDO::FETCH_ASSOC)[COD_SEC2];
+
+            if (empty($codigo)){
+                continue;
+            }
+
+            $inscritas[] =  $codigo;
 
         }
 
@@ -504,6 +510,10 @@ abstract class User extends cuenta {
         $secciones = $this->courses_alumn_search();
 
         foreach ($secciones as $seccion){
+
+            if (empty($seccion)){
+                continue;
+            }
 
             $sql = "SELECT * FROM ".TABLE_SECTION." WHERE ".COD_SEC." = :codigo";
             $resultado = $this->conexionBase->prepare($sql);

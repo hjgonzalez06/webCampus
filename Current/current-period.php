@@ -9,6 +9,9 @@
 
 <?php
 
+    require_once '../Config/course/materia.php';
+    require_once "../users/professor.php";
+
 //    $secciones = $conexion->secciones("", "");
 //    foreach ($secciones as $listaSeccion) {
 //
@@ -34,7 +37,7 @@
 	</head>
 
 	<body>
-	   <?php require_once '../banner/banner.php'; 
+	   <?php require_once '../banner/banner.php';
                 $fullName = $user->getApellido()." ".$user->getApellido2().
                         " ".$user->getNombre() ." ".$user->getNombre2();
 
@@ -45,32 +48,32 @@
 	    		<hr></hr>
 	    		<table id="Datos_G">
 	    			<tr>
-                                    <td> <p>Cédula de Identidad: &nbsp</p>
-                                    </td>
-                                    <td>
-                                        <input type="text" name="CI" value="<?php echo $user->getCedula();?>" readonly="true">
-                                    </td>
+                        <td> <p>Cédula de Identidad: &nbsp</p>
+                        </td>
+                        <td>
+                            <input type="text" name="CI" value="<?php echo $user->getCedula();?>" readonly="true">
+                        </td>
 	    			</tr>
 	    			<tr>
-                                    <td><p>Apellidos y Nombres: &nbsp</p>
-                                    </td>
-                                    <td>
-                                        <input type="text" name="nombre" value="<?php echo $fullName;?>" readonly="true">
-                                    </td>
+                        <td><p>Apellidos y Nombres: &nbsp</p>
+                        </td>
+                        <td>
+                            <input type="text" name="nombre" value="<?php echo $fullName;?>" readonly="true">
+                        </td>
 	    			</tr>
 	    			<tr>
-                                    <td><p>Carrera: &nbsp</p>
-                                    </td>
-                                    <td>
-                                        <input type="text" name="carrera" value="<?php echo $user->getCodigoCa();?>" readonly="true">
-                                    </td>
+                        <td><p>Carrera: &nbsp</p>
+                        </td>
+                        <td>
+                            <input type="text" name="carrera" value="<?php echo $user->getCodigoCa();?>" readonly="true">
+                        </td>
 	    			</tr>
 	    			<tr>
-                                    <td><p>Período Activo: &nbsp</p>
-                                    </td>
-                                    <td>
-                                        <input type="text" name="CI" value="<?php echo $user->getLapso();?>" readonly="true">
-                                    </td>
+                        <td><p>Período Activo: &nbsp</p>
+                        </td>
+                        <td>
+                            <input type="text" name="CI" value="<?php echo $user->getLapso();?>" readonly="true">
+                        </td>
 	    			</tr>
 	    		</table>
 	    		<br>
@@ -86,27 +89,27 @@
                                 continue;
                             }
 
-                            $materia = $lista;
-
-
+                            $materia = new materia($lista[COD_MAT]);
+                            $profesor = new professor($lista[ID_PRO2],"");
+                            $fullName = $profesor->getNombre() ." ".$profesor->getApellido();
                                         echo "<tr>
 	    				<td>
-	    					<input type='text' placeholder='".$materia["cod_mat"]."' readonly='true' class='Cod' title='Código de Materia'>
+	    					<input type='text' value='".$materia->getCodMat()."' readonly='true' class='Cod' title='Código de Materia'>
 	    				</td>
 	    				<td>
-	    					<input type='text' placeholder='".$materia["nombre"]."' readonly='true' class='Asig' title='Nombre de la Asignatura'>
+	    					<input type='text' value='".$materia->getName()."' readonly='true' class='Asig' title='Nombre de la Asignatura'>
 	    				</td>
 	    				<td>
-	    					<input type='text' placeholder='".$seccion["turno"]."' readonly='true' class='Sec' title='Sección inscrita'>
+	    					<input type='text' value='".$lista[TURN]."' readonly='true' class='Sec' title='Sección inscrita'>
 	    				</td>
 	    				<td>
-	    					<input type='text' placeholder='".$profesor["nombre"]." ". $profesor["apellido"]."' readonly='true' class='Prof' title='Profesor de la asignatura'>
+	    					<input type='text' value='".$fullName."' readonly='true' class='Prof' title='Profesor de la asignatura'>
 	    				</td>
 	    				<td>
-	    					<input type='text' placeholder='".$materia["uc_cost"]."' readonly='true' class='Uc' title='Unidades de Crédito de la asignatura'>
+	    					<input type='text' value='".$materia->getUcCost()."' readonly='true' class='Uc' title='Unidades de Crédito de la asignatura'>
 	    				</td>
 	    				<td>
-	    					<input type='text' placeholder='Nah' readonly='true' class='Def' title='Calificación definitiva en la Asignatura'>
+	    					<input type='text' value='Nah' readonly='true' class='Def' title='Calificación definitiva en la Asignatura'>
 	    				</td>
 	    			</tr>";
                                     }

@@ -6,8 +6,14 @@ require_once '../Config/professor_options.php';
  *
  * @author nookamb
  */
-abstract class professor extends professor_options {
+
+class professor extends professor_options {
+
+    public function __construct($idCuenta, $contraseña){
+
+        parent::__construct($idCuenta, $contraseña);
+
+    }
 
 
-    
 }

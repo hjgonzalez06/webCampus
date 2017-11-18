@@ -15,17 +15,7 @@ $user->__connect();
 
 //documentar esto.
 
-$listaIns = $user->data_section();
-
-foreach ($listaIns as $lista){
-
-    if (empty($lista)){
-        continue;
-    }
-
-    $materias[] = $lista;
-
-}
+$materias = $user->data_section();
 
 $horasImprimir = array
         (

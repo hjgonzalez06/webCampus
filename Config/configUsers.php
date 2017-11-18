@@ -37,7 +37,6 @@ define("TABLE_COURSE", "materias");
     
 //data of profesor's table
 define("TABLE_PROFESSOR", "profesores");
-    define("COD_PRO", "cod_pro");
     define("ID_PRO", "cedula");
     define("NAME_PRO", "nombre");
     define("LNAME_PRO", "apellido");
@@ -54,7 +53,7 @@ define("TABLE_TRIMESTER", "trimestres");
 define("TABLE_SECTION", "seccion");
     define("COD_SEC", "cod_sec");
     define("COD_MAT2", "cod_mat");
-    define("COD_PRO2", "cod_pro");
+    define("ID_PRO2", "cedula_pro");
     define("HOUR", "hora_uno");
     define("HOUR2", "hora_dos");
     define("DAY", "dia_uno");

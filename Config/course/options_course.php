@@ -29,12 +29,17 @@ abstract class options_course extends course {
      * Inicio de los metodos gets, tabla materia
      */
 
+    public function getCodMat(){
+
+        return $this->codigoMat;
+
+    }
+
     public function getName(){
 
         $sql = "SELECT ".NAME_CRS." FROM ".TABLE_COURSE." WHERE ".COD_MAT." = :codigo";
 
         $resultado = $this->conexionBase->prepare($sql);
-        $this->conexionBase->
         $resultado->execute(array(":codigo"=>$this->codigoMat));
 
         return $resultado->fetch()[NAME_CRS];

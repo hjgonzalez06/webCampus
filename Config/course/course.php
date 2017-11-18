@@ -6,13 +6,12 @@
 +    hiramjgonzalez98@gmail.com
 +    cfranklinmoreno@gmail.com
  */
-
+require_once '../Config/Bd_conexion.php';
 /**
  * Clase abstracta usada para establecer las bases de la creación de una materia.
  *
  * @author Franklin Moreno
  */
-
 abstract class course extends conexion {
     
     protected $codigoMat;
