@@ -131,7 +131,7 @@ main{
 	width: 90%;
 	max-width: 1000px;
 	margin-top: 85px;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 	margin-right: auto;
 	margin-left: auto;
 	background-color: rgba(242,242,242,.9);
@@ -211,6 +211,66 @@ main article p{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	border-radius:5px;
+	font-family: 'Play', sans-serif;
+}
+
+#Datos_M tr td .Cod_Tit{
+	width: 100px;
+	text-align: center;
+	color: #FFFFFF;
+	border-color: transparent;
+	background-color: rgb(51,153,255);
+	border-radius:5px;
+	font-family: 'Play', sans-serif;
+}
+
+#Datos_M tr td .Asig_Tit{
+	width: 275px;
+	text-align: center;
+	color: #FFFFFF;
+	border-color: transparent;
+	background-color: rgb(51,153,255);
+	border-radius:5px;
+	font-family: 'Play', sans-serif;
+}
+
+#Datos_M tr td .Sec_Tit{
+	width: 50px;
+	text-align: center;
+	color: #FFFFFF;
+	border-color: transparent;
+	background-color: rgb(51,153,255);
+	border-radius:5px;
+	font-family: 'Play', sans-serif;
+}
+
+#Datos_M tr td .Prof_Tit{
+	width: 250px;
+	text-align: center;
+	color: #FFFFFF;
+	border-color: transparent;
+	background-color: rgb(51,153,255);
+	border-radius:5px;
+	font-family: 'Play', sans-serif;
+}
+
+#Datos_M tr td .Uc_Tit{
+	width: 30px;
+	text-align: center;
+	color: #FFFFFF;
+	border-color: transparent;
+	background-color: rgb(51,153,255);
+	border-radius:5px;
+	font-family: 'Play', sans-serif;
+}
+
+#Datos_M tr td .Def_Tit{
+	width: 40px;
+	text-align: center;
+	color: #FFFFFF;
+	border-color: transparent;
+	background-color: rgb(51,153,255);
 	border-radius:5px;
 	font-family: 'Play', sans-serif;
 }

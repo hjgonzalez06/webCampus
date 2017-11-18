@@ -93,14 +93,14 @@ header{
 
 .Ident_Fecha p{
 	margin-right: 245px;
-	font: bold 1em 'Play', sans-serif;
+	font: normal 1em 'Play', sans-serif;
 	color: #FFFFFF;
 	text-shadow: #696969 1px 1px 2px;
 }
 
 .Ident_Fecha span{
 	margin-left: 245px;
-	font: bold 1em 'Play', sans-serif;
+	font: normal 1em 'Play', sans-serif;
 	color: #FFFFFF;
 	text-shadow: #696969 1px 1px 2px;
 }
