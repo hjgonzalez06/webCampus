@@ -17,7 +17,7 @@
             if ($url==$area || $url==$datos || $url==$out) {
                 header("Location: ../Login/login.php"); 
             }else{
-                header("Location: ../../Login/login.php"); 
+                header("Location: ../Login/login.php");
             }
             
     } 

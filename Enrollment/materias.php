@@ -10,9 +10,13 @@ Contacto:
 <?php
     require_once '../Config/Bd_conexion.php';
     require_once '../Config/check.php';
-    
     $conexion = new Bd_Gestion();
-    $secciones = $conexion->secciones("", "");
+    $user = unserialize($_SESSION["user"]);
+    $user->__connect();
+
+    $secciones = course::show_all_sections();
+
+
     $cedula=$_SESSION["usuario"]["cedula"];
     
     if (isset($_POST["codDel"])) {

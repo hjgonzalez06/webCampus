@@ -447,8 +447,7 @@ class Bd_Gestion  {
             $resultado = $this->baseDeDatos->prepare($sql);
             $resultado->execute(array(":codigo"=>$codigo));
             
-            return $res
-            ultado->fetch(PDO::FETCH_ASSOC);
+            return $resultado->fetch(PDO::FETCH_ASSOC);
         }elseif($codigo!="all" && $tabla=="materias"){
             
             $sql ="SELECT * FROM $tabla WHERE cod_mat = :codigo";

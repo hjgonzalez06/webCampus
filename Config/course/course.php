@@ -56,6 +56,17 @@ abstract class course extends conexion {
 
     }
 
+    public static function show_all_courses(){
+
+        $sql = "SELECT * FROM ". TABLE_COURSE;
+
+        $resultado = (new conexion())->__conexion()->prepare($sql);
+        $resultado->execute();
+
+        return $resultado->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
     /**
      * show_all_sections: *STATIC, retorna toda la información de las secciones disponibles.
      * <br><td> -LOCACIÓN TEMPORAL.

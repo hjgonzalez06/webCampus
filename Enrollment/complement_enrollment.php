@@ -10,24 +10,22 @@ Contacto:
 <tbody >
     
 <?php
-require_once '../Config/check.php';
+    require_once '../Config/check.php';
     require_once '../Config/Bd_conexion.php';
-    $conexionBase = new Bd_Gestion();
-    $registroMaterias = $conexionBase->data("all", "materias");
-    
-    $secciones = $conexionBase->secciones("", "");
-    foreach ($secciones as $listaSeccion) {
-        $registro[]=$listaSeccion["cod_sec"];
-    }
-    $resultado = $conexionBase->buscar($registro, $_SESSION["usuario"]["cedula"]);
-    foreach ($resultado as $resul) {
-        if (!empty($resul)) {
-            $noMostrar[] = $conexionBase->materia($resul["cod_sec"]);
-        }
-    }
+    require_once 'inscripcion.php';
+
+    $user = unserialize($_SESSION["user"]);
+    $user->__connect();
+    $inscripcion = new inscripcion($user);
+
+    $registroMaterias = course::show_all_courses();
+    $secciones = course::show_all_sections();
+    $noMostrar = $user->data_section();
+    $disponibles = $inscripcion->disponibles();
+
     ?>
-    
-    
+
+
 <form method="POST">
 <table>
 <p id="Titulo">ASIGNATURAS A INSCRIBIR</p>
@@ -46,30 +44,18 @@ require_once '../Config/check.php';
 </thead>
 <form method="POST" id="todo">
     <?php
-    $saltar = false;
-        foreach ($registroMaterias as $materia) {      
-            if (!empty($noMostrar)) {
-                foreach ($noMostrar as $lista) {
-                    if ($lista["cod_mat"] == $materia["cod_mat"]) {
-                        $saltar=true;
-                        break;
-                    }
-                }
-            }
-            if ($saltar) {
-                $saltar=false;
-                continue;
-            }
+    foreach ($disponibles as $disponible) {
+
              echo "
                     <tr>
                         <td>
-                            <input type='text' value='".$materia["cod_mat"]."' readonly='' class='Cod'>
+                            <input type='text' value='".$disponible["cod_mat"]."' readonly='' class='Cod'>
                         </td>
                         <td>
-                            <input type='button' id='".$materia["cod_mat"]."' value='".$materia["nombre"]."' readonly='' class='mat'>
+                            <input type='button' id='".$disponible["cod_mat"]."' value='".$disponible["nombre"]."' readonly='' class='mat'>
                         </td>
                         <td>
-                            <input type='text' value='".$materia["uc_cost"]."' readonly='' class='U_C'>
+                            <input type='text' value='".$disponible["uc_cost"]."' readonly='' class='U_C'>
                         </td>
                     </tr>
                     ";  
