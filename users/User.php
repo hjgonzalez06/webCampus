@@ -519,7 +519,7 @@ abstract class User extends cuenta {
             $resultado = $this->conexionBase->prepare($sql);
             $resultado->execute(array(":codigo"=>$seccion));
 
-            $informacion[] = $resultado->fetch();
+            $informacion[] = $resultado->fetch(PDO::FETCH_ASSOC);
 
         }
 

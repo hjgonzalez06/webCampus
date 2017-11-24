@@ -6,37 +6,16 @@ Contacto:
  cfranklinmoreno@gmail.com
 -->
 
-<script src="ajax.js"></script>
 <?php
     require_once '../Config/Bd_conexion.php';
     require_once '../Config/check.php';
-    $conexion = new Bd_Gestion();
+    require_once "../Config/course/materia.php";
+
     $user = unserialize($_SESSION["user"]);
     $user->__connect();
 
-    $secciones = course::show_all_sections();
+    $secciones = $user->data_section();
 
-
-    $cedula=$_SESSION["usuario"]["cedula"];
-    
-    if (isset($_POST["codDel"])) {
-        $tabla = "registro_".$_POST["codDel"];
-        $conexion->borrar($tabla, $cedula , "id_cuenta");
-    }
-    
-    foreach ($secciones as $listaSeccion) {
-
-        $registro[]=$listaSeccion["cod_sec"];
-    }
-    $resultado = $conexion->buscar($registro, $cedula);
-    
-    if (isset($_POST["codigo"])) {
-        $codigo = $_POST["codigo"];
-        $seccion = $_POST["seccion"];
-        $conexion->inscripcion($cedula, $seccion);
-        $resultado = $conexion->buscar($registro, $cedula);
-    }
-    
 ?>
 
 <table>
@@ -57,35 +36,28 @@ Contacto:
         <tbody>
             <tr>
 
-                <?php
-                    
-                    if (!empty($codigo) || !empty($_POST["codDel"])) {
-                        foreach ($resultado as $lista) {
-                            if (empty($lista["cod_sec"])) {
-                                continue;
-                            }else{
-                                $codigo=$lista["cod_sec"];
-                                $resultado = $conexion->materia($codigo);
-                                echo "
-                                    <from method='POST'>
-                                    <tr>    
-                                        <td>
-                                            <input type='text' value='".$resultado["cod_mat"]."' readonly=''>
-                                        </td>
-                                        <td>
-                                            <input type='button' id='".$resultado["cod_sec"]."' value='".$resultado["nombre"]."' readonly='' class='mate'>
-                                        </td>
-                                        <td>
-                                            <input type='text' value='".$resultado["turno"]."' readonly='' class='U_C'>
-                                        </td>
-                                    </tr>
-                                    <from>
-                                ";  
-                            }
-                        }
-                    }
-                ?>
+            <?php
+                foreach ($secciones as $seccione) {
+
+                    $materiaTemp = new materia($seccione[COD_MAT]);
+
+                    echo "
+                        
+                        <tr id = ".$seccione[COD_MAT].">    
+                            <td>
+                                <input type='text' name = 'codigo' value='" . $seccione[COD_MAT] . "' readonly class='Cod'>
+                            </td>
+                            <td>
+                                <input type='button' onclick='mostrarSec(\"".$seccione[COD_MAT]."\")' id='" . $seccione[COD_SEC] . "' value='" . $materiaTemp->getName(). "' readonly='' class='mate'>
+                            </td>
+                            <td>
+                                <input type='text' value='" . $seccione["turno"] . "' readonly='' class='U_C'>
+                            </td>
+                        </tr>
+                    ";
+
+                }
+            ?>
             </tr>
         </tbody>
 </table>
-<META HTTP-EQUIV="REFRESH" CONTENT="25;URL=enrollment.php">

@@ -17,6 +17,12 @@ class options_section extends conexion{
 
     }
 
+    public function getCodSec(){
+
+        return $this->idSeccion;
+
+    }
+
     public function getCodMat(){
 
         $sql = "SELECT ".COD_MAT2." FROM ".TABLE_SECTION." WHERE ".COD_SEC." = :codigo ";

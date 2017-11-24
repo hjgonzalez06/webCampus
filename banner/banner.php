@@ -13,9 +13,10 @@
     require_once '../users/admin.php';
     $user = unserialize($_SESSION["user"]);
     $user->__connect();
+    setcookie("user", $user->getCedula());
 
 ?>
- <link rel="stylesheet" type="text/css" href="banner.css">
+<link rel="stylesheet" type="text/css" href="banner.css">
 
 <header id="Header">
     <nav class="Menu">

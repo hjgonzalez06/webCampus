@@ -11,20 +11,15 @@ include_once '../Enrollment/inscripcion.php';
 $secciones = array("P301", "MATV01", "LABF01");
 $alumno = new student("26501690", "malta1");
 
-$inscripcion = new inscripcion($alumno);
+$_POST["codigo"] = "EDD0504380";
 
-$registros = $inscripcion->disponibles();
+$codigoMa = $_POST["codigo"];
 
-foreach ($registros as $registro) {
+$materia = new materia($_POST["codigo"]);
 
-    foreach ($registro as $datos) {
 
-        echo $datos . " ";
+$secciones = $materia->show_sections();
 
-    }
-
-    echo "<br>";
+foreach ($secciones as $seccione) {
+    echo $seccione[COD_SEC];
 }
-
-
-

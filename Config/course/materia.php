@@ -16,9 +16,9 @@ require_once 'options_course.php';
 
 class materia extends options_course {
     
-    public function __conected() {
+    public function __construct($codMateria) {
 
-        parent::__conected();
+        parent::__construct($codMateria);
 
     }
     

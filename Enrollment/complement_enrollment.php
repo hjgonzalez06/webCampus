@@ -5,10 +5,6 @@ Contacto:
  hiramjgonzalez98@gmail.com
  cfranklinmoreno@gmail.com
 -->
-
-<script src="ajax.js"></script>
-<tbody >
-    
 <?php
     require_once '../Config/check.php';
     require_once '../Config/Bd_conexion.php';
@@ -24,9 +20,6 @@ Contacto:
     $disponibles = $inscripcion->disponibles();
 
     ?>
-
-
-<form method="POST">
 <table>
 <p id="Titulo">ASIGNATURAS A INSCRIBIR</p>
 <thead>
@@ -42,27 +35,25 @@ Contacto:
         </th>
     </tr>
 </thead>
-<form method="POST" id="todo">
+<form method="POST" name = "form1">
     <?php
-    foreach ($disponibles as $disponible) {
 
-             echo "
-                    <tr>
-                        <td>
-                            <input type='text' value='".$disponible["cod_mat"]."' readonly='' class='Cod'>
-                        </td>
-                        <td>
-                            <input type='button' id='".$disponible["cod_mat"]."' value='".$disponible["nombre"]."' readonly='' class='mat'>
-                        </td>
-                        <td>
-                            <input type='text' value='".$disponible["uc_cost"]."' readonly='' class='U_C'>
-                        </td>
-                    </tr>
-                    ";  
+    foreach ($disponibles as $disponible) {
+         echo "
+            <tr id = ".$disponible[COD_MAT].">
+                <td>
+                    <input  retype='text' name ='cod1' value='".$disponible[COD_MAT]."' readonly='' class='Cod'>
+                </td>
+                <td>
+                    <input type='button' onclick='mostrarSec(\"".$disponible[COD_MAT]."\")' id='asg' value='".$disponible[NAME_CRS]."' readonly='' class='mat'>
+                </td>
+                <td>    
+                    <input type='text' value='".$disponible[COST]."' readonly='' class='U_C'>
+                </td>
+            </tr>
+            ";
         }
     ?>
         
-    </form>
-</tbody>
-</table>
 </form>
+</table>

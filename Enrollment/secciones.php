@@ -6,13 +6,15 @@ Contacto:
  cfranklinmoreno@gmail.com
 -->
 <?php
-    include_once '../Config/Bd_conexion.php';
-    $datosBase= new Bd_Gestion();
-    $id=$_POST["id"];
-    $registro = $datosBase->secciones($id,"turno");
-    foreach ($registro as $registro){
-        echo "<option value =".$registro["cod_sec"].">".$registro["turno"]."</option>";
-    }   
-    $id=NULL;
+
+    require_once "../Config/course/materia.php";
+
+    $materia = new materia($_POST["codigo"]);
+    $secciones = $materia->show_sections();
+
+    foreach ($secciones as $seccione) {
+
+        echo "<option value = ".$seccione[COD_SEC]." id = \"".$seccione[COD_SEC]."\" >".$seccione[TURN]."</option>";
+
+    }
 ?>
-                                       

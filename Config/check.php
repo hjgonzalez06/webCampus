@@ -19,7 +19,7 @@
             header("Location: ../Login/login.php"); 
             
         }
-        
+
     }elseif ($url==$login){
         
         header("Location: ../Index/index.php");

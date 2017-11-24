@@ -8,7 +8,11 @@
 -->
 <?php
     require_once '../Config/Bd_Gestion.php';
+    require_once '../Config/course/materia.php';
+    require_once '../Config/section/section.php';
+
     $datosBase = new Bd_Gestion();
+
 ?>
 <html>
 	<head>
@@ -21,11 +25,7 @@
 		<link rel="stylesheet" type="text/css" href="enrollment-style.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css"/>
 	    <link rel="shortcut icon" type="image/ico" href="../Imagenes/Logo Unimar.png"/>
-            <script src="../jquery.min.js"></script>
-            <script src="ajax.js"></script>
-
-            
-            
+        <script src="../jquery.min.js"></script>
 	</head>
 
 	<body>
@@ -37,16 +37,15 @@
                     <h1>INSCRIPCIONES ON-LINE</h1>
                     <hr>
                     <div id="Cuadros">
-                        <div class="Asig" id="act">
-                            
-                                    <?php
-                                        
-                                        require_once './complement_enrollment.php';
-                                    
-                                    ?>
-                            </table>
-                            </form>
-                            
+                        <div class="Asig" id="noInscritas">
+
+                            <from name = 'formulario1' id = 'form1'>
+                            <?php
+
+                                require_once './complement_enrollment.php';
+
+                            ?>
+                            </from>
                         </div>
                             <div class="Desp_Opc">
                                 
@@ -54,23 +53,30 @@
                                 </select>
                                 
                                 
-                                <p id="bot1"><input type="submit" name="inscribir" value="Inscribir" class="boton"></p>
-                                <p id="bot2"><input type="reset" name="retirar" value="Retirar" class="boton"></p>
+                                <p id="botInscribir"><input type="submit" onclick="inscribir()"
+                                                            name="inscribir" value="Inscribir" class="boton"></p>
+                                <p id="botRetirar"><input type="reset" name="retirar" value="Retirar" class="boton"></p>
                             </div>
-			    	<div class="Ins">
-                                    <?php
-                                        require_once './materias.php';
-                                    ?>
+			    	<div class="Asig" id = "inscritas">
+                        <form name = "sec" id = "form2">
+
+                            <?php
+
+                                require_once './materias.php';
+
+                            ?>
+
+                        </form>
+
 			    	</div>
 			    </div>
 		    	<footer id="Can_Fin">
-		    		<p id="inscribir"><input type="submit" name="cancelar" value="Cancelar" class="boton"></p>
-	    			<p id="borrar"><input type="submit" name="finalizar" value="Finalizar" class="boton"></p>
+		    		<p id="cancelar"><input type="submit" onclick="" name="cancelar" value="Cancelar" class="boton"></p>
+	    			<p id="finalizar"><input type="submit" onclick="finalizar()" name="finalizar" value="Finalizar" class="boton"></p>
 		    	</footer>
 	    	</article>
 	    </main>
-
-	    <script src="../jquery.min.js"></script>
+        <script src="ajax.js"></script>
 	    <script src="../Headroom/headroom.min.js"></script>
 	    <script src="../Headroom/menu.js"></script>
 

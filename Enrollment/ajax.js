@@ -1,64 +1,103 @@
-$(document).ready(function() {
 
-    $('.mat').click(function(e){
+var codigoMateria;
+var seccionesInscribir="";
 
-        var id = e.target.id;
-        var nombre = $('#nombre').val();
 
-        $.ajax({
-            type: "POST",
-            url: "secciones.php",
-            data:'id='+id,
-            success: function(data) {
-                $('#secciones option').remove();
-                $('#secciones').append(data);
-            }
-        });
-        
-        $('#bot1').click(function(e){
-            var sec = $('#secciones').val();
+function remover(codigo) {
 
-            $.ajax({
-                type: "POST",
-                url: "materias.php",
-                data:{codigo: id, seccion: sec, nombre: nombre},
-                success: function(data) {
-                   $('.Ins').html(data);
-                }
-            });
-            return false;
-        });
-        
-        $('#bot1').click(function(){
-            $("#act").load("complement_enrollment.php");
-            $("#secciones").load("secciones.php");
-            return false;
-        });
-        return false;
+    var listaMateria = document.getElementById(codigo).parentNode;
+    var materia = document.getElementById(codigo);
+    listaMateria.removeChild(materia);
+
+
+}
+
+function reintegrar(codigo) {
+
+}
+
+function removerEsp(codigo) {
+
+
+    $("#"+codigo).each(function () {
+        $(this).closest("tr").remove();
     });
-        
-    $('.mate').click(function(e){
 
-        var id = e.target.id;
-        
-        $('#bot2').click(function(e){
-            $.ajax({
-                type: "POST",
-                url: "materias.php",
-                data:{codDel: id},
-                success: function(data) {
-                   $('.Ins').html(data);
-                   id=null;
-                }
-            });
-            return false;
-        });
-        
-        $('#bot2').click(function(){
-            $("#act").load("complement_enrollment.php");
-            $("#secciones").load("secciones.php");
-            return false;
-        });
-        return false;
+
+}
+
+function mostrarSec(materia) {
+
+    codigoMateria = materia;
+
+    var codigo = {"codigo" : materia};
+
+
+    $.ajax({
+        data: codigo,
+        url: "secciones.php",
+        type: "POST",
+
+        success: function(codigo){
+
+            $("#secciones option").remove();
+            $("#secciones").append(codigo);
+
+        }
     });
-});
+
+
+}
+
+function inscribir() {
+
+    var codigoSeccion = $("#secciones option:selected").val();
+
+
+    $("#secciones option").remove();
+    remover(codigoMateria);
+
+    seccionesInscribir +=codigoSeccion+"%";
+
+    $.ajax({
+
+        data: "id="+codigoSeccion,
+        url: "inscritas.php",
+        type: "POST",
+
+        success: function (data) {
+
+            $("#form2").append(data);
+
+        }
+
+    });
+
+}
+
+
+
+
+function finalizar() {
+
+    var materias = "materias="+seccionesInscribir;
+
+    $.ajax({
+        data: materias,
+        url: "inscritas.php",
+        type: "POST",
+
+        success: function (data) {
+
+            $("#inscritas").load("materias.php");
+
+
+        }
+    })
+
+}
+
+
+
+
+
