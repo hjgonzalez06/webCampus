@@ -72,34 +72,40 @@ $(document).ready(function () {
 
     $("#finalizar").click(function () {
 
-        if (!(seccionesInscribir.length == 0)){
+        //var res = confirm('¿Está seguro(a) de formalizar su inscripción? Una vez hecho ésto, no se podrán realizar cambios.');
 
-            var materias = "materias="+seccionesInscribir;
+        //if(res){
 
-            $.ajax({
-                data: materias,
-                url: "inscritas.php",
-                type: "POST",
+            if (!(seccionesInscribir.length == 0)){
 
-                success: function (data) {
+                var materias = "materias="+seccionesInscribir;
 
-                    $("#inscritas").load("materias.php");
+                $.ajax({
+                    data: materias,
+                    url: "inscritas.php",
+                    type: "POST",
 
-                }
-            });
+                    success: function (data) {
 
-        }else if(!(seccionesDesinsribir.length == 0)){
+                        $("#inscritas").load("materias.php");
 
-            var noMaterias = "return="+seccionesDesinsribir;
+                    }
+                });
 
-            $.ajax({
-                data: noMaterias,
-                url: "inscritas.php",
-                type: "POST"
+            }else if(!(seccionesDesinsribir.length == 0)){
 
-            });
+                var noMaterias = "return="+seccionesDesinsribir;
 
-        }
+                $.ajax({
+                    data: noMaterias,
+                    url: "inscritas.php",
+                    type: "POST"
+
+                });
+
+            }
+            
+        //}
 
         seccionesDesinsribir="";
         seccionesInscribir="";
