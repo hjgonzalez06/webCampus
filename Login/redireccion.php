@@ -17,10 +17,11 @@ require_once '../users/admin.php';
     session_start();
     
     if($student->login()==0){
-        
+
+        setcookie("user", $student->getCedula());
         $student->__destruct();
         $_SESSION["user"] = serialize($student);
-        
+
       header ("location: ../Index/index.php" );
       
     } elseif ($admin->login() ==0 ) {

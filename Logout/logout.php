@@ -13,6 +13,7 @@
     
     session_destroy();
     setcookie("login", 1, time()-1, "/");
+    setcookie("user", 1, time()-1);
     
     ob_start();
     header("refresh: 3; url = ../Login/login.php");
