@@ -62,6 +62,11 @@ class inscripcion extends conexion {
         $registroInscritas = $this->alumno->data_section();
         $skip = false;
 
+        if ($registroInscritas == null){
+
+            return $registroMaterias;
+
+        }
 
         foreach ($registroMaterias as $registroMateria) {
 

@@ -103,38 +103,46 @@
                                     <input type='text' value='NOTA' readonly='true' class='Def_Tit'>
                                 </td>
                             </tr>";
-                        foreach ($user->data_section() as $lista){
 
-                            if (empty($lista)){
-                                continue;
+                        if ($user->data_section() == null){
+
+                            echo "<script>alert(\"No hay materias inscritas\");</script> ";
+
+                        }else {
+
+                            foreach ($user->data_section() as $lista) {
+
+                                if (empty($lista)) {
+                                    continue;
+                                }
+
+                                $materia = new materia($lista[COD_MAT]);
+                                $profesor = new professor($lista[ID_PRO2], "");
+                                $fullName = $profesor->getNombre() . " " . $profesor->getApellido();
+                                echo "<tr>
+                                        <td>
+                                            <input type='text' value='" . $materia->getCodMat() . "' readonly='true' class='Cod'>
+                                        </td>
+                                        <td>
+                                            <input type='text' value='" . $materia->getName() . "' readonly='true' class='Asig'>
+                                        </td>
+                                        <td>
+                                            <input type='text' value='" . $lista[TURN] . "' readonly='true' class='Sec'>
+                                        </td>
+                                        <td>
+                                            <input type='text' value='" . $fullName . "' readonly='true' class='Prof'>
+                                        </td>
+                                        <td>
+                                            <input type='text' value='" . $materia->getUcCost() . "' readonly='true' class='Uc'>
+                                        </td>
+                                        <td>
+                                            <input type='text' value='Nah' readonly='true' class='Def'>
+                                        </td>
+                                    </tr>";
                             }
-
-                            $materia = new materia($lista[COD_MAT]);
-                            $profesor = new professor($lista[ID_PRO2],"");
-                            $fullName = $profesor->getNombre() ." ".$profesor->getApellido();
-                                        echo "<tr>
-                                <td>
-                                    <input type='text' value='".$materia->getCodMat()."' readonly='true' class='Cod'>
-                                </td>
-                                <td>
-                                    <input type='text' value='".$materia->getName()."' readonly='true' class='Asig'>
-                                </td>
-                                <td>
-                                    <input type='text' value='".$lista[TURN]."' readonly='true' class='Sec'>
-                                </td>
-                                <td>
-                                    <input type='text' value='".$fullName."' readonly='true' class='Prof'>
-                                </td>
-                                <td>
-                                    <input type='text' value='".$materia->getUcCost()."' readonly='true' class='Uc'>
-                                </td>
-                                <td>
-                                    <input type='text' value='Nah' readonly='true' class='Def'>
-                                </td>
-                            </tr>";
                         }
-                                ?>
-	    			
+                            ?>
+
 	    		</table>
 	    	</article>
 	    </main>

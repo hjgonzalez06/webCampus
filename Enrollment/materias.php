@@ -1,24 +1,17 @@
 <!DOCTYPE html>
-<!--
-Código fuente desarrollado por Franklin Moreno e Hiram González
-Contacto:
- hiramjgonzalez98@gmail.com
- cfranklinmoreno@gmail.com
--->
-
 <?php
     require_once '../Config/Bd_conexion.php';
     require_once '../Config/check.php';
     require_once "../Config/course/materia.php";
+    require_once "../users/student.php";
 
-    $user = unserialize($_SESSION["user"]);
-    $user->__connect();
+    $user = new student($_COOKIE["user"]);
 
     $secciones = $user->data_section();
 
 ?>
 
-<table>
+<table >
     <p id="Titulo">ASIGNATURAS INSCRITAS</p>
     <thead>
         <tr>
@@ -32,16 +25,23 @@ Contacto:
                 <p>SECCIÓN</p>
             </th>
         </tr>
-    </thead>
-        <tbody>
+    </thead >
+        <tbody class =  "matecritas">
             <tr>
 
             <?php
-                foreach ($secciones as $seccione) {
 
-                    $materiaTemp = new materia($seccione[COD_MAT]);
+                if ($secciones == null){
 
-                    echo "
+                    echo "<center>No hay materias inscritas</center>";
+
+                }else{
+
+                    foreach ($secciones as $seccione) {
+
+                        $materiaTemp = new materia($seccione[COD_MAT]);
+
+                        echo "
                         
                         <tr id = ".$seccione[COD_MAT].">    
                             <td>
@@ -56,7 +56,11 @@ Contacto:
                         </tr>
                     ";
 
+                    }
+
                 }
+
+
             ?>
             </tr>
         </tbody>

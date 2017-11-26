@@ -35,11 +35,11 @@ Contacto:
         </th>
     </tr>
 </thead>
-<form method="POST" name = "form1">
+    <tbody class = "matedescritas">
     <?php
 
     foreach ($disponibles as $disponible) {
-         echo "
+        echo "
             <tr id = ".$disponible[COD_MAT].">
                 <td>
                     <input  retype='text' name ='cod1' value='".$disponible[COD_MAT]."' readonly='' class='Cod'>
@@ -52,8 +52,7 @@ Contacto:
                 </td>
             </tr>
             ";
-        }
+    }
     ?>
-        
-</form>
+    </tbody>
 </table>

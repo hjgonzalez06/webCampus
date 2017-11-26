@@ -1,30 +1,114 @@
 
 var codigoMateria;
 var seccionesInscribir="";
+var seccionesDesinsribir = "";
 
 
-function remover(codigo) {
+$(document).ready(function () {
 
-    var listaMateria = document.getElementById(codigo).parentNode;
-    var materia = document.getElementById(codigo);
-    listaMateria.removeChild(materia);
+    $("#botRetirar").click(function () {
 
+        var arrayID = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31];
+        var desCodigo = $("#secciones option").val();
+        var padre = document.getElementById("form2");
 
-}
+        arrayID.forEach(function (id) {
 
-function reintegrar(codigo) {
+            if (padre[id].id == desCodigo) {
 
-}
+                seccionesDesinsribir += desCodigo+"%";
+                padre[id].closest("tr").remove();
+                desinscribir(desCodigo);
 
-function removerEsp(codigo) {
+            }
 
+        });
 
-    $("#"+codigo).each(function () {
-        $(this).closest("tr").remove();
     });
 
+    function desinscribir(codigo) {
 
-}
+        $.ajax({
+
+            data: "noins="+codigo,
+            url: "inscritas.php",
+            type: "POST",
+
+            success: function(data) {
+
+                $(".matedescritas").append(data);
+
+            }
+
+        });
+
+    }
+
+    $("#botInscribir").click(function () {
+
+        var codigoSeccion = $("#secciones option:selected").val();
+
+
+        $("#secciones option").remove();
+        remover(codigoMateria);
+
+        seccionesInscribir +=codigoSeccion+"%";
+
+        $.ajax({
+
+            data: "id="+codigoSeccion,
+            url: "inscritas.php",
+            type: "POST",
+
+            success: function (data) {
+
+                $(".matecritas").append(data);
+
+            }
+
+        });
+
+    });
+
+    $("#finalizar").click(function () {
+
+        if (!(seccionesInscribir.length == 0)){
+
+            var materias = "materias="+seccionesInscribir;
+
+            $.ajax({
+                data: materias,
+                url: "inscritas.php",
+                type: "POST",
+
+                success: function (data) {
+
+                    $("#inscritas").load("materias.php");
+
+                }
+            });
+
+        }else if(!(seccionesDesinsribir.length == 0)){
+
+            var noMaterias = "return="+seccionesDesinsribir;
+
+            $.ajax({
+                data: noMaterias,
+                url: "inscritas.php",
+                type: "POST"
+
+            });
+
+        }
+
+        seccionesDesinsribir="";
+        seccionesInscribir="";
+
+    })
+
+
+
+});
 
 function mostrarSec(materia) {
 
@@ -44,56 +128,16 @@ function mostrarSec(materia) {
             $("#secciones").append(codigo);
 
         }
-    });
-
-
-}
-
-function inscribir() {
-
-    var codigoSeccion = $("#secciones option:selected").val();
-
-
-    $("#secciones option").remove();
-    remover(codigoMateria);
-
-    seccionesInscribir +=codigoSeccion+"%";
-
-    $.ajax({
-
-        data: "id="+codigoSeccion,
-        url: "inscritas.php",
-        type: "POST",
-
-        success: function (data) {
-
-            $("#form2").append(data);
-
-        }
 
     });
 
 }
 
+function remover(codigo) {
 
-
-
-function finalizar() {
-
-    var materias = "materias="+seccionesInscribir;
-
-    $.ajax({
-        data: materias,
-        url: "inscritas.php",
-        type: "POST",
-
-        success: function (data) {
-
-            $("#inscritas").load("materias.php");
-
-
-        }
-    })
+    var listaMateria = document.getElementById(codigo).parentNode;
+    var materia = document.getElementById(codigo);
+    listaMateria.removeChild(materia);
 
 }
 

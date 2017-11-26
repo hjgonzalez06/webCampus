@@ -71,8 +71,8 @@
 			    	</div>
 			    </div>
 		    	<footer id="Can_Fin">
-		    		<p id="cancelar"><input type="submit" onclick="" name="cancelar" value="Cancelar" class="boton"></p>
-	    			<p id="finalizar"><input type="submit" onclick="finalizar()" name="finalizar" value="Finalizar" class="boton"></p>
+		    		<p id="cancelar"><input type="submit" name="cancelar" value="Cancelar" class="boton"></p>
+	    			<p id="finalizar"><input type="submit"  name="finalizar" value="Finalizar" class="boton"></p>
 		    	</footer>
 	    	</article>
 	    </main>

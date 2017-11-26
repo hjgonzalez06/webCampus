@@ -460,6 +460,7 @@ abstract class User extends cuenta {
     public function courses_alumn_search(){
 
         $lista = $this->only_codes();
+        $inscritas = null;
 
         foreach ($lista as $codigo){
 
@@ -490,6 +491,10 @@ abstract class User extends cuenta {
 
         $secciones = course::show_all_sections();
 
+        if ($secciones==null){
+            return null;
+        }
+
         foreach ($secciones as $seccion){
 
             $listaSecciones[] = $seccion["cod_sec"];
@@ -508,6 +513,10 @@ abstract class User extends cuenta {
     public function data_section(){
 
         $secciones = $this->courses_alumn_search();
+
+        if ($secciones == null ){
+            return null;
+        }
 
         foreach ($secciones as $seccion){
 
