@@ -28,11 +28,6 @@
 
 	<body>
 
-		<div id="particles-js">
-	        <script src="../Efecto-Particulas-Fondo/particles.js"></script>
-            <script src="../Efecto-Particulas-Fondo/particulas.js"></script>
-	    </div>
-
 	    <header id="Header">
 		    <nav class="Menu">
 		        <div class="Logo">

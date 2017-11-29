@@ -44,11 +44,6 @@ Contacto:
     </head>
     <body>
 
-        <div id="particles-js">
-            <script src="../../Efecto-Particulas-Fondo/particles.js"></script>
-            <script src="../../Efecto-Particulas-Fondo/particulas.js"></script>
-        </div>
-
         <?php include_once '../Banner_Admin/banner-admin.php';?>
 
         <main>
