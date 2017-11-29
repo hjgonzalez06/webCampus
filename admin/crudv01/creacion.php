@@ -7,9 +7,7 @@ Contacto:
 -->
 <?php
     require_once '../../Config/Bd_conexion.php';
-    
-    $conexion = new Bd_Gestion();
-    $informacion;
+
 ?>
 <html>
     <head>

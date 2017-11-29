@@ -10,7 +10,7 @@ Contacto cfranklinmoreno@gmail.com
     
     ob_start();
         header("refresh: 3; url = crudv01/accion.php");
-    ob_end_flush(); 
+    ob_end_flush();
 ?>
 
 <html>

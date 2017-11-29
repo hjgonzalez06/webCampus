@@ -27,10 +27,10 @@ require_once '../users/admin.php';
     } elseif ($admin->login() ==0 ) {
 
         $admin->__destruct();
-        $_SESSION["user"]= serialize($admin);
+        $_SESSION["admin"]= serialize($admin);
         
         header("location: ../admin/area_admin.php");
-        
+
     }else{
     
         $_SESSION["error"] = 1;
