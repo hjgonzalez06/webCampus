@@ -10,9 +10,11 @@ Contacto:
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="description" content="Página oficial del WebCampus de la Universidad de Margarita: Alma Mater del Caribe."/>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
         <title>Panel de Control - WebCampus UNIMAR</title>
         <link rel="stylesheet" type="text/css" href="accion-style.css">
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../../banner/banner.css">
         <link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css"/>
         <link rel="shortcut icon" type="image/ico" href="../../Imagenes/Logo Unimar.png"/>
