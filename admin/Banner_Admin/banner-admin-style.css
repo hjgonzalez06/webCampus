@@ -45,13 +45,13 @@
 
 .Ident_Fecha p{
 	margin-right: 245px;
-	font: bold 1em 'Nunito Sans', sans-serif;
+	font: bold 1em 'Play', sans-serif;
 	color: #696969;
 }
 
 .Ident_Fecha span{
 	margin-left: 245px;
-	font: bold 1em 'Nunito Sans', sans-serif;
+	font: bold 1em 'Play', sans-serif;
 	color: #696969;
 }
 
@@ -147,14 +147,14 @@
 	.Ident_Fecha p{
 		margin-right: 0px;
 		text-align: center;
-		font: bold .75em 'Nunito Sans', sans-serif;
+		font: bold .75em 'Play', sans-serif;
 		color: #696969;
 	}
 
 	.Ident_Fecha span{
 		margin-left: 0px;
 		text-align: center;
-		font: bold .75em 'Nunito Sans', sans-serif;
+		font: bold .75em 'Play', sans-serif;
 		color: #696969;
 	}  
 }

@@ -28,7 +28,7 @@ q:before, q:after { content:''; }
 
 body{
 	background-color: #7ac5cd;
-	font-family: 'Nunito Sans', sans-serif;
+	font-family: 'Play', sans-serif;
 	font-size: 16px;
 	padding-top: 55px;
 }
@@ -118,7 +118,7 @@ footer{
 }
 
 footer p{
-	font: 1em Georgia, "Times New Roman", Times, serif;
+	font: 1em 'Play', serif;
 	color: #303030;
 	text-shadow: #696969 3px 3px 3px;
 }
@@ -173,7 +173,7 @@ footer p{
 	}
 
 	footer p{
-		font: .78em Georgia, "Times New Roman", Times, serif;
+		font: .78em 'Play', serif;
 		color: #303030;
 		text-shadow: #696969 3px 3px 3px;
 	}
