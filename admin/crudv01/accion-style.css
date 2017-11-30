@@ -27,22 +27,14 @@ q:before, q:after { content:''; }
 /* INICIO CÓDIGO CSS PARA APARIENCIA DE PÁGINA WEB */
 
 body{
-	background-color: #7ac5cd;
+	background-color: #FFFFFF;
 	font-family: 'Play', sans-serif;
 	font-size: 16px;
 	padding-top: 55px;
 }
 
-#particles-js{
-	margin-top: -20px;
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	z-index: -1;
-}
-
 header{
-	background-color: #00b2ee;
+	background-color: rgb(51,153,255);
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -66,48 +58,52 @@ header{
 
 main{
 	width: 90%;
+	height: 75vh;
 	max-width: 1000px;
-	height: 520px;
-	margin-top: 35px;
+	margin-top: 39px;
 	margin-bottom: 20px;
 	margin-right: auto;
 	margin-left: auto;
-	background-color: rgba(0,30,255,.5);
+	background-color: rgba(242,242,242,.9);
 	padding: 20px;
 	box-shadow: #696969 10px 10px 15px;
+	font-style: 'Play', sans-serif;
 }
 
 main h1{
 	font: 40px bold;
-	background-color: rgba(238,59,59,.7);
-	width: 75%;
+	font-family: 'Play', sans-serif;
+	color: #FFFFFF;
+	background-color: rgb(51,153,255) ;
+	width: 60%;
 	padding: 5px;
 	text-align: center;
 	border-radius: 10px;
-	border: 3px solid rgb(0,30,255);
+	border: 3px solid rgba(0,30,255,.75);
 	margin-left: auto;
 	margin-right: auto;
 	box-shadow: #696969 5px 5px 10px;
 }
 
 #envoltura{
-    margin: 175px auto;
-    width: 500px;
-    background-color: rgba(240,248,255,.5);
-    border: 3px solid rgb(0,30,255);
+    margin: 180px auto;
+    width: 50%;
+    background-color: rgba(242,242,242,.9);
+    border: 3px solid rgba(0,30,255,.75);
     border-radius: 10px;
     box-shadow: #696969 5px 5px 10px;
-    align-items: center;
-    padding: 10px;
 }
 
 #envoltura #Titulo{
 	width: 95%;
 	text-align: center;
 	font: 25px bold;
-	background-color: #ee3b3b;
+	font-family: 'Play', sans-serif;
+	color: #FFFFFF;
+	background-color: rgb(51,153,255);
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 10px;
 	border-radius: 5px;
 	border: 3px solid rgb(0,30,255);
 }
@@ -119,6 +115,7 @@ main h1{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-top: -10px;
 }
 
 a{
@@ -133,6 +130,7 @@ a{
     color: #303030;
     width: 120px;
     border-radius: 5px;
+    font-family: 'Play', sans-serif;
 }
 
 .boton:active{
@@ -151,11 +149,12 @@ footer{
 	position: relative;
 	bottom: 0;
 	width: 100%;
+	background-color: #333;
 }
 
 footer p{
 	font: 1em 'Play', serif;
-	color: #303030;
+	color: #F6F6F6;
 	text-shadow: #696969 3px 3px 3px;
 }
 
@@ -180,7 +179,7 @@ footer p{
 
 /* FIN CÓDIGO EFECTOS DEL MENÚ */
 
-/* COMIENZO CÓDIGO MEDIAQUERIES
+/* COMIENZO CÓDIGO MEDIAQUERIES */
 
 @media screen and (max-width: 900px){
 	.Menu{
@@ -199,19 +198,20 @@ footer p{
 		width: 90%;
 		max-width: 1000px;
 		height: 540px;
-		margin-top: 70px;
+		margin-top: 75px;
 		margin-bottom: 20px;
 		margin-right: auto;
 		margin-left: auto;
-		background-color: rgba(0,30,255,.5);
+		background-color: rgba(242,242,242,.9);
 		padding: 20px;
 		box-shadow: #696969 10px 10px 15px;
 	}
 
 	main h1{
 		font: 25px bold;
-		background-color: rgba(238,59,59,.7);
+		background-color: rgb(51,153,255) ;
 		width: 90%;
+		color: #FFFFFF;
 		padding: 5px;
 		text-align: center;
 		border-radius: 10px;
@@ -224,7 +224,7 @@ footer p{
 	#envoltura{
 	    margin: 170px auto;
 	    width: 80%;
-	    background-color: rgba(240,248,255,.5);
+	    background-color: rgba(242,242,242,.9);
 	    border: 3px solid rgb(0,30,255);
 	    border-radius: 10px;
 	    box-shadow: #696969 5px 5px 10px;
@@ -236,7 +236,8 @@ footer p{
 		width: 95%;
 		text-align: center;
 		font: 20px bold;
-		background-color: #ee3b3b;
+		color: #FFFFFF;
+		background-color: rgb(51,153,255) ;
 		margin-left: auto;
 		margin-right: auto;
 		border-radius: 5px;
@@ -254,10 +255,10 @@ footer p{
 
 	footer p{
 		font: .78em 'Play', serif;
-		color: #303030;
+		color: #F6F6F6;
 		text-shadow: #696969 3px 3px 3px;
 	}
 
 }
 
- FIN CÓDIGO MEDIAQUERIES */
+/* FIN CÓDIGO MEDIAQUERIES */
