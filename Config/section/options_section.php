@@ -101,7 +101,4 @@ class options_section extends conexion{
 
     }
 
-
-
-
 }

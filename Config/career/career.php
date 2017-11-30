@@ -21,5 +21,22 @@ class career extends options_career {
 
     }
 
+    /**
+     * show_all: retorna toda la información de las carreras registradas en la base de datos.
+     *
+     * @return array
+     */
+
+    public static function show_all(){
+
+        $sql = "SELECT * FROM ". TABLE_CAREER;
+
+        $resultado = (new conexion())->__conexion()->prepare($sql);
+        $resultado->execute();
+
+        return $resultado->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
 
 }

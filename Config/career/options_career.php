@@ -6,8 +6,7 @@
  *          -hiramjgonzalez98@gmai.com
  */
 
-require_once "../Config/Bd_conexion.php";
-
+require_once '../../Config/Bd_conexion.php';
 /**
  * Clase abstracta, con todas las opciones para la gestion de los datos
  * de TABLE_CAREER
@@ -39,11 +38,14 @@ abstract class options_career extends conexion {
 
     public function getName() {
 
+        $sql = "SELECT ".NAME_CA." FROM ".TABLE_CAREER." WHERE ".COD_CA." = :codigo";
+        $resultado = $this->conexionBase->prepare($sql);
+        $resultado->execute(array(":codigo"=>$this->codigoCarrera));
 
+        return $resultado->fetch()[NAME_CA];
 
 
     }
-
 
     public function getUCTol(){
 
@@ -58,7 +60,7 @@ abstract class options_career extends conexion {
 
     public function getNroTriCa(){
 
-        $sql = "SELECT ".NRO_STU_TRI." FROM ".TABLE_CAREER." WHERE ".COD_CA." = :codigo";
+        $sql = "SELECT ".NRO_TRI_CA." FROM ".TABLE_CAREER." WHERE ".COD_CA." = :codigo";
 
         $resultado = $this->conexionBase->prepare($sql);
         $resultado->execute(array(":codigo"=>$this->codigoCarrera));
@@ -69,7 +71,7 @@ abstract class options_career extends conexion {
 
     public function getNroEst(){
 
-        $sql = "SELECT ".NAME_CA." FROM ".TABLE_CAREER." WHERE ".COD_CA." = :codigo";
+        $sql = "SELECT ".NRO_STU." FROM ".TABLE_CAREER." WHERE ".COD_CA." = :codigo";
 
         $resultado = $this->conexionBase->prepare($sql);
         $resultado->execute(array(":codigo"=>$this->codigoCarrera));
@@ -84,11 +86,37 @@ abstract class options_career extends conexion {
 
     public function setName($nombreCarrera){
 
-
         $sql = "UPDATE ".TABLE_CAREER." SET ".NAME_CA." = :parametro1 WHERE ".COD_CA." = :parametro2";
 
         $resultado = $this->conexionBase->prepare($sql);
         $resultado->execute(array(":parametro1"=>$nombreCarrera, ":parametro2"=>$this->codigoCarrera));
+
+    }
+
+    public function setUCTol($unidadesTotales) {
+
+        $sql = "UPDATE ".TABLE_CAREER." SET ".UNIT_ALL." = :parametro1 WHERE ".COD_CA." = :parametro2";
+
+        $resultado = $this->conexionBase->prepare($sql);
+        $resultado->execute(array(":parametro1"=>$unidadesTotales, ":parametro2"=>$this->codigoCarrera));
+
+    }
+
+    public function setNroTriCa($nroTriCa) {
+
+        $sql = "UPDATE ".TABLE_CAREER." SET ".NRO_TRI_CA." = :parametro1 WHERE ".COD_CA." = :parametro2";
+
+        $resultado = $this->conexionBase->prepare($sql);
+        $resultado->execute(array(":parametro1"=>$nroTriCa, ":parametro2"=>$this->codigoCarrera));
+
+    }
+
+    public function setNroEst($nroEst) {
+
+        $sql = "UPDATE ".TABLE_CAREER." SET ".NRO_STU." = :parametro1 WHERE ".COD_CA." = :parametro2";
+
+        $resultado = $this->conexionBase->prepare($sql);
+        $resultado->execute(array(":parametro1"=>$nroEst, ":parametro2"=>$this->codigoCarrera));
 
     }
 

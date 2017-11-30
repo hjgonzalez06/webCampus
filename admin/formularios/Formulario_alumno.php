@@ -2,6 +2,10 @@
 
 <?php
     require_once '../../Config/Bd_conexion.php';
+    require_once '../../Config/configUsers.php';
+    require_once "../../Config/career/career.php";
+
+    $carreras = career::show_all();
 ?>
 
 <html>
@@ -47,11 +51,13 @@
                                         <option value="0" >Carreras...</option>
                                         
                                         <?php
-                                            $registro = $datosBase->data("all","carreras");
-                                            foreach ($registro as $registro){
-                                                echo '<option value ="'.$registro["cod_ca"].'">'.$registro["cod_ca"]
-                                                        .'--'.$registro["nombre"] .'</option>';
+
+                                            foreach ($carreras as $carrera) {
+
+                                            echo '<option value ="'.$carrera[COD_CA].'">'.$carrera[COD_CA]
+                                                .'--'.$carrera[NAME_CA] .'</option>';
                                             }
+
                                         ?>
                         
                                     </select></td></tr>

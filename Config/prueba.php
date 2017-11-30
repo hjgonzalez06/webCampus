@@ -10,4 +10,4 @@ include_once './career/career.php';
 
 $carrera = new career("ING0809101");
 
-echo $carrera->get
+echo $carrera->getName();
