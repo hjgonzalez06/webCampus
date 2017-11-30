@@ -6,4 +6,12 @@
  * and open the template in the editor.
  */
 
-header ("location: Login/login.php" );
+
+session_start();
+
+if (!isset($_SESSION["admin"])){
+
+    header ("location: Login/login.php" );
+
+}
+header ("location: admin/area_admin.php" );

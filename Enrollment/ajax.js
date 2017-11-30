@@ -72,9 +72,9 @@ $(document).ready(function () {
 
     $("#finalizar").click(function () {
 
-        //var res = confirm('¿Está seguro(a) de formalizar su inscripción? Una vez hecho ésto, no se podrán realizar cambios.');
+        var res = confirm('¿Está seguro(a) de formalizar su inscripción? Una vez hecho ésto, no se podrán realizar cambios.');
 
-        //if(res){
+        if(res){
 
             if (!(seccionesInscribir.length == 0)){
 
@@ -105,10 +105,11 @@ $(document).ready(function () {
 
             }
             
-        //}
+        }
 
         seccionesDesinsribir="";
         seccionesInscribir="";
+        window.location.href = "../Current/current-period.php";
 
     })
 
