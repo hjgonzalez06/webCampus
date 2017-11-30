@@ -19,6 +19,12 @@ class inscripcion extends conexion {
     }
 
 
+    /**
+     * Inscripciones: requerido arreglo de secciones a inscribir para el correcto funcionamiento.
+     *
+     * @param $secciones
+     */
+
     public function inscripcion($secciones){
 
         $sql = "START TRANSACTION; ";
@@ -38,6 +44,12 @@ class inscripcion extends conexion {
 
     }
 
+    /**
+     * Desinscripciones: requerido arreglo de secciones a inscribir para el correcto funcionamiento.
+     *
+     * @param $secciones
+     */
+
     public function desinscribir($secciones){
 
         $sql = "START TRANSACTION; ";
@@ -55,6 +67,13 @@ class inscripcion extends conexion {
 
 
     }
+
+    /**
+     *
+     * Disponibles: retorna registros de materias disponibles.
+     *
+     * @return array
+     */
 
     public function disponibles(){
 

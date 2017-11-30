@@ -6,20 +6,8 @@ include_once './course/materia.php';
 include_once '../users/professor.php';
 include_once '../Config/section/section.php';
 include_once '../Enrollment/inscripcion.php';
+include_once './career/career.php';
 
+$carrera = new career("ING0809101");
 
-$secciones = array("P301", "MATV01", "LABF01");
-$alumno = new student("26501690", "malta1");
-
-$_POST["codigo"] = "EDD0504380";
-
-$codigoMa = $_POST["codigo"];
-
-$materia = new materia($_POST["codigo"]);
-
-
-$secciones = $materia->show_sections();
-
-foreach ($secciones as $seccione) {
-    echo $seccione[COD_SEC];
-}
+echo $carrera->get
