@@ -6,7 +6,7 @@
  */
 
 require_once 'config.php';
-    
+
 class conexion {
     
     protected $conexionBase;

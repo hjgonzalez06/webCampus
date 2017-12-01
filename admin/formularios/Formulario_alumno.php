@@ -4,8 +4,11 @@
     require_once '../../Config/Bd_conexion.php';
     require_once '../../Config/configUsers.php';
     require_once "../../Config/career/career.php";
+    require_once "../../Config/trimester/trimester.php";
+
 
     $carreras = career::show_all();
+    $trimestres = trimester::show_all();
 ?>
 
 <html>
@@ -66,17 +69,20 @@
                             <td class="izq">
                                 TRIMESTRE: </td><td class="der">
                                 <select name="trimestre">
-                                        <option value="0" >Trimestres...</option>
-                                        
-                                       <?php
-                                            $registro = $datosBase->data("cod_tri","trimestres");
-                                            foreach ($registro as $registro){
-                                                echo '<option value ="'.$registro["cod_tri"].'">'.$registro["cod_tri"]
-                                                        .' TRIMESTE Nº: '.$registro["n_tri"] .'</option>';
-                                            }
-                                        ?>
-                        
-                                    </select></td></tr>
+                                    <option value="0" >Trimestres...</option>
+
+                                   <?php
+
+                                   foreach ($trimestres as $trimestre) {
+
+                                       echo '<option value ="'.$trimestre[COD_TRI].'">'.$trimestre[COD_TRI]
+                                           .' TRIMESTE Nº: '.$trimestre[NRO_TRI] .'</option>';
+
+                                    }
+
+                                    ?>
+
+                                </select></td></tr>
                         <tr>
                             <td class="izq">
                                 NOMBRE: </td><td class="der"><input type="text" name="nombre" placeholder="nombre" class="Input"></td></tr>

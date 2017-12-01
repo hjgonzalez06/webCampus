@@ -1,18 +1,18 @@
 <?php
 
-/* p
+/*
  * Código fuente desarrollado por Franklin Moreno e Hiram González
  * Contacto -cfranklinmoreno@gmail.com
  *          -hiramjgonzalez98@gmai.com
  */
 
-require_once '../../Config/Bd_conexion.php';
 /**
  * Clase abstracta, con todas las opciones para la gestion de los datos
  * de TABLE_CAREER
  * <br>
  * @author nookamb
  */
+
 
 abstract class options_career extends conexion {
 
@@ -119,9 +119,5 @@ abstract class options_career extends conexion {
         $resultado->execute(array(":parametro1"=>$nroEst, ":parametro2"=>$this->codigoCarrera));
 
     }
-
-
-
-
 
 }

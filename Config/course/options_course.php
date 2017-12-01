@@ -15,7 +15,6 @@
  */
 
 require_once 'course.php';
-require_once '../Config/configUsers.php';
 
 abstract class options_course extends course {
     

@@ -1,4 +1,4 @@
-<?php   
+<?php
 
 require_once 'Bd_conexion.php';
 require_once 'configUsers.php';

@@ -32,6 +32,14 @@ abstract class admin_option extends cuenta {
 
     }
 
+    public function new_student($datos) {
+
+
+
+
+
+    }
+
 
     /**
      * EN PROCESO

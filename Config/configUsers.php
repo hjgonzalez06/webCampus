@@ -22,7 +22,7 @@ define("TABLE_CAREER", "carreras");
     define("COD_CA", "cod_ca");
     define("UNIT_ALL", "uc_tol");
     define("NRO_TRI_CA", "nro_tri_ca");
-    define("NRO_STU", "nro_est");
+    define("NRO_STU", "n_est");
     define("NAME_CA", "nombre");
     
 //data of course´s table    
