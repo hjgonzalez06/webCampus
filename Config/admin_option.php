@@ -35,6 +35,12 @@ abstract class admin_option extends cuenta {
 
     }
 
+
+    /**
+     * New_student: transaccion PDO para inserción de alumnos en la base de datos.
+     *
+     * @param $datos
+     */
     public function new_student($datos) {
 
         try{
@@ -71,6 +77,11 @@ abstract class admin_option extends cuenta {
 
     }
 
+    /**
+     * New_section: transaccion PDO para inserción de secciones en la base de datos.
+     *
+     * @param $datos
+     */
     public function new_section($datos) {
 
         try{
@@ -78,15 +89,13 @@ abstract class admin_option extends cuenta {
             $this->conexionBase->beginTransaction();
 
             $section = new section($datos["seccion"]);
-            $section->setCodMat($datos["materias"]);
-            $section->setCedulaPro($datos["profesor"]);
+            $section->create($datos["materias"],$datos["profesor"]);
+
             $section->setHora1($datos["horario1"]);
             $section->setHora2($datos["horario2"]);
             $section->setDia($datos["dia1"]);
             $section->setDia2($datos["dia2"]);
             $section->setTurn($datos["turno"]);
-
-            echo "aqii";
 
             $this->conexionBase->commit();
 
@@ -103,7 +112,12 @@ abstract class admin_option extends cuenta {
 
     }
 
-    public function new_profesor($datos) {
+    /**
+     * New_professor: transaccion PDO para inserción de profesores en la base de datos.
+     *
+     * @param $datos
+     */
+    public function new_professor($datos) {
 
         try{
 
@@ -111,6 +125,8 @@ abstract class admin_option extends cuenta {
             $this->conexionBase->beginTransaction();
 
             $profesor = new professor($datos["cedula"],"");
+            $profesor->create();
+
             $profesor->setNombre($datos["nombre"]);
             $profesor->setApellido($datos["apellido"]);
 

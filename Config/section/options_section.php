@@ -8,7 +8,7 @@
 
 class options_section extends conexion{
 
-    private $idSeccion;
+    protected $idSeccion;
 
     public function __construct($idSeccion){
 
@@ -17,11 +17,6 @@ class options_section extends conexion{
 
     }
 
-    public function create() {
-
-        //Codigo
-
-    }
 
     /*
      * Inicio de los metodos GET.
