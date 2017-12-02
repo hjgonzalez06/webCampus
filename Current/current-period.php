@@ -12,13 +12,6 @@
     require_once '../Config/course/materia.php';
     require_once "../users/professor.php";
 
-//    $secciones = $conexion->secciones("", "");
-//    foreach ($secciones as $listaSeccion) {
-//
-//        $registro[]=$listaSeccion["cod_sec"];
-//    }
-//    $resultado = $conexion->buscar($registro, "26501690");
-    
 ?>
 
 <html>

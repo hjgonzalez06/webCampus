@@ -276,6 +276,15 @@ abstract class User extends cuenta {
         $resultado->execute();
     }
 
+    public function setStuTri($stuTri) {
+
+        $sql = "UPDATE ".TABLE_STUDENT." SET ".STU_TRI." = '".$stuTri.
+            "' WHERE ".ID_AC3." = '".$this->idCuenta."'";
+        $resultado = $this->conexionBase->prepare($sql);
+        $resultado->execute();
+
+    }
+
     public function setCodigoCa($codigoCa) {
         
         $sql = "UPDATE ".TABLE_STUDENT." SET ".CAREER." = '".$codigoCa.

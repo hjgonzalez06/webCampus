@@ -4,7 +4,14 @@ Código fuente desarrollado por Franklin Moreno e Hiram González
 Contacto cfranklinmoreno@gmail.com
 -->
 <?php
-    require_once '../Config/chechadmin.php';
+    require_once "../Config/chechadmin.php";
+    require_once "../users/admin.php";
+
+    $admin = unserialize($_SESSION["admin"]);
+    $admin->__connect();
+
+
+
 ?>
 <html>
     <head>
@@ -30,31 +37,29 @@ Contacto cfranklinmoreno@gmail.com
                         <span class="Span2">
                                 <img src="../Imagenes/Encabezado3.png" id="Encabezado3">
                         </span>
-                    </div>  
-                </div>                  
+                    </div>
+                </div>
             </nav>
         </header>
 
         <main>
             <div id="envoltura">
                 <div id="cuerpo">
-                    <?php 
-                
+                    <?php
+
                         require_once '../Config/Bd_Gestion.php';
-                        
+
                         $webCampus = new Bd_Gestion();
-                        
+
                         if (isset($_POST["newCarrera"])) {
 
                             $webCampus ->agregar_carrera($_POST["codigo"],$_POST["unidades"],
                                 $_POST["numero"],$_POST["nombre"]);
                             echo '<p id="Despedida">Carrera añadida exitosamente.</p>';
-                            
+
                         }else if (isset ($_POST["newProfesor"])) {
 
-                            $webCampus->agregar_profesor($_POST["codigo"], $_POST["cedula"],
-                                    $_POST["nombre"], $_POST["apellido"]);
-                            echo '<p id="Despedida">Profesor añadido exitosamente.</p>';
+                           $admin->new_professor($_POST);
 
                         }else if(isset ($_POST["newMateria"])){
 
@@ -62,33 +67,27 @@ Contacto cfranklinmoreno@gmail.com
                                     $_POST["nombre"], $_POST["prelacion"], $_POST["uc"],
                                     $_POST["trimestre"], $_POST["cost"]);
                             echo '<p id="Despedida">Materia añadida exitosamente.</p>';
-                            
+
                         }else if (isset ($_POST["newSeccion"])) {
-                            
-                            $webCampus->agregar_seccion($_POST["seccion"],$_POST["materias"],
-                                    $_POST["profesor"], $_POST["horario1"], $_POST["horario2"],
-                                    $_POST["dia1"], $_POST["dia2"], $_POST["turno"]);
-                            echo '<p id="Despedida">Sección creada exitosamente.</p>';
-                            
+
+                            $admin->new_section($_POST);
+
                         }else if (isset ($_POST["newTrimestre"])) {
-                            
+
                             $webCampus->agregar_trimestre($_POST["trimestre"],
                                     $_POST["carrera"], $_POST["numero"], $_POST["uc"]);
                             echo '<p id="Despedida">Trimestre agregado exitosamente.</p>';
-                            
+
                         }else if (isset ($_POST["newAlumno"])) {
-                            $webCampus->agregar_alumno($_POST["cedula"], $_POST["nacionalidad"], 
-                                    $_POST["carrera"], $_POST["trimestre"], $_POST["nombre"],
-                                    $_POST["nombre2"], $_POST["apellido"], $_POST["apellido2"],
-                                    $_POST["correo"], $_POST["movil"], $_POST["casa"],
-                                    $_POST["direccion"]);
-                            echo '<p id="Despedida">Alumno agregado exitosamente.</p>';
+
+                            $admin->new_student($_POST);
+
                         }
 
                          ob_start();
                             header("refresh: 3; url = crudv01/accion.php");
-              
-                        ob_end_flush(); 
+
+                        ob_end_flush();
                     ?>
                 </div>
             </div>
