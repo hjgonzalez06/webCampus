@@ -2,6 +2,10 @@
 
 <?php
     require_once '../../Config/Bd_conexion.php';
+    require_once $_SERVER["DOCUMENT_ROOT"]."/webCampus/Config/career/career.php";
+
+    $carreras = career::show_all();
+
 ?>
 
 <html>
@@ -29,16 +33,13 @@
                             <td class="izq">
                                 CODIGO CARRERA</td><td class="der">
                                 <select name="carrera">
-                                        <option value="0" >Carreras...</option>
-                                        
-                                        <?php
-                                            $registro = $datosBase->data("all","carreras");
-                                            foreach ($registro as $registro){
-                                                echo '<option value ="'.$registro["cod_ca"].'">'.$registro["cod_ca"]
-                                                        .'--'.$registro["nombre"] .'</option>'; 
-                                            }
-                                        ?>
-                        
+                                    <option value="0" >Carreras...</option>
+                                    <?php
+                                        foreach ($carreras as $carrera){
+                                            echo '<option value ="'.$carrera[COD_CA].'">'.$carrera[COD_CA]
+                                                .'--'.$carrera[NAME_CA] .'</option>';
+                                        }
+                                    ?>
                                 </select></td></tr>
                         <tr>
                             <td class="izq">

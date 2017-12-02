@@ -17,7 +17,7 @@
 require_once 'course.php';
 
 abstract class options_course extends course {
-    
+
     public function __construct($codigoMat) {
 
         parent::__construct($codigoMat);
@@ -126,7 +126,7 @@ abstract class options_course extends course {
 
     public function setUcPre($ucPre){
 
-        $sql = "UPDATE ".TABLE_COURSE." SET ".PRE_COD." = :parametro1 WHERE ".COD_MAT." = :parametro2";
+        $sql = "UPDATE ".TABLE_COURSE." SET ".PRE_UNIT." = :parametro1 WHERE ".COD_MAT." = :parametro2";
 
         $resultado = $this->conexionBase->prepare($sql);
         $resultado->execute(array(":parametro1"=>$ucPre, ":parametro2"=>$this->codigoMat));

@@ -6,6 +6,9 @@ require_once 'course/materia.php';
 require_once $_SERVER['DOCUMENT_ROOT']."/webCampus/users/student.php";
 require_once $_SERVER['DOCUMENT_ROOT']."/webCampus/users/professor.php";
 require_once $_SERVER['DOCUMENT_ROOT']."/webCampus/Config/section/section.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/webCampus/Config/course/course.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/webCampus/Config/trimester/trimester.php";
+
 /**
  * Description of admin_option
  *
@@ -144,6 +147,74 @@ abstract class admin_option extends cuenta {
 
     }
 
+
+    /**
+     * New_course: transaccion PDO para la inserción de materias en la base de datos.
+     *
+     * @param $datos
+     */
+    public function new_course($datos) {
+
+        try{
+
+            $this->conexionBase->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->conexionBase->beginTransaction();
+
+            $materia = new materia($datos["materia"]);
+            $materia->create($datos["carrera"]);
+
+            $materia->setName($datos["nombre"]);
+            $materia->setPreCod($datos["prelacion"]);
+            $materia->setUcPre($datos["uc"]);
+            $materia->setUcCost($datos["cost"]);
+            $materia->setNroTri($datos["trimestre"]);
+
+            $this->conexionBase->commit();
+
+            echo '<p id="Despedida">Materia añadida exitosamente.</p>';
+
+        }catch (Exception $e) {
+
+            $this->conexionBase->rollBack();
+
+            echo '<p id="Despedida">ERROR: '.$e->getMessage().'.</p>';
+
+        }
+
+
+    }
+
+    /**
+     * New_trimester: transaccion PDO para la inserción de trimestres en la base de datos.
+     *
+     * @param $datos
+     */
+    public function new_trimester($datos) {
+
+        try{
+
+            $this->conexionBase->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->conexionBase->beginTransaction();
+
+            $trimestre = new trimester($datos["trimestre"]);
+            $trimestre->create($datos["carrera"]);
+
+            $trimestre->setNroTri($datos["numero"]);
+            $trimestre->setUCNec($datos["uc"]);
+
+            $this->conexionBase->commit();
+
+            echo '<p id="Despedida">Trimestre agregado exitosamente.</p>';
+
+        }catch (Exception $e) {
+
+            $this->conexionBase->rollBack();
+
+            echo '<p id="Despedida">ERROR: '.$e->getMessage().'.</p>';
+
+        }
+
+    }
 
     /**
      * EN PROCESO

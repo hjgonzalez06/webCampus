@@ -21,12 +21,16 @@ class career extends options_career {
 
     }
 
+    public function create($codMat) {
+
+        //CODIGO
+    }
+
     /**
      * show_all: retorna toda la información de las carreras registradas en la base de datos.
      *
      * @return array
      */
-
     public static function show_all(){
 
         $sql = "SELECT * FROM ". TABLE_CAREER;

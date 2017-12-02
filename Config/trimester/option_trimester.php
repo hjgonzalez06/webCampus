@@ -2,7 +2,7 @@
 
 abstract class option_trimester extends conexion {
 
-    private $codTrimestre;
+    protected $codTrimestre;
 
     public function __construct($codTrimestre) {
 

@@ -21,5 +21,19 @@ class materia extends options_course {
         parent::__construct($codMateria);
 
     }
+
+    /**
+     * Create: metodo dedicado a la inserción de la materia dentro de la base de datos.
+     *
+     * @param $idCa
+     */
+    public function create($idCa) {
+
+        $sql = "INSERT INTO ".TABLE_COURSE." ( ".COD_MAT.", ".FOREN_COD.") VALUES (:idMat, :idCa)";
+
+        $resultado = $this->conexionBase->prepare($sql);
+        $resultado->execute(array(":idMat"=>$this->codigoMat, ":idCa"=>$idCa));
+
+    }
     
 }

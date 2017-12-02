@@ -47,14 +47,8 @@ Contacto cfranklinmoreno@gmail.com
                 <div id="cuerpo">
                     <?php
 
-                        require_once '../Config/Bd_Gestion.php';
-
-                        $webCampus = new Bd_Gestion();
-
                         if (isset($_POST["newCarrera"])) {
 
-                            $webCampus ->agregar_carrera($_POST["codigo"],$_POST["unidades"],
-                                $_POST["numero"],$_POST["nombre"]);
                             echo '<p id="Despedida">Carrera añadida exitosamente.</p>';
 
                         }else if (isset ($_POST["newProfesor"])) {
@@ -63,10 +57,7 @@ Contacto cfranklinmoreno@gmail.com
 
                         }else if(isset ($_POST["newMateria"])){
 
-                            $webCampus->agregar_materia($_POST["carrera"], $_POST["materia"],
-                                    $_POST["nombre"], $_POST["prelacion"], $_POST["uc"],
-                                    $_POST["trimestre"], $_POST["cost"]);
-                            echo '<p id="Despedida">Materia añadida exitosamente.</p>';
+                            $admin->new_course($_POST);
 
                         }else if (isset ($_POST["newSeccion"])) {
 
@@ -74,9 +65,7 @@ Contacto cfranklinmoreno@gmail.com
 
                         }else if (isset ($_POST["newTrimestre"])) {
 
-                            $webCampus->agregar_trimestre($_POST["trimestre"],
-                                    $_POST["carrera"], $_POST["numero"], $_POST["uc"]);
-                            echo '<p id="Despedida">Trimestre agregado exitosamente.</p>';
+                            $admin->new_trimester($_POST);
 
                         }else if (isset ($_POST["newAlumno"])) {
 
@@ -84,10 +73,6 @@ Contacto cfranklinmoreno@gmail.com
 
                         }
 
-                         ob_start();
-                            header("refresh: 3; url = crudv01/accion.php");
-
-                        ob_end_flush();
                     ?>
                 </div>
             </div>
