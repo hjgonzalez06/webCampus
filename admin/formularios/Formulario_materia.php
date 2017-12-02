@@ -30,7 +30,6 @@
                                 CODIGO CARRERA</td><td class="der">
                                 <select name="carrera">
                                         <option value="0" >Carreras...</option>
-                                        
                                         <?php
                                             $registro = $datosBase->data("all","carreras");
                                             foreach ($registro as $registro){
@@ -39,19 +38,18 @@
                                             }
                                         ?>
                         
-                                    </select></td></tr>
+                                </select></td></tr>
                         
                         <tr>
                             <td class="izq">
                                 CODIGO MATERIA</td><td class="der"><input type="text" name="materia" class="Input"></td></tr>
-                        
+                        <tr>
                             <td class="izq">
                                 NOMBRE MATERIA</td><td class="der"><input type="text" name="nombre" class="Input"></td></tr>
                          
                           <tr>
                             <td class="izq">
                                 U.C. PRELACION</td><td class="der"><input type="number" name="uc" class="Input"></td></tr>
-                          <tr>
                           <tr>
                             <td class="izq">
                                 U.C. COSTO</td><td class="der"><input type="number" name="cost" class="Input"></td></tr>
