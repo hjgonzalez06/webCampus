@@ -27,22 +27,14 @@ q:before, q:after { content:''; }
 /* INICIO CÓDIGO CSS PARA APARIENCIA DE PÁGINA WEB */
 
 body{
-	background-color: #7ac5cd;
+	background-color: #FFFFFF;
 	font-family: 'Play', sans-serif;
 	font-size: 16px;
 	padding-top: 55px;
 }
 
-#particles-js{
-	margin-top: -20px;
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	z-index: -1;
-}
-
 header{
-	background-color: #00b2ee;
+	background-color: rgb(51,153,255);
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -72,14 +64,17 @@ main{
 	margin-bottom: 20px;
 	margin-right: auto;
 	margin-left: auto;
-	background-color: rgba(0,30,255,.5);
+	background-color: rgba(242,242,242,.9);
 	padding: 20px;
 	box-shadow: #696969 10px 10px 15px;
+	font-style: 'Play', sans-serif;
 }
 
 main h1{
 	font: 40px bold;
-	background-color: rgba(238,59,59,.7);
+	font-family: 'Play', sans-serif;
+	color: #FFFFFF;
+	background-color: rgb(51,153,255);
 	width: 90%;
 	padding: 5px;
 	text-align: center;
@@ -93,7 +88,7 @@ main h1{
 #Cuadro{
 	margin: 10px auto;
 	height: 400px;
-	background-color: rgba(240,248,255,.5);
+	background-color: #FFFFFF;
 	border: 3px solid rgb(0,30,255);
 	border-radius: 5px;
 	display: flex;
@@ -103,19 +98,20 @@ main h1{
 }
 
 table{
-	margin: 160px auto;
+	margin: 170px auto;
 	width: 95%;
+	background-color: rgba(242,242,242,.9);
 	border-collapse: separate;
 	border-spacing: 10px 5px;
 	border: 3px solid rgb(0,30,255);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	align-items: center
+	align-items: center;
 }
 
 table tr .izq{
-	background-color: rgba(238,59,59,.5);
+	background-color: rgba(51,153,255,.7);
 	padding: 0px;
 	text-align: center;
 	font-size: 15px bold;
@@ -134,7 +130,7 @@ table tr .der{
 .Input{
 	width: 200px;
 	text-align: center;
-	background-color: rgba(240,248,255,.5);
+	background-color: #FFFFFF;
 	border: 2px solid #333333;
 	border-radius: 5px;
 }
@@ -142,7 +138,7 @@ table tr .der{
 select{
 	width: 200px;
 	text-align: center;
-	background-color: rgba(240,248,255,.5);
+	background-color: #FFFFFF;
 	border: 2px solid #333333;
 	border-radius: 5px;
 }
@@ -183,13 +179,13 @@ footer{
 	font-size: 1em;
 	position: fixed;
 	bottom: 0;
-	left: 0;
 	width: 100%;
+	background-color: #333;
 }
 
 footer p{
 	font: 1em 'Play', serif;
-	color: #303030;
+	color: #F6F6F6;
 	text-shadow: #696969 3px 3px 3px;
 }
 
