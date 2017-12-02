@@ -1,6 +1,5 @@
 <?php
 
-require_once "../../Config/Bd_conexion.php";
 abstract class option_trimester extends conexion {
 
     private $codTrimestre;

@@ -6,7 +6,9 @@
 +    hiramjgonzalez98@gmail.com
 +    cfranklinmoreno@gmail.com
  */
-require_once '../Config/Bd_conexion.php';
+
+require_once $_SERVER["DOCUMENT_ROOT"]."/webCampus/Config/Bd_conexion.php";
+require_once $_SERVER["DOCUMENT_ROOT"]."/webCampus/Config/configUsers.php";
 /**
  * Clase abstracta usada para establecer las bases de la creación de una materia.
  *
@@ -85,3 +87,4 @@ abstract class course extends conexion {
     }
 
 }
+?>

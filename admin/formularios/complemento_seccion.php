@@ -5,6 +5,11 @@ Contacto cfranklinmoreno@gmail.com
 -->
 <?php
     require_once '../../Config/Bd_conexion.php';
+    require_once $_SERVER["DOCUMENT_ROOT"]."/webCampus/Config/course/materia.php";
+    require_once $_SERVER["DOCUMENT_ROOT"]."/webCampus/users/professor.php";
+    $materias = materia::show_all_courses();
+    $profesores = professor::show_all();
+
 ?>
 
 <html>
@@ -45,11 +50,12 @@ Contacto cfranklinmoreno@gmail.com
                                 <option value="0" >Materias...</option>
 
                                     <?php
-                                        $registro = $datosBase->data("all","materias");
-                                        foreach ($registro as $registro){
-                                            echo '<option value ="'.$registro["cod_mat"].'">'.
-                                            $registro["cod_mat"].'--'.$registro["nombre"]
+                                        foreach ($materias as $materia) {
+
+                                            echo '<option value ="'.$materia[COD_MAT].'">'.
+                                            $materia[COD_MAT].'--'.$materia[NAME_CRS]
                                                 .'</option>';
+
                                             }
                                     ?>
 
@@ -62,11 +68,10 @@ Contacto cfranklinmoreno@gmail.com
                                 <option value="0" >Profesores...</option>
 
                                     <?php
-                                        $registro = $datosBase->data("all","profesores");
-                                        foreach ($registro as $registro){
-                                            echo '<option value ="'.$registro["cod_pro"].'">'.
-                                            $registro["cod_pro"].'--'.$registro["nombre"]
-                                                .' '. $registro["apellido"] .'</option>';
+                                        foreach ($profesores as $profesore){
+                                            echo '<option value ="'.$profesore[ID_PRO].'">'.
+                                            $profesore[ID_PRO].'--'.$profesore[NAME_PRO]
+                                                .' '. $profesore[LNAME_PRO] .'</option>';
                                             }
                                     ?>
 

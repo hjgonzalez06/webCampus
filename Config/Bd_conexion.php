@@ -4,7 +4,6 @@
  * Código fuente desarrollado por Franklin Moreno e Hiram González
  * Contacto cfranklinmoreno@gmail.com
  */
-
 require_once 'config.php';
 
 class conexion {

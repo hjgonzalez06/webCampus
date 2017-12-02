@@ -8,7 +8,7 @@
 
 
 require_once "options_career.php";
-
+require_once $_SERVER["DOCUMENT_ROOT"]."/webCampus/Config/configUsers.php";
 /**
  * @author nookamb
  */

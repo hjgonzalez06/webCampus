@@ -6,7 +6,6 @@
     require_once "../../Config/career/career.php";
     require_once "../../Config/trimester/trimester.php";
 
-
     $carreras = career::show_all();
     $trimestres = trimester::show_all();
 ?>
@@ -14,7 +13,7 @@
 <html>
 
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html"; charset=UTF-8" />
         <meta name="description" content="Página oficial del WebCampus de la Universidad de Margarita: Alma Mater del Caribe."/>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
         <title>Nuevo Alumno - WebCampus UNIMAR</title>
