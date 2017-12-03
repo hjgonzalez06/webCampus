@@ -21,9 +21,13 @@ class career extends options_career {
 
     }
 
-    public function create($codMat) {
+    public function create() {
 
-        //CODIGO
+        $sql = "INSERT INTO ".TABLE_CAREER." ( ".COD_CA.") VALUES (:idCa)";
+
+        $resultado = $this->conexionBase->prepare($sql);
+        $resultado->execute(array(":idCa"=>$this->codigoCarrera));
+
     }
 
     /**

@@ -8,6 +8,7 @@ require_once $_SERVER['DOCUMENT_ROOT']."/webCampus/users/professor.php";
 require_once $_SERVER['DOCUMENT_ROOT']."/webCampus/Config/section/section.php";
 require_once $_SERVER['DOCUMENT_ROOT']."/webCampus/Config/course/course.php";
 require_once $_SERVER['DOCUMENT_ROOT']."/webCampus/Config/trimester/trimester.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/webCampus/Config/career/career.php";
 
 /**
  * Description of admin_option
@@ -207,6 +208,35 @@ abstract class admin_option extends cuenta {
             echo '<p id="Despedida">Trimestre agregado exitosamente.</p>';
 
         }catch (Exception $e) {
+
+            $this->conexionBase->rollBack();
+
+            echo '<p id="Despedida">ERROR: '.$e->getMessage().'.</p>';
+
+        }
+
+    }
+
+    public function new_career($datos) {
+
+
+        try {
+
+            $this->conexionBase->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->conexionBase->beginTransaction();
+
+            $career = new career($datos["codigo"]);
+            $career->create();
+
+            $career->setName($datos["nombre"]);
+            $career->setNroTriCa($datos["numero"]);
+            $career->setUCTol($datos["unidades"]);
+
+            $this->conexionBase->commit();
+
+            echo '<p id="Despedida">Carrera agregada exitosamente.</p>';
+
+        }catch(Exception $e) {
 
             $this->conexionBase->rollBack();
 

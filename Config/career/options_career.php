@@ -16,7 +16,7 @@
 
 abstract class options_career extends conexion {
 
-    private $codigoCarrera;
+    protected $codigoCarrera;
 
     public function __construct($codigoCarrera) {
 

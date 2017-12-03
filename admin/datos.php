@@ -49,7 +49,7 @@ Contacto cfranklinmoreno@gmail.com
 
                         if (isset($_POST["newCarrera"])) {
 
-                            echo '<p id="Despedida">Carrera añadida exitosamente.</p>';
+                            $admin->new_career($_POST);
 
                         }else if (isset ($_POST["newProfesor"])) {
 
