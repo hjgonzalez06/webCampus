@@ -88,7 +88,7 @@ main h1{
 #envoltura{
     margin: 180px auto;
     width: 50%;
-    background-color: rgba(242,242,242,.9);
+    background-color: #FFFFFF;
     border: 3px solid rgba(0,30,255,.75);
     border-radius: 10px;
     box-shadow: #696969 5px 5px 10px;

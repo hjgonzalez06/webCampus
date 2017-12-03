@@ -33,6 +33,14 @@ Contacto:
             <h1>Tabla de Profesores</h1>
             <div id="Cuadro">
                 <table>
+                    <thead>
+                        <tr>
+                            <td>Cédula</td>
+                            <td>Nombre</td>
+                            <td>Apellido</td>
+                            <td colspan="2">Opciones</td>
+                        </tr>
+                    </thead>
                     <?php
                         foreach ($profesores as $profesore) {
 

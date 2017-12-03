@@ -31,6 +31,18 @@ Contacto:
             <h1>Tabla de Estudiantes</h1>
             <div id="Cuadro">
                 <table>
+                    <thead>
+                        <tr>
+                            <td>Cédula</td>
+                            <td>Carrera</td>
+                            <td>Trimestre</td>
+                            <td>Nombre</td>
+                            <td>Apellido</td>
+                            <td>Correo Electrónico</td>
+                            <td>Teléfonp</td>
+                            <td colspan="2">Opciones</td>
+                        </tr>
+                    </thead>
                     <?php
 
                         foreach ($alumnos as $alumno) {
