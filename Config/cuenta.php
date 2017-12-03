@@ -138,6 +138,16 @@ abstract class cuenta extends conexion {
         return password_verify($this->contraseña, $contraOriginal["contrasenha"]);
         
     } //Funcional
+
+    public function delete () {
+
+        $sql = "DELET FROM".TABLE_ACCOUNT." WHERE ".ID_ACCOUNT. " = :id";
+
+        $resultado = $this->conexionBase->prepare($sql);
+        $resultado->execute(array(":id"=>$this->idCuenta));
+
+
+    }
     
     public function sumar($numero, $tabla, $codigo, $referencia){
         

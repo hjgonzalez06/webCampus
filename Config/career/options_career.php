@@ -6,14 +6,14 @@
  *          -hiramjgonzalez98@gmai.com
  */
 
+require_once $_SERVER["DOCUMENT_ROOT"]."/webCampus/Config/Bd_conexion.php";
+
 /**
  * Clase abstracta, con todas las opciones para la gestion de los datos
  * de TABLE_CAREER
  * <br>
  * @author nookamb
  */
-
-
 abstract class options_career extends conexion {
 
     protected $codigoCarrera;

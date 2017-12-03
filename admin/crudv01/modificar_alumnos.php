@@ -7,9 +7,9 @@ Contacto:
 -->
 <?php
     require_once '../../Config/Bd_conexion.php';
+    require_once $_SERVER["DOCUMENT_ROOT"]."/webCampus/users/student.php";
+    $alumnos = student::show_all();
     
-    $conexion = new Bd_Gestion();
-    $informacion;
 ?>
 <html>
     <head>
@@ -32,37 +32,37 @@ Contacto:
             <div id="Cuadro">
                 <table>
                     <?php
-                        $informacion = $conexion->data("all", "alumnos");
 
-                        foreach ($informacion as $profesores){
+                        foreach ($alumnos as $alumno) {
+
                     ?>
                     <tr>
                         <td title="Cédula del Estudiante">
-                            <?php echo $profesores["cedula"]?>
+                            <?php echo $alumno[ID_STU]?>
                         </td>
                         <td title="Carrera que cursa">
-                            <?php echo $profesores["carrera"]?>
+                            <?php echo $alumno[CAREER]?>
                         </td>
                         <td title="Trimestre que cursa">
-                            <?php echo $profesores["trimestre"]?>
+                            <?php echo $alumno[STU_TRI]?>
                         </td>
                         <td title="Primer nombre del Estudiante">
-                            <?php echo $profesores["nombre"]?>
+                            <?php echo $alumno[NAME_STU]?>
                         </td>
                         <td title="Primer apellido del Estudiante">
-                            <?php echo $profesores["apellido"]?>  
+                            <?php echo $alumno[LNAME_STU]?>
                         </td>
                         <td title="Correo electrónico del Estudiante">
-                            <?php echo $profesores["correo"]?>
+                            <?php echo $alumno[EMAIL]?>
                         </td>
                         <td title="Número de teléfono celular del Estudiante">
-                            <?php echo $profesores["movil"]?>
+                            <?php echo $alumno[CELL]?>
                         </td>
                         <td id="C_Bot">
-                            <a href="editar_alumnos.php?editar=<?php echo $profesores['cedula']?>"><p id="bot"><input type="submit" name="editar" value="Editar" class="boton"></p></a>
+                            <a href="editar_alumnos.php?editar=<?php echo $alumno['cedula']?>"><p id="bot"><input type="submit" name="editar" value="Editar" class="boton"></p></a>
                         </td>
                         <td id="C_Bot">
-                            <a href="borrar.php?borrar=<?php echo $profesores['cedula']?>&tabla=alumnos&campo=id_cuenta"><p id="bot"><input type="submit" name="borrar" value="Borrar" class="boton"></p></a>
+                            <a href="borrar.php?borrar=<?php echo $alumno['cedula']?>&tabla=alumnos&campo=id_cuenta"><p id="bot"><input type="submit" name="borrar" value="Borrar" class="boton"></p></a>
                         </td>
                     <?php }?>
                     </tr>

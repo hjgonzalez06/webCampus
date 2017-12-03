@@ -65,7 +65,7 @@ Contacto cfranklinmoreno@gmail.com
 
                         }else if (isset ($_POST["newTrimestre"])) {
 
-                            $admin->new_trimester($_POST);
+                            $admin->new_trimester($datos);
 
                         }else if (isset ($_POST["newAlumno"])) {
 
@@ -73,6 +73,9 @@ Contacto cfranklinmoreno@gmail.com
 
                         }
 
+                         ob_start();
+                            header("refresh: 3; url = crudv01/accion.php");
+                        ob_end_flush();
                     ?>
                 </div>
             </div>

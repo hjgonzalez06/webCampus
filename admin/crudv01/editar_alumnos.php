@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <!--
 Código fuente desarrollado por Franklin Moreno e Hiram González
 Contacto:
@@ -8,6 +8,14 @@ Contacto:
 
 <?php
     require_once '../../Config/Bd_Gestion.php';
+    require_once "../../Config/career/career.php";
+    require_once "../../Config/trimester/trimester.php";
+    require_once "../../users/student.php";
+
+    $carreras = career::show_all();
+    $trimestres = trimester::show_all();
+    $alumno = new student($_GET["editar"], "");
+
     $conexion = new Bd_Gestion();
     $informacion = $conexion->data($_GET["editar"], "alumnos");
     $lapso = array(date("Y")."-I",date("Y")."-II", date("Y")."-III" );
@@ -38,7 +46,7 @@ Contacto:
                         <tr>
                             <td class="izq">
                                 CEDULA DE IDENTIDAD: </td><td class="der">
-                                <input type="number" name="cedula" class="Input" value="<?php echo $informacion['cedula'];?>"></td></tr>            
+                                <input type="number" name="cedula" class="Input" value="<?php echo $alumno->getCedula();?>"></td></tr>
                         <tr>
                             <td class="izq">
                                 CODIGO CARRERA</td><td class="der">
@@ -46,10 +54,10 @@ Contacto:
                                         <option value="0" >Carreras...</option>
                                         
                                         <?php
-                                            $registro = $conexion->data("cod_ca","carreras");
-                                            foreach ($registro as $registro){
-                                                echo '<option value ="'.$registro["cod_ca"].'">'.$registro["cod_ca"]
-                                                        .'--'.$registro["nombre"] .'</option>';
+                                            foreach ($carreras as $carrera) {
+
+                                                echo '<option value ="'.$carrera[COD_CA].'">'.$carrera[COD_CA]
+                                                    .'--'.$carrera[NAME_CA] .'</option>';
                                             }
                                         ?>
                         
@@ -62,44 +70,45 @@ Contacto:
                                         <option value="0" >Trimestres...</option>
                                         
                                        <?php
-                                            $registro = $conexion->data("cod_tri","trimestres");
-                                            foreach ($registro as $registro){
-                                                echo '<option value ="'.$registro["cod_tri"].'">'.$registro["cod_tri"]
-                                                        .' TRIMESTE Nº: '.$registro["n_tri"] .'</option>';
-                                            }
+                                           foreach ($trimestres as $trimestre) {
+
+                                               echo '<option value ="'.$trimestre[COD_TRI].'">'.$trimestre[COD_TRI]
+                                                   .' TRIMESTE Nº: '.$trimestre[NRO_TRI] .'</option>';
+
+                                           }
                                         ?>
                         
                                     </select></td></tr>
                         <tr>
                             <td class="izq">
                                 NOMBRE: </td><td class="der">
-                                <input type="text" name="nombre" class="Input" value="<?php echo $informacion['nombre'];?>"></td></tr>
+                                <input type="text" name="nombre" class="Input" value="<?php echo $alumno->getNombre();?>"></td></tr>
                         
                         <tr>
                             <td class="izq">
                             SEGUNDO NOMBRE: </td><td class="der">
-                                <input type="text" name="nombre2" class="Input" value="<?php echo $informacion['nombre_do'];?>"></td></tr>
+                                <input type="text" name="nombre2" class="Input" value="<?php echo $alumno->getNombre2();?>"></td></tr>
                      
                       <tr>
                         <td class="izq">
                             APELLIDO: </td><td class="der">
-                            <input type="text" name="apellido" class="Input" value="<?php echo $informacion['apellido'];?>"></td></tr>
+                            <input type="text" name="apellido" class="Input" value="<?php echo $alumno->getApellido();?>"></td></tr>
                       <tr>
                             <td class="izq">
                             SEGUNDO APELLIDO: </td><td class="der">
-                                <input type="text" name="apellido2" class="Input" value="<?php echo $informacion['apellido_do'];?>"></td></tr>
+                                <input type="text" name="apellido2" class="Input" value="<?php echo $alumno->getApellido2();?>"></td></tr>
                        <tr>
                         <td class="izq">
                             CORREO ELECTRONICO: </td><td class="der">
-                            <input type="email" name="correo" class="Input" value="<?php echo $informacion['correo'];?>"></td></tr>
+                            <input type="email" name="correo" class="Input" value="<?php echo $alumno->getCorreo();?>"></td></tr>
                        <tr>
                             <td class="izq">
                             TELEFONO CELULAR: </td><td class="der">
-                                <input type="text" name="movil" class="Input" value="<?php echo $informacion['movil'];?>"></td></tr>
+                                <input type="text" name="movil" class="Input" value="<?php echo $alumno->getMovil();?>"></td></tr>
                        <tr>
                             <td class="izq">
                             TELEFONO FIJO: </td><td class="der">
-                                <input type="text" name="casa" class="Input" value="<?php echo $informacion['casa'];?>"></td></tr>
+                                <input type="text" name="casa" class="Input" value="<?php echo $alumno->getCasa();?>"></td></tr>
                        <tr>
                         <td class="izq">
                             TURNO: </td><td class="der">
@@ -138,7 +147,7 @@ Contacto:
                        <tr>
                             <td class="izq">
                             TRIMESTRES APROBADOS </td><td class="der">
-                                <input type="text" name="triA" class="Input" value="<?php echo $informacion['tri_aprob'];?>"></td></tr>
+                                <input type="text" name="triA" class="Input" value="<?php echo $alumno->getTriAprob();?>"></td></tr>
                         <td class="izq">
                             ESTATUS: </td><td class="der">
                             <select name="status">
@@ -148,24 +157,37 @@ Contacto:
                         </td></tr>
                             <td class="izq">
                             UNIDADES DE CREDITO A. </td><td class="der">
-                                <input type="text" name="uca" class="Input" value="<?php echo $informacion['uca'];?>"></td></tr>
+                                <input type="text" name="uca" class="Input" value="<?php echo $alumno->getUca();?>"></td></tr>
                        <tr>
                             <td class="izq">
                             UNIDADES DE CREDITO C. </td><td class="der">
-                                <input type="text" name="ucc" class="Input" value="<?php echo $informacion['ucc'];?>"></td></tr>
+                                <input type="text" name="ucc" class="Input" value="<?php echo $alumno->getUcc();?>"></td></tr>
                        
                     <tr><td id="C_Bot" colspan="2"><p id="bot"><input type="submit" name="actAlumno" value="Actualizar" class="boton"></p></td></tr>
                 </table>
             </form>
             <?php
                 if (isset($_POST["actAlumno"])) {
-                    $error= $conexion->actualizar_alumno($_POST["cedula"], $_POST["carrera"],
-                            $_POST["trimestre"], $_POST["nombre"], $_POST["nombre2"],
-                            $_POST["apellido"], $_POST["apellido2"], $_POST["correo"],
-                            $_POST["movil"], $_POST["casa"], $_POST["turno"],
-                            $_POST["lapso_act"], $_POST["lapso_ant"], $_POST["status"],
-                            $_POST["triA"], $_POST["uca"], $_POST["ucc"]);
-                    
+
+                    $alumno = new student($_POST["cedula"], "");
+
+                    $alumno->setCedula($_POST["cedula"]);
+                    $alumno->setCodigoCa($_POST["carrera"]);
+                    $alumno->setStuTri($_POST["trimestre"]);
+                    $alumno->setNombre($_POST["nombre"]);
+                    $alumno->setNombre2($_POST["nombre2"]);
+                    $alumno->setApellido($_POST["apellido"]);
+                    $alumno->setApellido2($_POST["apellido2"]);
+                    $alumno->setCorreo($_POST["correo"]);
+                    $alumno->setMovil($_POST["movil"]);
+                    $alumno->setCasa($_POST["casa"]);
+                    $alumno->setTurno($_POST["turno"]);
+                    $alumno->setLapsoAct($_POST["lapso_act"]);
+                    $alumno->setLapsoOld($_POST["lapso_ant"]);
+                    $alumno->setTriAprob($_POST["triA"]);
+                    $alumno->setStatus($_POST["status"]);
+                    $alumno->setUca($_POST["uca"]);
+                    $alumno->setUcc($_POST["ucc"]);
 
                     echo "<META HTTP-EQUIV='REFRESH' CONTENT='2;URL=buscar.php'>";
                 }

@@ -1,6 +1,7 @@
 <?php
 
 require_once 'User.php';
+require_once $_SERVER["DOCUMENT_ROOT"]."/webCampus/Config/Bd_conexion.php";
 
 class student extends user {
     
@@ -30,7 +31,10 @@ class student extends user {
         }
         
     }
-    
+
+    /**
+     * Agregar_alumno: Inserta registro primario del alumno ya instanciado.
+     */
     private function agregar_alumno() {
         
         $sql  = "INSERT INTO ".TABLE_STUDENT." (".ID_STU.", ".ID_AC3.") VALUES"
@@ -45,6 +49,17 @@ class student extends user {
         
         $resultado->closeCursor();
         
+    }
+
+    public static function show_all() {
+
+        $sql = "SELECT * FROM ".TABLE_STUDENT;
+
+        $resultado = ((new conexion())->__conexion())->prepare($sql);
+        $resultado->execute();
+
+        return $resultado->fetchAll(PDO::FETCH_ASSOC);
+
     }
     
 }

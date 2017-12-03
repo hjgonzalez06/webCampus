@@ -7,7 +7,7 @@
  * @author nookamb
  */
 
-require_once '../Config/cuenta.php';
+require_once $_SERVER["DOCUMENT_ROOT"]."/webCampus/Config/cuenta.php";
 
 abstract class User extends cuenta {
 
