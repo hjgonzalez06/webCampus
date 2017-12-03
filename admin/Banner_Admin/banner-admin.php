@@ -37,16 +37,16 @@ require_once '../../Config/chechadmin.php';
     </div>
     <div class="Enlaces" id="Enlaces">
       <a href="../crudv01/accion.php">
-        <i class="fa fa-cog" aria-hidden="true"> Panel</i>
+        <i class="fa fa-cog" aria-hidden="true"><span> Panel</span></i>
       </a>
       <a href="../crudv01/creacion.php">
-        <i class="fa fa-plus" aria-hidden="true"> Habilitar</i>
+        <i class="fa fa-plus" aria-hidden="true"><span> Habilitar</span></i>
       </a>
       <a href="../crudv01/buscar.php">
-        <i class="fa fa-search" aria-hidden="true"> Búsqueda+</i>
+        <i class="fa fa-search" aria-hidden="true"><span> Búsqueda+</span></i>
       </a>
       <a href="../logout-admin.php">
-        <i class="fa fa-power-off" aria-hidden="true"> Cerrar Sesión</i>
+        <i class="fa fa-power-off" aria-hidden="true"><span> Cerrar Sesión</span></i>
       </a>
     </div>
   </nav>

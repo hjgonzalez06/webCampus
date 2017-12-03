@@ -61,6 +61,7 @@
 .Menu .Enlaces{
 	display: inline-block;
 	text-align: right;
+	font-family: 'Play', serif;
 }
 
 .Menu .Enlaces a{
@@ -70,6 +71,7 @@
 	padding: .75em;
 	text-align: center;
 	font-size: 16px;
+	font-family: 'Play', serif;
 }
 
 .Menu .Enlaces a:hover{
@@ -79,6 +81,10 @@
 
 .Menu .Enlaces i{
 	margin-right: 5px;
+}
+
+.Menu .Enlaces i span{
+	font-family: 'Play', serif;
 }
 
 /* COMIENZO CÓDIGO EFECTOS DEL MENÚ */

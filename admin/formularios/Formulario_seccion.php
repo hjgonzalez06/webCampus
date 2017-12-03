@@ -48,7 +48,7 @@
 
                     echo '</select></td></tr>';
                     
-                    echo '<tr><td id="C_Bot" colspan="2"><p id="bot"><input type="submit" name="seleccion"value="Enviar" class="boton"></p></td></tr>';
+                    echo '<tr><td id="C_Bot" colspan="2"><p id="bot"><input type="submit" name="seleccion"value="Enviar" class="boton"></p></td></tr></table></form>';
                 }
             ?>
             </div>
