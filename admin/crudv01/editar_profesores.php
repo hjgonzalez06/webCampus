@@ -8,28 +8,17 @@ Contacto:
 
 <?php
     require_once '../../Config/Bd_Gestion.php';
-    $conexion = new Bd_Gestion();
+    require_once $_SERVER["DOCUMENT_ROOT"]."/webCampus/users/professor.php";
     if (isset($_GET["editar"])) {
-        $informacion = $conexion->data($_GET["editar"], "profesores");
+        $profesor = new professor($_GET["editar"],"");
     }
     
     if (isset($_POST["actProfesor"])) {
-        $resultado = $conexion->actualizar_profesor($_POST["codigo"],
-            $_POST["nombre"], $_POST["apellido"]);
+
+        $profesor = new professor($_POST["cedula"],"");
+        $profesor->setNombre($_POST["nombre"]);
+        $profesor->setApellido($_POST["apellido"]);
         
-        if ($resultado!=0) {
-                        
-            echo "<script language='javascript'>alert('Cédula o "
-            . "Contraseña incorrectas. Intente de nuevo.')</script>";
-                        
-            echo "<META HTTP-EQUIV='REFRESH' CONTENT='1;URL=editar_profesores.php'>";
-        }else{
-            
-            echo "<script language='javascript'>alert('Operacion "
-                        . "Exitoso')</script>";
-            echo "<META HTTP-EQUIV='REFRESH' CONTENT='0;URL=buscar.php'>";
-            
-        }
     }
 ?>
 <html>
@@ -55,18 +44,10 @@ Contacto:
                    <table>
                         <tr>
                             <td class="izq">
-                                CÓDIGO PROFESOR:
-                            </td>
-                            <td class="der">
-                                <input type="text" name="codigo" class="Input" value="<?php echo $informacion['cod_pro'];?>">
-                            </td>
-                        </tr>            
-                        <tr>
-                            <td class="izq">
                                 CEDULA DE IDENTIDAD:
                             </td>
                             <td class="der">
-                                <input type="text" name="cedula" class="Input" value="<?php echo $informacion['cedula'];?>">
+                                <input type="text" name="cedula" class="Input" value="<?php echo $profesor->getCedula();?>">
                             </td>
                         </tr>            
                         <tr>
@@ -74,7 +55,7 @@ Contacto:
                                 NOMBRE:
                             </td>
                             <td class="der">
-                                <input type="text" name="nombre" class="Input" value="<?php echo $informacion['nombre'];?>">
+                                <input type="text" name="nombre" class="Input" value="<?php echo $profesor->getNombre();?>">
                             </td>
                         </tr>            
                         <tr>
@@ -82,7 +63,7 @@ Contacto:
                                 APELLIDO:
                             </td>
                             <td class="der">
-                                <input type="text" name="apellido" class="Input" value="<?php echo $informacion['apellido'];?>">
+                                <input type="text" name="apellido" class="Input" value="<?php echo $profesor->getApellido();?>">
                             </td>
                         </tr>
                         <tr><td id="C_Bot" colspan="2"><p id="bot"><input type="submit" name="actProfesor" value="Actualizar" class="boton"></p></td></tr>

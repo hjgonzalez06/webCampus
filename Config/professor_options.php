@@ -19,6 +19,13 @@ abstract class professor_options extends cuenta {
     /*
      * Inicio de los metodos get.
      */
+
+    public function getCedula () {
+
+        return $this->idCuenta;
+        
+    }
+
     public function getNombre(){
 
         $sql = "SELECT ".NAME_PRO." FROM ".TABLE_PROFESSOR." WHERE ".ID_PRO." = :codigo";

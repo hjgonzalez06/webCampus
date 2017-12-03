@@ -6,10 +6,12 @@ Contacto:
  cfranklinmoreno@gmail.com
 -->
 <?php
+
     require_once '../../Config/Bd_conexion.php';
-    
-    $conexion = new Bd_Gestion();
-    $informacion;
+    require_once $_SERVER["DOCUMENT_ROOT"]."/webCampus/users/professor.php";
+
+    $profesores = professor::show_all();
+
 ?>
 <html>
     <head>
@@ -32,32 +34,28 @@ Contacto:
             <div id="Cuadro">
                 <table>
                     <?php
-                        $informacion = $conexion->data("all", "profesores");
+                        foreach ($profesores as $profesore) {
 
-                        foreach ($informacion as $profesores){
                     ?>
                     <tr>
-                        <td title="Código del Profesor">
-                            <?php echo $profesores["cod_pro"];?>
-                        </td>
                         <td title="Cédula del Profesor">
-                            <?php echo $profesores["cedula"];?>
+                            <?php echo $profesore[ID_PRO];?>
                         </td>
                         <td title="Nombre del Profesor">
-                            <?php echo $profesores["nombre"];?>
+                            <?php echo $profesore[NAME_PRO];?>
                         </td>
                         <td title="Apellido del Profesor">
-                            <?php echo $profesores["apellido"];?>
+                            <?php echo $profesore[LNAME_PRO];?>
                         </td>
                         <td id="C_Bot">
-                            <a href="editar_profesores.php?editar=<?php echo $profesores['cod_pro'];?>">
+                            <a href="editar_profesores.php?editar=<?php echo $profesore[ID_PRO];?>">
                                 <p id="bot">
                                     <input type="submit" name="editar" value="Editar" class="boton">
                                 </p>
                             </a>
                         </td>
                         <td id="C_Bot">
-                            <a href="borrar.php?borrar=<?php echo $profesores['cod_pro'];?>&tabla=profesores&campo=cod_pro">
+                            <a href="borrar.php?borrar=<?php echo $profesore[ID_PRO];?>&tabla=profesores&campo=cod_pro">
                                 <p id="bot">
                                     <input type="submit" name="borrar" value="Borrar" class="boton">
                                 </p>
